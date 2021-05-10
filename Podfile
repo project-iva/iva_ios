@@ -8,3 +8,8 @@ target 'iva_ios' do
   # Pods for iva_ios
 	pod 'Alamofire', '~> 5.2'
 end
+
+target 'iva_watch Extension' do
+    platform :watchos, '7.0'
+    pod 'Alamofire', '~> 5.2'
+end

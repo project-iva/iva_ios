@@ -24,6 +24,7 @@
 		78C3055826499B380001BE1D /* iva_watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 78C3053726499B340001BE1D /* iva_watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78C3056226499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
 		78C3056326499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
+		EE67B2E17E4E8D04303A5DBD /* libPods-iva_watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +71,9 @@
 
 /* Begin PBXFileReference section */
 		1A76B3B3620276956F32EB3D /* Pods-iva_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios.release.xcconfig"; sourceTree = "<group>"; };
+		52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iva_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		7832EA732645A18100371FA7 /* iva_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832EA762645A18100371FA7 /* iva_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iva_iosApp.swift; sourceTree = "<group>"; };
 		7832EA782645A18100371FA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		78C3055426499B380001BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78C3055526499B380001BE1D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		78C3056126499D8B0001BE1D /* IvaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaController.swift; sourceTree = "<group>"; };
+		B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iva_watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE67B2E17E4E8D04303A5DBD /* libPods-iva_watch Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */,
+				B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -209,6 +215,8 @@
 			children = (
 				C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */,
 				1A76B3B3620276956F32EB3D /* Pods-iva_ios.release.xcconfig */,
+				52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */,
+				72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78C3055926499B380001BE1D /* Build configuration list for PBXNativeTarget "iva_watch Extension" */;
 			buildPhases = (
+				C1868EB6C62FC8BBB239839E /* [CP] Check Pods Manifest.lock */,
 				78C3053C26499B370001BE1D /* Sources */,
 				78C3053D26499B370001BE1D /* Frameworks */,
 				78C3053E26499B370001BE1D /* Resources */,
@@ -349,7 +358,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-framework/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -358,6 +367,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1868EB6C62FC8BBB239839E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iva_watch Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB6FEE933498611986FBC96D /* [CP] Check Pods Manifest.lock */ = {
@@ -584,6 +611,7 @@
 		};
 		78C3055A26499B380001BE1D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,12 +630,13 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Debug;
 		};
 		78C3055B26499B380001BE1D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,7 +655,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Release;
 		};
@@ -646,7 +675,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Debug;
 		};
@@ -666,7 +695,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
 			};
 			name = Release;
 		};
