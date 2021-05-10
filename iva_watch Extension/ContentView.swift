@@ -1,30 +1,23 @@
 //
 //  ContentView.swift
-//  iva_ios
+//  iva_watch Extension
 //
-//  Created by Igor Pidik on 07/05/2021.
+//  Created by Igor Pidik on 10/05/2021.
 //
 
 import SwiftUI
 
 struct ContentView: View {
     private let ivaController = IvaController()
-    
     var body: some View {
         Button(action: {
-            ivaController.next()
+            self.ivaController.next()
         }, label: {
             HStack {
                 Image(systemName: "arrowtriangle.forward.fill")
                     .font(.title)
                 Text("Next")
-                    .fontWeight(.semibold)
-                    .font(.title)
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(40)
         })
     }
 }
