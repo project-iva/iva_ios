@@ -1,16 +1,24 @@
 PODS:
   - Alamofire (5.4.3)
+  - HealthKitReporter (1.4.3)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - HealthKitReporter (~> 1.4)
+  - Starscream (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - HealthKitReporter
+    - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  HealthKitReporter: 5f061ac7ecea833cf1374de6de8fc2780136066f
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: d0a6d5504420ae20e7e4606c2c513b8dd36d16ed
+PODFILE CHECKSUM: 4defe067d9f716856f9e4d0aa6a15fc474101ba2
 
 COCOAPODS: 1.5.2

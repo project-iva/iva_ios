@@ -7,6 +7,8 @@ target 'iva_ios' do
 
   # Pods for iva_ios
 	pod 'Alamofire', '~> 5.2'
+    pod 'HealthKitReporter', '~> 1.4'
+    pod 'Starscream', '~> 4.0.0'
 end
 
 target 'iva_watch Extension' do

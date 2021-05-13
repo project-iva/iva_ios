@@ -37,5 +37,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Read data to get the stats</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Update data to get the stats</string>
 </dict>
 </plist>
