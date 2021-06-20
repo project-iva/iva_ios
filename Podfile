@@ -12,6 +12,6 @@ target 'iva_ios' do
 end
 
 target 'iva_watch Extension' do
-    platform :watchos, '7.0'
+    platform :watchos, '7.4'
     pod 'Alamofire', '~> 5.2'
 end

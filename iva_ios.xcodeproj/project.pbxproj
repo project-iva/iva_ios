@@ -26,6 +26,7 @@
 		78C3056226499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
 		78C3056326499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
 		78D8525A264C7304001DAC38 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D85259264C7304001DAC38 /* HealthKit.framework */; };
+		78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */; };
 		EE67B2E17E4E8D04303A5DBD /* libPods-iva_watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		78C3056126499D8B0001BE1D /* IvaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaController.swift; sourceTree = "<group>"; };
 		78D85258264C7304001DAC38 /* iva_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iva_ios.entitlements; sourceTree = "<group>"; };
 		78D85259264C7304001DAC38 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaHealthKitReporter.swift; sourceTree = "<group>"; };
 		B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iva_watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				7832EA7C2645A18200371FA7 /* Preview Content */,
 				78C3056126499D8B0001BE1D /* IvaController.swift */,
 				787F5ADB264DAA8D00092255 /* AppDelegate.swift */,
+				78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */,
 			);
 			path = iva_ios;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
+				78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
 				78C3056226499D8B0001BE1D /* IvaController.swift in Sources */,
@@ -646,7 +650,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -671,7 +675,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};
@@ -691,7 +695,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Debug;
 		};
@@ -711,7 +715,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
 			};
 			name = Release;
 		};

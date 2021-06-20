@@ -10,7 +10,7 @@ import Alamofire
 
 class IvaController {    
     func next() {
-        AF.request("http://192.168.0.101:8080", method: .post).response { data in
+        AF.request("http://192.168.0.101:8001", method: .post).response { data in
             print(data)
         }
     }

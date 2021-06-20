@@ -12,8 +12,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     private var socket: WebSocket!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        print("Your code here")
-        connectToWebsocketServer()
+//        connectToWebsocketServer()
         return true
     }
     
