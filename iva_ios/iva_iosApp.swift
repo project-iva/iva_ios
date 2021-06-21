@@ -8,6 +8,7 @@
 import SwiftUI
 import HealthKitReporter
 import Starscream
+import PromiseKit
 
 @main
 struct iva_iosApp: App {
@@ -15,10 +16,17 @@ struct iva_iosApp: App {
     private let reporter = try? HealthKitReporter()
 
     init() {
-        if let reporter = try? HealthKitReporter() {
-            let ivaReporter = IvaHealthKitReporter(reporter: reporter)
-            ivaReporter.start()
+//        if let reporter = try? HealthKitReporter() {
+//            let ivaReporter = IvaHealthKitReporter(reporter: reporter)
+//            ivaReporter.start()
+//        }
+        
+        ApiHandler.shared.makeRequest(request: MindfulSessionRouter.get(), resultType: [MindfulSession].self).done { response in
+            print(response.result)
+        }.catch { error in
+            print(error)
         }
+
     }
     
     var body: some Scene {

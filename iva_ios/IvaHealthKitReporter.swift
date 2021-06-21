@@ -15,7 +15,6 @@ class IvaHealthKitReporter {
     
     init(reporter: HealthKitReporter) {
         self.reporter = reporter
-        HKQuery.predicateForSamples(withStart: <#T##Date?#>, end: <#T##Date?#>, options: <#T##HKQueryOptions#>)
     }
     
     func start() {

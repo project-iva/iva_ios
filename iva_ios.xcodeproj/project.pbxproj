@@ -13,6 +13,7 @@
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
 		7832EA7E2645A18200371FA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
+		78A688CD2680AA9500675AAF /* FormattingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A688CC2680AA9500675AAF /* FormattingExtensions.swift */; };
 		78C3053A26499B370001BE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3053926499B370001BE1D /* Assets.xcassets */; };
 		78C3054126499B370001BE1D /* iva_watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78C3054026499B370001BE1D /* iva_watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78C3054626499B370001BE1D /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3054526499B370001BE1D /* iva_iosApp.swift */; };
@@ -26,6 +27,10 @@
 		78C3056226499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
 		78C3056326499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
 		78D8525A264C7304001DAC38 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D85259264C7304001DAC38 /* HealthKit.framework */; };
+		78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45055267FDA7500D04B3A /* ApiHandler.swift */; };
+		78E45058267FDB5700D04B3A /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45057267FDB5700D04B3A /* Responses.swift */; };
+		78E4505A267FDE2300D04B3A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45059267FDE2300D04B3A /* Router.swift */; };
+		78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E4505D267FE65D00D04B3A /* MindfulSession.swift */; };
 		78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */; };
 		EE67B2E17E4E8D04303A5DBD /* libPods-iva_watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */; };
 /* End PBXBuildFile section */
@@ -84,6 +89,7 @@
 		7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7832EA7F2645A18200371FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78A688CC2680AA9500675AAF /* FormattingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingExtensions.swift; sourceTree = "<group>"; };
 		78C3053726499B340001BE1D /* iva_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C3053926499B370001BE1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78C3053B26499B370001BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +106,10 @@
 		78C3056126499D8B0001BE1D /* IvaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaController.swift; sourceTree = "<group>"; };
 		78D85258264C7304001DAC38 /* iva_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iva_ios.entitlements; sourceTree = "<group>"; };
 		78D85259264C7304001DAC38 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		78E45055267FDA7500D04B3A /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
+		78E45057267FDB5700D04B3A /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		78E45059267FDE2300D04B3A /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		78E4505D267FE65D00D04B3A /* MindfulSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulSession.swift; sourceTree = "<group>"; };
 		78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaHealthKitReporter.swift; sourceTree = "<group>"; };
 		B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iva_watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios.debug.xcconfig"; sourceTree = "<group>"; };
@@ -168,6 +178,7 @@
 		7832EA752645A18100371FA7 /* iva_ios */ = {
 			isa = PBXGroup;
 			children = (
+				78E45054267FDA5800D04B3A /* api */,
 				78D85258264C7304001DAC38 /* iva_ios.entitlements */,
 				7832EA762645A18100371FA7 /* iva_iosApp.swift */,
 				7832EA782645A18100371FA7 /* ContentView.swift */,
@@ -220,6 +231,34 @@
 				78C3055226499B380001BE1D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78E45054267FDA5800D04B3A /* api */ = {
+			isa = PBXGroup;
+			children = (
+				78E4505C267FE60B00D04B3A /* models */,
+				78E4505B267FDE2B00D04B3A /* routers */,
+				78E45055267FDA7500D04B3A /* ApiHandler.swift */,
+				78E45057267FDB5700D04B3A /* Responses.swift */,
+				78A688CC2680AA9500675AAF /* FormattingExtensions.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		78E4505B267FDE2B00D04B3A /* routers */ = {
+			isa = PBXGroup;
+			children = (
+				78E45059267FDE2300D04B3A /* Router.swift */,
+			);
+			path = routers;
+			sourceTree = "<group>";
+		};
+		78E4505C267FE60B00D04B3A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				78E4505D267FE65D00D04B3A /* MindfulSession.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		C1C5F6739D5B282130E6703E /* Pods */ = {
@@ -372,12 +411,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-framework/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/HealthKitReporter/HealthKitReporter.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HealthKitReporter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,10 +469,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
+				78A688CD2680AA9500675AAF /* FormattingExtensions.swift in Sources */,
 				78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
+				78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
+				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
+				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
 				78C3056226499D8B0001BE1D /* IvaController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

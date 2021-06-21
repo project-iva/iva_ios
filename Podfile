@@ -9,6 +9,7 @@ target 'iva_ios' do
 	pod 'Alamofire', '~> 5.2'
     pod 'HealthKitReporter', '~> 1.4'
     pod 'Starscream', '~> 4.0.0'
+    pod "PromiseKit", "~> 6.8"
 end
 
 target 'iva_watch Extension' do
