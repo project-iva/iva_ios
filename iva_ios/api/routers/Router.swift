@@ -12,6 +12,7 @@ protocol Router: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     func addParametersToRequest(request: URLRequest) throws -> URLRequest
+    func encodeModelIntoRequest<EncodableModel: Encodable>(model: EncodableModel, request: URLRequest) throws -> URLRequest
     func asURLRequest() throws -> URLRequest
 }
 
@@ -22,6 +23,13 @@ extension Router {
     
     func addParametersToRequest(request: URLRequest) throws -> URLRequest {
         return request
+    }
+    
+    func encodeModelIntoRequest<EncodableModel: Encodable>(model: EncodableModel, request: URLRequest) throws -> URLRequest {
+        let jsonEncoder = JSONEncoder()
+        jsonEncoder.dateEncodingStrategy = .iso8601
+        jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+        return try JSONParameterEncoder(encoder: jsonEncoder).encode(model, into: request)
     }
     
     func asURLRequest() throws -> URLRequest {
@@ -36,17 +44,18 @@ extension Router {
 
 enum MindfulSessionRouter: Router {
     case get(Int? = nil)
+    case post(MindfulSession)
     
     var method: HTTPMethod {
         switch self {
             case .get: return .get
+            case .post: return .post
         }
     }
     
     var path: String {
-        let mindfulSessionEndpoint = "mindful-sessions/"
         switch self {
-            case .get: return mindfulSessionEndpoint
+            case .get, .post: return "mindful-sessions/"
         }
     }
     
@@ -58,6 +67,9 @@ enum MindfulSessionRouter: Router {
                     return requestWithLimit
                 }
                 return request
+                
+            case .post(let session):
+                return try encodeModelIntoRequest(model: session, request: request)
         }
     }
 }
