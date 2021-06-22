@@ -16,17 +16,10 @@ struct iva_iosApp: App {
     private let reporter = try? HealthKitReporter()
 
     init() {
-//        if let reporter = try? HealthKitReporter() {
-//            let ivaReporter = IvaHealthKitReporter(reporter: reporter)
-//            ivaReporter.start()
-//        }
-        
-        ApiHandler.shared.makeRequest(request: MindfulSessionRouter.get(), resultType: [MindfulSession].self).done { response in
-            print(response.result)
-        }.catch { error in
-            print(error)
+        if let reporter = try? HealthKitReporter() {
+            let ivaReporter = IvaHealthKitReporter(reporter: reporter)
+            ivaReporter.start()
         }
-
     }
     
     var body: some Scene {

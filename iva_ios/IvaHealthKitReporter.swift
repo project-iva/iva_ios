@@ -8,7 +8,13 @@
 import Foundation
 import HealthKitReporter
 import HealthKit
+import PromiseKit
 
+enum SleepAnalysisError: Error {
+    case failedToRetrieveSleepAnalysisType
+    case failedToRetrieveSources
+    case failedToRetrieveAutoSleepSource
+}
 
 class IvaHealthKitReporter {
     private let reporter: HealthKitReporter
@@ -40,27 +46,56 @@ class IvaHealthKitReporter {
     }
     
     private func handleSleepAnalysis() {
-        guard let sleepAnalysisType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) else {
-            // This should never fail when using a defined constant.
-            fatalError("*** Unable to get the sleep analysis type ***")
+        firstly {
+            when(fulfilled: retrieveLastStoredSleepRecord(), retrieveAutoSleepSource())
+        }.done { lastStoredRecord, source in
+            print(lastStoredRecord)
+            print(source)
+            self.startSleepAnalysisObserver(autoSleepSource: source)
+        }.catch { error in
+            print(error)
         }
-        let query = HKSourceQuery(sampleType: sleepAnalysisType, samplePredicate: nil) {(query, sourcesOrNil, errorOrNil) in
-            
-            guard let sources = sourcesOrNil else {
-                // Properly handle the error.
+    }
+    
+    private func retrieveLastStoredSleepRecord() -> Promise<MindfulSession?> {
+        return Promise<MindfulSession?> { seal in
+            ApiHandler.shared.makeRequest(request: MindfulSessionRouter.get(1), resultType: [MindfulSession].self).done { response in
+                seal.fulfill(response.result.first)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    private func retrieveAutoSleepSource() -> Promise<HKSource> {
+        return Promise<HKSource> { seal in
+            guard let sleepAnalysisType = HKObjectType.categoryType(forIdentifier: .sleepAnalysis) else {
+                // This should never fail when using a defined constant.
+                seal.reject(SleepAnalysisError.failedToRetrieveSleepAnalysisType)
                 return
             }
             
-            let autoSleepSources = sources.filter { source in
-                return source.name == "AutoSleep"
+            let query = HKSourceQuery(sampleType: sleepAnalysisType, samplePredicate: nil) {(query, sourcesOrNil, errorOrNil) in
+                
+                guard let sources = sourcesOrNil else {
+                    seal.reject(SleepAnalysisError.failedToRetrieveSources)
+                    return
+                }
+                
+                let autoSleepSources = sources.filter { source in
+                    return source.name == "AutoSleep"
+                }
+                
+                guard let autoSleepSource = autoSleepSources.first else {
+                    seal.reject(SleepAnalysisError.failedToRetrieveAutoSleepSource)
+                    return
+                }
+                
+                seal.fulfill(autoSleepSource)
             }
             
-            if let autoSleepSource = autoSleepSources.first {
-                self.startSleepAnalysisObserver(autoSleepSource: autoSleepSource)
-            }
+            reporter.manager.executeQuery(query)
         }
-        
-        reporter.manager.executeQuery(query)
     }
     
     private func startSleepAnalysisObserver(autoSleepSource: HKSource) {
@@ -83,6 +118,7 @@ class IvaHealthKitReporter {
                                     print(session)
                                 }
                             }
+                            
                         }
                         self.reporter.manager.executeQuery(readQuery)
                     } catch {
@@ -123,10 +159,7 @@ class IvaHealthKitReporter {
                                 print("updates for \(identifier!)")
                                 // Read data
                                 do {
-                                    let readQuery = try reporter.reader.categoryQuery(type: type, limit: 1) { results, error in
-                                        if let session = try? results.first?.encoded() {
-                                            print(session)
-                                        }
+                                    let readQuery = try reporter.reader.categoryQuery(type: type, limit: 6) { results, error in
                                     }
                                     reporter.manager.executeQuery(readQuery)
                                 } catch {

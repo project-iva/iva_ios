@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		189CAF757DE933D103CF0C1B /* Pods_iva_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */; };
+		780530B02682561A007A7EAA /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780530AF2682561A007A7EAA /* CategoryModel.swift */; };
+		780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780530B126825A43007A7EAA /* SleepAnalysis.swift */; };
 		7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA762645A18100371FA7 /* iva_iosApp.swift */; };
 		7832EA792645A18100371FA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA782645A18100371FA7 /* ContentView.swift */; };
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
 		7832EA7E2645A18200371FA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
-		78A688CD2680AA9500675AAF /* FormattingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A688CC2680AA9500675AAF /* FormattingExtensions.swift */; };
 		78C3053A26499B370001BE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3053926499B370001BE1D /* Assets.xcassets */; };
 		78C3054126499B370001BE1D /* iva_watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78C3054026499B370001BE1D /* iva_watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78C3054626499B370001BE1D /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3054526499B370001BE1D /* iva_iosApp.swift */; };
@@ -82,6 +83,8 @@
 		52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iva_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		780530AF2682561A007A7EAA /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		780530B126825A43007A7EAA /* SleepAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysis.swift; sourceTree = "<group>"; };
 		7832EA732645A18100371FA7 /* iva_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832EA762645A18100371FA7 /* iva_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iva_iosApp.swift; sourceTree = "<group>"; };
 		7832EA782645A18100371FA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,7 +92,6 @@
 		7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7832EA7F2645A18200371FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78A688CC2680AA9500675AAF /* FormattingExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormattingExtensions.swift; sourceTree = "<group>"; };
 		78C3053726499B340001BE1D /* iva_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C3053926499B370001BE1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78C3053B26499B370001BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,7 +242,6 @@
 				78E4505B267FDE2B00D04B3A /* routers */,
 				78E45055267FDA7500D04B3A /* ApiHandler.swift */,
 				78E45057267FDB5700D04B3A /* Responses.swift */,
-				78A688CC2680AA9500675AAF /* FormattingExtensions.swift */,
 			);
 			path = api;
 			sourceTree = "<group>";
@@ -257,6 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				78E4505D267FE65D00D04B3A /* MindfulSession.swift */,
+				780530AF2682561A007A7EAA /* CategoryModel.swift */,
+				780530B126825A43007A7EAA /* SleepAnalysis.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -471,11 +474,12 @@
 			files = (
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
-				78A688CD2680AA9500675AAF /* FormattingExtensions.swift in Sources */,
 				78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
+				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,
+				780530B02682561A007A7EAA /* CategoryModel.swift in Sources */,
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
 				78C3056226499D8B0001BE1D /* IvaController.swift in Sources */,
