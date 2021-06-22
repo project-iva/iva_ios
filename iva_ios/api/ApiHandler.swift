@@ -22,7 +22,6 @@ class ApiHandler {
         return decoder
     }()
     
-    
     func makeRequest<T>(request: URLRequestConvertible, resultType: T.Type) -> Promise<SuccessfulAPIResponse<T>> where T: Decodable {
         return Promise<SuccessfulAPIResponse<T>> { seal in
             AF.request(request)

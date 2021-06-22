@@ -8,9 +8,4 @@
 import Foundation
 
 
-class MindfulSession: Codable {
-    var uuid: UUID
-    var sourceName: String
-    var start: Date
-    var end: Date
-}
+class MindfulSession: CategoryModel {}
