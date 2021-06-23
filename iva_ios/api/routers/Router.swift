@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-protocol Router: URLRequestConvertible {
+protocol RouterProtocol: URLRequestConvertible {
     var method: HTTPMethod { get }
     var path: String { get }
     func addParametersToRequest(request: URLRequest) throws -> URLRequest
@@ -16,7 +16,7 @@ protocol Router: URLRequestConvertible {
     func asURLRequest() throws -> URLRequest
 }
 
-extension Router {
+extension RouterProtocol {
     var baseURL: URL {
         return URL(string: "http://192.168.0.101:8000/api/")!
     }
@@ -42,7 +42,7 @@ extension Router {
     }
 }
 
-enum ModelViewSetRouter<T: Encodable>: Router {
+enum ModelViewSetRouter<T: Encodable>: RouterProtocol {
     case get(Int? = nil)
     case post(T)
 
@@ -54,7 +54,7 @@ enum ModelViewSetRouter<T: Encodable>: Router {
     }
 
     var path: String {
-        fatalError("path property has to be overriden")
+        return RouterHelper.getEndpoint(for: T.self)
     }
 
     func addParametersToRequest(request: URLRequest) throws -> URLRequest {
@@ -69,17 +69,5 @@ enum ModelViewSetRouter<T: Encodable>: Router {
             case .post(let model):
                 return try encodeModelIntoRequest(model: model, request: request)
         }
-    }
-}
-
-extension ModelViewSetRouter where T == MindfulSession {
-    var path: String {
-        return "mindful-sessions/"
-    }
-}
-
-extension ModelViewSetRouter where T == SleepAnalysis {
-    var path: String {
-        return "sleep-analyses/"
     }
 }

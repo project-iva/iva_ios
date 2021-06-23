@@ -6,5 +6,18 @@
 //
 
 import Foundation
+import struct HealthKitReporter.Category
 
-class MindfulSession: CategoryModel {}
+struct MindfulSession: Codable {
+    let uuid: UUID
+    let sourceName: String
+    let start: Date
+    let end: Date
+}
+
+extension MindfulSession {
+    init(category: Category) {
+        self.init(uuid: UUID(uuidString: category.uuid)!, sourceName: category.sourceRevision.source.name,
+                  start: category.startTimestamp.asDate, end: category.endTimestamp.asDate)
+    }
+}
