@@ -288,6 +288,7 @@
 				7832EA712645A18100371FA7 /* Resources */,
 				78C3056026499B380001BE1D /* Embed Watch Content */,
 				6C5D18933B69182681C787ED /* [CP] Embed Pods Frameworks */,
+				78A8FB742683966C0010423C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -428,6 +429,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		78A8FB742683966C0010423C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		C1868EB6C62FC8BBB239839E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
