@@ -51,7 +51,7 @@ class IvaHealthKitReporter {
         }.done { lastStoredRecord, source in
             print(lastStoredRecord)
             print(source)
-            self.startSleepAnalysisObserver(autoSleepSource: source)
+            self.startSleepAnalysisObserver(autoSleepSource: source, lastStoredAnalysis: lastStoredRecord!)
         }.catch { error in
             print(error)
         }
@@ -99,7 +99,7 @@ class IvaHealthKitReporter {
         }
     }
     
-    private func startSleepAnalysisObserver(autoSleepSource: HKSource) {
+    private func startSleepAnalysisObserver(autoSleepSource: HKSource, lastStoredAnalysis: SleepAnalysis) {
         let type = CategoryType.sleepAnalysis
         let autoSleepPredicate = HKQuery.predicateForObjects(from: [autoSleepSource])
         do {
@@ -111,20 +111,9 @@ class IvaHealthKitReporter {
                     print("updates for \(identifier!)")
                     do {
                         print(HKPredicateKeyPathSource)
-                        let readQuery = try self.reporter.reader.categoryQuery(type: type, predicate: autoSleepPredicate, limit: 10) { results, _ in
-                            if let res = results.last {
-                                let sleepAnalysis = SleepAnalysis(category: res)
-                                print(sleepAnalysis.value)
-                                ApiHandler.shared.makeRequest(request: ModelViewSetRouter<SleepAnalysis>.post(sleepAnalysis),
-                                                              resultType: SleepAnalysis.self).done { response in
-                                                                print(response.result)
-                                                              }.catch { error in
-                                                                print(error)
-                                                                // swiftlint:disable:next force_cast
-                                                                print(String(decoding: (error as! ErrorAPIResponse).errorData!, as: UTF8.self))
-                                                              }
-                                
-                            }
+                        let startDatePredicate = HKQuery.predicateForSamples(withStart: lastStoredAnalysis.start, end: nil, options: .strictStartDate)
+                        let combinedPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: [autoSleepPredicate, startDatePredicate])
+                        let readQuery = try self.reporter.reader.categoryQuery(type: type, predicate: combinedPredicate) { results, _ in
                             for result in results {
                                 if let session = try? result.encoded() {
                                     print(Date(timeIntervalSince1970: result.startTimestamp))

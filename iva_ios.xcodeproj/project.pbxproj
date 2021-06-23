@@ -155,6 +155,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		780A46742683C12100EDED5A /* HealthKit Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */,
+			);
+			path = "HealthKit Reporting";
+			sourceTree = "<group>";
+		};
 		7832EA6A2645A18100371FA7 = {
 			isa = PBXGroup;
 			children = (
@@ -180,7 +188,8 @@
 		7832EA752645A18100371FA7 /* iva_ios */ = {
 			isa = PBXGroup;
 			children = (
-				78E45054267FDA5800D04B3A /* api */,
+				780A46742683C12100EDED5A /* HealthKit Reporting */,
+				78E45054267FDA5800D04B3A /* API */,
 				78D85258264C7304001DAC38 /* iva_ios.entitlements */,
 				7832EA762645A18100371FA7 /* iva_iosApp.swift */,
 				7832EA782645A18100371FA7 /* ContentView.swift */,
@@ -189,7 +198,6 @@
 				7832EA7C2645A18200371FA7 /* Preview Content */,
 				78C3056126499D8B0001BE1D /* IvaController.swift */,
 				787F5ADB264DAA8D00092255 /* AppDelegate.swift */,
-				78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */,
 			);
 			path = iva_ios;
 			sourceTree = "<group>";
@@ -235,33 +243,33 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		78E45054267FDA5800D04B3A /* api */ = {
+		78E45054267FDA5800D04B3A /* API */ = {
 			isa = PBXGroup;
 			children = (
-				78E4505C267FE60B00D04B3A /* models */,
-				78E4505B267FDE2B00D04B3A /* routers */,
+				78E4505C267FE60B00D04B3A /* Models */,
+				78E4505B267FDE2B00D04B3A /* Routers */,
 				78E45055267FDA7500D04B3A /* ApiHandler.swift */,
 				78E45057267FDB5700D04B3A /* Responses.swift */,
 			);
-			path = api;
+			path = API;
 			sourceTree = "<group>";
 		};
-		78E4505B267FDE2B00D04B3A /* routers */ = {
+		78E4505B267FDE2B00D04B3A /* Routers */ = {
 			isa = PBXGroup;
 			children = (
 				78E45059267FDE2300D04B3A /* Router.swift */,
 				78A8FB752683A63C0010423C /* RouterHelper.swift */,
 			);
-			path = routers;
+			path = Routers;
 			sourceTree = "<group>";
 		};
-		78E4505C267FE60B00D04B3A /* models */ = {
+		78E4505C267FE60B00D04B3A /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				78E4505D267FE65D00D04B3A /* MindfulSession.swift */,
 				780530B126825A43007A7EAA /* SleepAnalysis.swift */,
 			);
-			path = models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C1C5F6739D5B282130E6703E /* Pods */ = {
