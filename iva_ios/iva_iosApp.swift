@@ -11,6 +11,7 @@ import Starscream
 import PromiseKit
 
 @main
+// swiftlint:disable:next type_name
 struct iva_iosApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     private let reporter = try? HealthKitReporter()
@@ -21,7 +22,7 @@ struct iva_iosApp: App {
             ivaReporter.start()
         }
     }
-    
+
     var body: some Scene {
         WindowGroup {
             ContentView()

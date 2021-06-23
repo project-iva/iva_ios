@@ -10,7 +10,7 @@ import Foundation
 class APIResponse {
     let statusCode: Int?
     let headers: [String: String]
-    
+
     init(statusCode: Int?, headers: [String: String]) {
         self.statusCode = statusCode
         self.headers = headers
@@ -28,7 +28,7 @@ class SuccessfulAPIResponse<T: Decodable>: APIResponse {
 class ErrorAPIResponse: APIResponse, Error {
     let error: Error
     let errorData: Data?
-    
+
     init(error: Error, errorData: Data?, statusCode: Int?, headers: [String: String]) {
         self.error = error
         self.errorData = errorData

@@ -10,17 +10,17 @@ import Starscream
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     private var socket: WebSocket!
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
 //        connectToWebsocketServer()
         return true
     }
-    
+
     private func connectToWebsocketServer() {
         var request = URLRequest(url: URL(string: "ws://192.168.0.101:5678/ios")!)
         request.timeoutInterval = 5
         socket = WebSocket(request: request)
-        
+
         socket.onEvent = { event in
             switch event {
                 case .connected(let headers):
@@ -46,7 +46,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
                     print(error)
             }
         }
-        
+
         socket.connect()
     }
 }

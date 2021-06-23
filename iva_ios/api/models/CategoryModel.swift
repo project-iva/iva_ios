@@ -20,8 +20,9 @@ class CategoryModel: Codable {
         self.start = start
         self.end = end
     }
-    
+
     convenience init(category: Category) {
-        self.init(uuid: UUID(uuidString: category.uuid)!, sourceName: category.sourceRevision.source.name, start: category.startTimestamp.asDate, end: category.endTimestamp.asDate)
+        self.init(uuid: UUID(uuidString: category.uuid)!, sourceName: category.sourceRevision.source.name,
+                  start: category.startTimestamp.asDate, end: category.endTimestamp.asDate)
     }
 }

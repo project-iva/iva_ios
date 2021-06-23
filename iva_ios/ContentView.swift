@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     private let ivaController = IvaController()
-    
+
     var body: some View {
         Button(action: {
             ivaController.next()
