@@ -57,9 +57,9 @@ class IvaHealthKitReporter {
         }
     }
     
-    private func retrieveLastStoredSleepRecord() -> Promise<MindfulSession?> {
-        return Promise<MindfulSession?> { seal in
-            ApiHandler.shared.makeRequest(request: MindfulSessionRouter.get(1), resultType: [MindfulSession].self).done { response in
+    private func retrieveLastStoredSleepRecord() -> Promise<SleepAnalysis?> {
+        return Promise<SleepAnalysis?> { seal in
+            ApiHandler.shared.makeRequest(request: ModelViewSetRouter<SleepAnalysis>.get(1), resultType: [SleepAnalysis].self).done { response in
                 seal.fulfill(response.result.first)
             }.catch { error in
                 seal.reject(error)

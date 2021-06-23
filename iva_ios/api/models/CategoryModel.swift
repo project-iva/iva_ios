@@ -8,13 +8,12 @@
 import Foundation
 import struct HealthKitReporter.Category
 
-
 class CategoryModel: Codable {
     let uuid: UUID
     let sourceName: String
     let start: Date
     let end: Date
-    
+
     init(uuid: UUID, sourceName: String, start: Date, end: Date) {
         self.uuid = uuid
         self.sourceName = sourceName

@@ -42,9 +42,9 @@ extension Router {
     }
 }
 
-enum MindfulSessionRouter: Router {
+enum ModelViewSetRouter<T: Encodable>: Router {
     case get(Int? = nil)
-    case post(MindfulSession)
+    case post(T)
     
     var method: HTTPMethod {
         switch self {
@@ -54,9 +54,7 @@ enum MindfulSessionRouter: Router {
     }
     
     var path: String {
-        switch self {
-            case .get, .post: return "mindful-sessions/"
-        }
+        fatalError("path property has to be overriden")
     }
     
     func addParametersToRequest(request: URLRequest) throws -> URLRequest {
@@ -68,8 +66,21 @@ enum MindfulSessionRouter: Router {
                 }
                 return request
                 
-            case .post(let session):
-                return try encodeModelIntoRequest(model: session, request: request)
+            case .post(let model):
+                return try encodeModelIntoRequest(model: model, request: request)
         }
+    }
+}
+
+extension ModelViewSetRouter where T == MindfulSession {
+    var path: String {
+        return "mindful-sessions/"
+    }
+}
+
+
+extension ModelViewSetRouter where T == SleepAnalysis {
+    var path: String {
+        return "sleep-analyses/"
     }
 }
