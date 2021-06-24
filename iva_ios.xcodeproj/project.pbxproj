@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		189CAF757DE933D103CF0C1B /* Pods_iva_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */; };
 		780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780530B126825A43007A7EAA /* SleepAnalysis.swift */; };
+		780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */; };
 		7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA762645A18100371FA7 /* iva_iosApp.swift */; };
 		7832EA792645A18100371FA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA782645A18100371FA7 /* ContentView.swift */; };
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iva_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		780530B126825A43007A7EAA /* SleepAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysis.swift; sourceTree = "<group>"; };
+		780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysisReporter.swift; sourceTree = "<group>"; };
 		7832EA732645A18100371FA7 /* iva_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832EA762645A18100371FA7 /* iva_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iva_iosApp.swift; sourceTree = "<group>"; };
 		7832EA782645A18100371FA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */,
+				780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */,
 			);
 			path = "HealthKit Reporting";
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-framework/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AwaitKit/AwaitKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HealthKitReporter/HealthKitReporter.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
@@ -429,6 +433,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwaitKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HealthKitReporter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
@@ -443,11 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -504,6 +505,7 @@
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
+				780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */,
 				78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */,
 				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
