@@ -8,7 +8,7 @@
 import Foundation
 import struct HealthKitReporter.Category
 
-struct SleepAnalysis: Codable {
+struct SleepAnalysis: ModelWithStartTimeAndUUID, Codable {
     let uuid: UUID
     let sourceName: String
     let start: Date

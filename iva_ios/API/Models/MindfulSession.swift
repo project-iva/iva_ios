@@ -8,7 +8,7 @@
 import Foundation
 import struct HealthKitReporter.Category
 
-struct MindfulSession: Codable {
+struct MindfulSession: ModelWithStartTimeAndUUID, Codable {
     let uuid: UUID
     let sourceName: String
     let start: Date
