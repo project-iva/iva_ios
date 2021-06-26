@@ -34,7 +34,6 @@ extension RouterProtocol {
 
     func asURLRequest() throws -> URLRequest {
         let url = baseURL.appendingPathComponent(path)
-        print(url)
         var request = URLRequest(url: url)
         request.method = method
         request = try addParametersToRequest(request: request)

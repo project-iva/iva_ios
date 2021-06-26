@@ -23,7 +23,8 @@ class SleepAnalysisReporter: ModelReporter<SleepAnalysis> {
             when(fulfilled: retrieveLastStoredModelRecord(), retrieveAutoSleepSource())
         }.done { lastStoredSleepAnalysis, source in
             self.lastStoredModel = lastStoredSleepAnalysis
-            self.startObserver(autoSleepSource: source)
+            let autoSleepPredicate = HKQuery.predicateForObjects(from: [source])
+            self.startObserver(for: CategoryType.sleepAnalysis, autoSleepPredicate)
         }.catch { error in
             print(error)
         }
@@ -60,52 +61,37 @@ class SleepAnalysisReporter: ModelReporter<SleepAnalysis> {
         }
     }
     
-    private func startObserver(autoSleepSource: HKSource) {
-        let type = CategoryType.sleepAnalysis
-        let autoSleepPredicate = HKQuery.predicateForObjects(from: [autoSleepSource])
-        do {
-            let query = try reporter.observer.observerQuery(
-                type: type,
-                predicate: autoSleepPredicate
-            ) { (_, identifier, error) in
-                if error == nil && identifier != nil {
-                    print("updates for \(identifier!)")
+    override func handleUpdate(for type: CategoryType, _ predicate: NSPredicate? = nil) -> Guarantee<()> {
+        return Guarantee<()> { seal in
+            do {
+                var predicates: [NSPredicate] = []
+                if let predicate = predicate {
+                    predicates.append(predicate)
+                }
+                
+                if let lastStoredAnalysis = self.lastStoredModel {
+                    let startDatePredicate = HKQuery.predicateForSamples(withStart: lastStoredAnalysis.start,
+                                                                         end: nil, options: .strictStartDate)
+                    predicates.append(startDatePredicate)
+                }
+                
+                let compoundPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: predicates)
+                let readQuery = try self.reporter.reader.categoryQuery(type: type, predicate: compoundPredicate) { results, _ in
+                    // Map results to SleepAnalysis objects
+                    var sleepAnalyses = results.map { SleepAnalysis(category: $0) }
+                    // HealthKit returns the latest entries first, therefore we reverse the order to get
+                    // the oldest unsynced data first
+                    sleepAnalyses.reverse()
                     
-                    do {
-                        var predicates: [NSPredicate] = [autoSleepPredicate]
-                        if let lastStoredAnalysis = self.lastStoredModel {
-                            let startDatePredicate = HKQuery.predicateForSamples(withStart: lastStoredAnalysis.start,
-                                                                                 end: nil, options: .strictStartDate)
-                            predicates.append(startDatePredicate)
-                        }
-                        
-                        let compoundPredicate = NSCompoundPredicate.init(andPredicateWithSubpredicates: predicates)
-                        let readQuery = try self.reporter.reader.categoryQuery(type: type, predicate: compoundPredicate) { results, _ in
-                            // Map results to SleepAnalysis objects
-                            var sleepAnalyses = results.map { SleepAnalysis(category: $0) }
-                            // HealthKit returns the latest entries first, therefore we reverse the order to get
-                            // the oldest unsynced data first
-                            sleepAnalyses.reverse()
-                            
-                            self.syncModels(models: sleepAnalyses)
-                        }
-                        self.reporter.manager.executeQuery(readQuery)
-                    } catch {
-                        print("error")
+                    self.syncModels(models: sleepAnalyses).done { _ in
+                        seal(())
                     }
                 }
+                self.reporter.manager.executeQuery(readQuery)
+            } catch {
+                print("error reading query")
+                seal(())
             }
-            reporter.observer.enableBackgroundDelivery(
-                type: type,
-                frequency: .immediate
-            ) { (_, error) in
-                if error == nil {
-                    print("enabled")
-                }
-            }
-            reporter.manager.executeQuery(query)
-        } catch {
-            print(error)
         }
     }
 }

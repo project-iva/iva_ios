@@ -12,13 +12,13 @@ import PromiseKit
 import AwaitKit
 
 class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
-    
     enum ModelSyncError: Error {
         case failedToSyncModels(Model?)
     }
     
     let reporter: HealthKitReporter
     var lastStoredModel: Model?
+    private let queue = DispatchQueue(label: "com.iva.healthkit.updatequeue")
     
     init(reporter: HealthKitReporter) {
         self.reporter = reporter
@@ -33,6 +33,43 @@ class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
                                             seal.reject(error)
                                           }
         }
+    }
+    
+    func startObserver(for type: CategoryType, _ predicate: NSPredicate? = nil) {
+        do {
+            let query = try reporter.observer.observerQuery(
+                type: type,
+                predicate: predicate
+            ) { (_, identifier, error) in
+                if error == nil && identifier != nil {
+                    self.queue.async {
+                        print("update started for \(identifier)")
+                        let semaphore = DispatchSemaphore(value: 0)
+                        self.handleUpdate(for: type).done { _ in
+                            semaphore.signal()
+                        }
+                        semaphore.wait()
+                        print("update finished for \(identifier)")
+                    }
+                }
+            }
+            
+            reporter.observer.enableBackgroundDelivery(
+                type: type,
+                frequency: .immediate
+            ) { (_, error) in
+                if error == nil {
+                    print("background delivery enabled")
+                }
+            }
+            reporter.manager.executeQuery(query)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func handleUpdate(for type: CategoryType, _ predicate: NSPredicate? = nil) -> Guarantee<()> {
+        fatalError("this method must be overriden")
     }
     
     private func findUnsyncedModels(models: [Model]) -> [Model] {
@@ -64,14 +101,18 @@ class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
         }
     }
     
-    func syncModels(models: [Model]) {
-        let modelsToSync = findUnsyncedModels(models: models)
-        postUnsyncedModels(models: modelsToSync).done { lastSuccessfullyPostedModel in
-            self.lastStoredModel = lastSuccessfullyPostedModel ?? self.lastStoredModel
-        }.catch { error in
-            if let error = error as? ModelSyncError,
-               case let ModelSyncError.failedToSyncModels(lastSuccessfullyPostedModel) = error {
+    func syncModels(models: [Model]) -> Guarantee<()> {
+        return Guarantee<()> { seal in
+            let modelsToSync = findUnsyncedModels(models: models)
+            postUnsyncedModels(models: modelsToSync).done { lastSuccessfullyPostedModel in
                 self.lastStoredModel = lastSuccessfullyPostedModel ?? self.lastStoredModel
+            }.catch { error in
+                if let error = error as? ModelSyncError,
+                   case let ModelSyncError.failedToSyncModels(lastSuccessfullyPostedModel) = error {
+                    self.lastStoredModel = lastSuccessfullyPostedModel ?? self.lastStoredModel
+                }
+            }.finally {
+                seal(())
             }
         }
     }
