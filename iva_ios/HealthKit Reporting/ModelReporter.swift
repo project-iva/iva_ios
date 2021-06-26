@@ -45,7 +45,7 @@ class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
                     self.queue.async {
                         print("update started for \(identifier)")
                         let semaphore = DispatchSemaphore(value: 0)
-                        self.handleUpdate(for: type).done { _ in
+                        self.handleUpdate(for: type, predicate).done { _ in
                             semaphore.signal()
                         }
                         semaphore.wait()
