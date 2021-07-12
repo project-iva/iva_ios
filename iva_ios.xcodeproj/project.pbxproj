@@ -17,6 +17,11 @@
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
 		78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */; };
 		78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AEF269C73AD000EBCBF /* RoutineStep.swift */; };
+		78A15AF1269CACD2000EBCBF /* ControlSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */; };
+		78A15AF2269CACD5000EBCBF /* ControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */; };
+		78A15AF3269CACD7000EBCBF /* MealControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */; };
+		78A15AF4269CACD9000EBCBF /* RoutineControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */; };
+		78A15AF5269CAD19000EBCBF /* RoutineStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AEF269C73AD000EBCBF /* RoutineStep.swift */; };
 		78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A243402685005700CF78EC /* MindfulSessionReporter.swift */; };
 		78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434226851DD900CF78EC /* ModelReporter.swift */; };
 		78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434426851E7E00CF78EC /* ModelProtocols.swift */; };
@@ -578,7 +583,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A15AF4269CACD9000EBCBF /* RoutineControlSessionView.swift in Sources */,
 				78C3054A26499B370001BE1D /* NotificationController.swift in Sources */,
+				78A15AF2269CACD5000EBCBF /* ControlSessionView.swift in Sources */,
 				78C3054826499B370001BE1D /* ContentView.swift in Sources */,
 				78C3056326499D8B0001BE1D /* IvaClient.swift in Sources */,
 				78C3054E26499B370001BE1D /* ComplicationController.swift in Sources */,
@@ -588,8 +595,11 @@
 				78C42E4F269C63E700FBCAE1 /* IvaRouters.swift in Sources */,
 				78C42E43269C62C100FBCAE1 /* ApiHandler.swift in Sources */,
 				78C3054C26499B370001BE1D /* NotificationView.swift in Sources */,
+				78A15AF5269CAD19000EBCBF /* RoutineStep.swift in Sources */,
 				78C42E40269C62A400FBCAE1 /* ControlSession.swift in Sources */,
 				78C42E44269C62CB00FBCAE1 /* Responses.swift in Sources */,
+				78A15AF3269CACD7000EBCBF /* MealControlSessionView.swift in Sources */,
+				78A15AF1269CACD2000EBCBF /* ControlSessionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

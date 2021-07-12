@@ -24,6 +24,7 @@ struct ControlSessionsView: View {
                     }
             }
         }.onAppear(perform: loadSessions)
+        .navigationTitle("Control Sessions")
     }
         
     func loadSessions() {

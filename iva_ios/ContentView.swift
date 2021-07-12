@@ -14,21 +14,6 @@ struct ContentView: View {
             NavigationLink(destination: ControlSessionsView()) {
                 Text("Go")
             }
-//            Button(action: {
-//
-//            }, label: {
-//                HStack {
-//                    Image(systemName: "arrowtriangle.forward.fill")
-//                        .font(.title)
-//                    Text("Next")
-//                        .fontWeight(.semibold)
-//                        .font(.title)
-//                }
-//                .padding()
-//                .foregroundColor(.white)
-//                .background(Color.blue)
-//                .cornerRadius(40)
-//            })
         }
     }
 }
