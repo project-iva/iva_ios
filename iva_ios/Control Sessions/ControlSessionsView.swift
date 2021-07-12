@@ -12,12 +12,20 @@ struct ControlSessionsView: View {
     
     var body: some View {
         List(controlSessions, id: \.uuid) {  session in
-            NavigationLink(destination: MealControlSessionView(sessionUUID: session.uuid)) {
-                Text(session.type)
+            let text = Text(session.type.rawValue)
+            switch session.type {
+                case .mealChoices:
+                    NavigationLink(destination: MealControlSessionView(sessionUUID: session.uuid))  {
+                        text
+                    }
+                case .routine:
+                    NavigationLink(destination: RoutineControlSessionView(sessionUUID: session.uuid)) {
+                        text
+                    }
             }
         }.onAppear(perform: loadSessions)
     }
-    
+        
     func loadSessions() {
         print("loading")
         IvaClient.fetchControlSessions().done { result in

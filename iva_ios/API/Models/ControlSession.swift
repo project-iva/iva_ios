@@ -7,15 +7,20 @@
 
 import Foundation
 
-struct ControlSessionListItem: Codable {
-    let uuid: UUID
-    let type: String
-}
-
 enum ControlSessionAction: String, Codable {
     case next
     case prev
     case confirm
+}
+
+enum ControlSessionType: String, Codable {
+    case routine
+    case mealChoices = "meal_choices"
+}
+
+struct ControlSessionListItem: Codable {
+    let uuid: UUID
+    let type: ControlSessionType
 }
 
 struct ControlSessionItem<T: Codable>: Codable {
@@ -24,7 +29,7 @@ struct ControlSessionItem<T: Codable>: Codable {
 }
 
 struct ControlSession<T: Codable>: Codable {
-    let sessionType: String
+    let sessionType: ControlSessionType
     let items: [ControlSessionItem<T>]
 }
 

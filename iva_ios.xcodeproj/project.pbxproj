@@ -15,6 +15,8 @@
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
 		7832EA7E2645A18200371FA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
+		78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */; };
+		78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AEF269C73AD000EBCBF /* RoutineStep.swift */; };
 		78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A243402685005700CF78EC /* MindfulSessionReporter.swift */; };
 		78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434226851DD900CF78EC /* ModelReporter.swift */; };
 		78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434426851E7E00CF78EC /* ModelProtocols.swift */; };
@@ -109,6 +111,8 @@
 		7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7832EA7F2645A18200371FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineControlSessionView.swift; sourceTree = "<group>"; };
+		78A15AEF269C73AD000EBCBF /* RoutineStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStep.swift; sourceTree = "<group>"; };
 		78A243402685005700CF78EC /* MindfulSessionReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulSessionReporter.swift; sourceTree = "<group>"; };
 		78A2434226851DD900CF78EC /* ModelReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelReporter.swift; sourceTree = "<group>"; };
 		78A2434426851E7E00CF78EC /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 				78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */,
 				78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */,
 				78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */,
+				78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */,
 			);
 			path = "Control Sessions";
 			sourceTree = "<group>";
@@ -315,6 +320,7 @@
 				78A2434426851E7E00CF78EC /* ModelProtocols.swift */,
 				78CE20A3269B707900AB55A0 /* ControlSession.swift */,
 				78CE20A5269B962C00AB55A0 /* Meal.swift */,
+				78A15AEF269C73AD000EBCBF /* RoutineStep.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -547,7 +553,9 @@
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
 				78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */,
 				78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */,
+				78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */,
 				78CE20A4269B707900AB55A0 /* ControlSession.swift in Sources */,
+				78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */,
 				78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */,
 				78C42E51269C6C6400FBCAE1 /* ControlSessionView.swift in Sources */,
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
