@@ -8,7 +8,6 @@ target 'iva_ios' do
   # Pods for iva_ios
 	pod 'Alamofire', '~> 5.2'
     pod 'HealthKitReporter', '~> 1.4'
-    pod 'Starscream', '~> 4.0.0'
     pod "PromiseKit", "~> 6.8"
     pod 'AwaitKit', '~> 5.2.0'
 end
@@ -16,4 +15,5 @@ end
 target 'iva_watch Extension' do
     platform :watchos, '7.4'
     pod 'Alamofire', '~> 5.2'
+    pod "PromiseKit", "~> 6.8"
 end

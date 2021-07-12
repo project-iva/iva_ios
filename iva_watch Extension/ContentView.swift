@@ -8,17 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let ivaController = IvaController()
+    private let ivaController = IvaClient()
     var body: some View {
-        Button(action: {
-            self.ivaController.next()
-        }, label: {
-            HStack {
-                Image(systemName: "arrowtriangle.forward.fill")
-                    .font(.title)
-                Text("Next")
-            }
-        })
+        NavigationLink(destination: ControlSessionsView()) {
+            Text("Go")
+        }
     }
 }
 

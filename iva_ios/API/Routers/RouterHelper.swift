@@ -8,14 +8,14 @@
 import Foundation
 
 class RouterHelper {
-    static func getEndpoint(for model: Encodable.Type) -> String {
+    static func getEndpoint(for model: Any.Type) -> String {
         switch model {
             case is MindfulSession.Type:
                 return "mindful-sessions/"
             
             case is SleepAnalysis.Type:
                 return "sleep-analyses/"
-
+                
             default:
                 fatalError("No endpoint defined for this model")
         }
