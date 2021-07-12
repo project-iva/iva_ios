@@ -8,24 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let ivaController = IvaController()
-
+    
     var body: some View {
-        Button(action: {
-            ivaController.next()
-        }, label: {
-            HStack {
-                Image(systemName: "arrowtriangle.forward.fill")
-                    .font(.title)
-                Text("Next")
-                    .fontWeight(.semibold)
-                    .font(.title)
+        NavigationView {
+            NavigationLink(destination: ControlSessionsView()) {
+                Text("Go")
             }
-            .padding()
-            .foregroundColor(.white)
-            .background(Color.blue)
-            .cornerRadius(40)
-        })
+//            Button(action: {
+//
+//            }, label: {
+//                HStack {
+//                    Image(systemName: "arrowtriangle.forward.fill")
+//                        .font(.title)
+//                    Text("Next")
+//                        .fontWeight(.semibold)
+//                        .font(.title)
+//                }
+//                .padding()
+//                .foregroundColor(.white)
+//                .background(Color.blue)
+//                .cornerRadius(40)
+//            })
+        }
     }
 }
 

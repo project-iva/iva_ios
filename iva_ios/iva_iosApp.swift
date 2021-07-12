@@ -7,7 +7,6 @@
 
 import SwiftUI
 import HealthKitReporter
-import Starscream
 import PromiseKit
 
 @main

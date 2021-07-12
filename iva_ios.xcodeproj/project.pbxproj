@@ -29,8 +29,21 @@
 		78C3055026499B380001BE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3054F26499B380001BE1D /* Assets.xcassets */; };
 		78C3055326499B380001BE1D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3055226499B380001BE1D /* Preview Assets.xcassets */; };
 		78C3055826499B380001BE1D /* iva_watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 78C3053726499B340001BE1D /* iva_watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		78C3056226499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
-		78C3056326499D8B0001BE1D /* IvaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaController.swift */; };
+		78C3056226499D8B0001BE1D /* IvaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaClient.swift */; };
+		78C3056326499D8B0001BE1D /* IvaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaClient.swift */; };
+		78C42E40269C62A400FBCAE1 /* ControlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A3269B707900AB55A0 /* ControlSession.swift */; };
+		78C42E41269C62A900FBCAE1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A5269B962C00AB55A0 /* Meal.swift */; };
+		78C42E42269C62B500FBCAE1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45059267FDE2300D04B3A /* Router.swift */; };
+		78C42E43269C62C100FBCAE1 /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45055267FDA7500D04B3A /* ApiHandler.swift */; };
+		78C42E44269C62CB00FBCAE1 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45057267FDB5700D04B3A /* Responses.swift */; };
+		78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E4B269C63B300FBCAE1 /* IvaBackendRouters.swift */; };
+		78C42E4E269C63BF00FBCAE1 /* IvaRouters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */; };
+		78C42E4F269C63E700FBCAE1 /* IvaRouters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */; };
+		78C42E51269C6C6400FBCAE1 /* ControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */; };
+		78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */; };
+		78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */; };
+		78CE20A4269B707900AB55A0 /* ControlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A3269B707900AB55A0 /* ControlSession.swift */; };
+		78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A5269B962C00AB55A0 /* Meal.swift */; };
 		78D8525A264C7304001DAC38 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D85259264C7304001DAC38 /* HealthKit.framework */; };
 		78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45055267FDA7500D04B3A /* ApiHandler.swift */; };
 		78E45058267FDB5700D04B3A /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45057267FDB5700D04B3A /* Responses.swift */; };
@@ -113,7 +126,14 @@
 		78C3055226499B380001BE1D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		78C3055426499B380001BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78C3055526499B380001BE1D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		78C3056126499D8B0001BE1D /* IvaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaController.swift; sourceTree = "<group>"; };
+		78C3056126499D8B0001BE1D /* IvaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaClient.swift; sourceTree = "<group>"; };
+		78C42E4B269C63B300FBCAE1 /* IvaBackendRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaBackendRouters.swift; sourceTree = "<group>"; };
+		78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaRouters.swift; sourceTree = "<group>"; };
+		78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSessionView.swift; sourceTree = "<group>"; };
+		78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealControlSessionView.swift; sourceTree = "<group>"; };
+		78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSessionsView.swift; sourceTree = "<group>"; };
+		78CE20A3269B707900AB55A0 /* ControlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSession.swift; sourceTree = "<group>"; };
+		78CE20A5269B962C00AB55A0 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		78D85258264C7304001DAC38 /* iva_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iva_ios.entitlements; sourceTree = "<group>"; };
 		78D85259264C7304001DAC38 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		78E45055267FDA7500D04B3A /* ApiHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHandler.swift; sourceTree = "<group>"; };
@@ -199,6 +219,7 @@
 		7832EA752645A18100371FA7 /* iva_ios */ = {
 			isa = PBXGroup;
 			children = (
+				78CE20A0269B6F3000AB55A0 /* Control Sessions */,
 				780A46742683C12100EDED5A /* HealthKit Reporting */,
 				78E45054267FDA5800D04B3A /* API */,
 				78D85258264C7304001DAC38 /* iva_ios.entitlements */,
@@ -207,7 +228,6 @@
 				7832EA7A2645A18200371FA7 /* Assets.xcassets */,
 				7832EA7F2645A18200371FA7 /* Info.plist */,
 				7832EA7C2645A18200371FA7 /* Preview Content */,
-				78C3056126499D8B0001BE1D /* IvaController.swift */,
 				787F5ADB264DAA8D00092255 /* AppDelegate.swift */,
 			);
 			path = iva_ios;
@@ -254,9 +274,20 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		78CE20A0269B6F3000AB55A0 /* Control Sessions */ = {
+			isa = PBXGroup;
+			children = (
+				78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */,
+				78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */,
+				78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */,
+			);
+			path = "Control Sessions";
+			sourceTree = "<group>";
+		};
 		78E45054267FDA5800D04B3A /* API */ = {
 			isa = PBXGroup;
 			children = (
+				78C3056126499D8B0001BE1D /* IvaClient.swift */,
 				78E4505C267FE60B00D04B3A /* Models */,
 				78E4505B267FDE2B00D04B3A /* Routers */,
 				78E45055267FDA7500D04B3A /* ApiHandler.swift */,
@@ -270,6 +301,8 @@
 			children = (
 				78E45059267FDE2300D04B3A /* Router.swift */,
 				78A8FB752683A63C0010423C /* RouterHelper.swift */,
+				78C42E4B269C63B300FBCAE1 /* IvaBackendRouters.swift */,
+				78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -280,6 +313,8 @@
 				78E4505D267FE65D00D04B3A /* MindfulSession.swift */,
 				780530B126825A43007A7EAA /* SleepAnalysis.swift */,
 				78A2434426851E7E00CF78EC /* ModelProtocols.swift */,
+				78CE20A3269B707900AB55A0 /* ControlSession.swift */,
+				78CE20A5269B962C00AB55A0 /* Meal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -437,7 +472,6 @@
 				"${BUILT_PRODUCTS_DIR}/AwaitKit/AwaitKit.framework",
 				"${BUILT_PRODUCTS_DIR}/HealthKitReporter/HealthKitReporter.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -445,7 +479,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwaitKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HealthKitReporter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -512,9 +545,16 @@
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
+				78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */,
+				78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */,
+				78CE20A4269B707900AB55A0 /* ControlSession.swift in Sources */,
 				78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */,
+				78C42E51269C6C6400FBCAE1 /* ControlSessionView.swift in Sources */,
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
+				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
+				78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */,
+				78C42E4E269C63BF00FBCAE1 /* IvaRouters.swift in Sources */,
 				78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
 				780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */,
@@ -522,7 +562,7 @@
 				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
-				78C3056226499D8B0001BE1D /* IvaController.swift in Sources */,
+				78C3056226499D8B0001BE1D /* IvaClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,10 +572,16 @@
 			files = (
 				78C3054A26499B370001BE1D /* NotificationController.swift in Sources */,
 				78C3054826499B370001BE1D /* ContentView.swift in Sources */,
-				78C3056326499D8B0001BE1D /* IvaController.swift in Sources */,
+				78C3056326499D8B0001BE1D /* IvaClient.swift in Sources */,
 				78C3054E26499B370001BE1D /* ComplicationController.swift in Sources */,
+				78C42E42269C62B500FBCAE1 /* Router.swift in Sources */,
+				78C42E41269C62A900FBCAE1 /* Meal.swift in Sources */,
 				78C3054626499B370001BE1D /* iva_iosApp.swift in Sources */,
+				78C42E4F269C63E700FBCAE1 /* IvaRouters.swift in Sources */,
+				78C42E43269C62C100FBCAE1 /* ApiHandler.swift in Sources */,
 				78C3054C26499B370001BE1D /* NotificationView.swift in Sources */,
+				78C42E40269C62A400FBCAE1 /* ControlSession.swift in Sources */,
+				78C42E44269C62CB00FBCAE1 /* Responses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
