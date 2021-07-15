@@ -11,7 +11,7 @@ import HealthKit
 import Alamofire
 import PromiseKit
 
-class MindfulSessionReporter: ModelReporter<MindfulSession> {
+class MindfulSessionReporter: ModelReporter<MindfulSession, CategoryType> {
     func start() {
         retrieveLastStoredModelRecord().done { lastStoredMindfulSession in
             self.lastStoredModel = lastStoredMindfulSession

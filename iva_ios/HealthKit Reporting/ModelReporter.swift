@@ -11,7 +11,7 @@ import HealthKit
 import PromiseKit
 import AwaitKit
 
-class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
+class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID, HealthKitSampleType: SampleType> {
     enum ModelSyncError: Error {
         case failedToSyncModels(Model?)
     }
@@ -35,7 +35,7 @@ class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
         }
     }
     
-    func startObserver(for type: CategoryType, _ predicate: NSPredicate? = nil) {
+    func startObserver(for type: HealthKitSampleType, _ predicate: NSPredicate? = nil) {
         do {
             let query = try reporter.observer.observerQuery(
                 type: type,
@@ -68,7 +68,7 @@ class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID> {
         }
     }
     
-    func handleUpdate(for type: CategoryType, _ predicate: NSPredicate? = nil) -> Guarantee<()> {
+    func handleUpdate(for type: HealthKitSampleType, _ predicate: NSPredicate? = nil) -> Guarantee<()> {
         fatalError("this method must be overriden")
     }
     

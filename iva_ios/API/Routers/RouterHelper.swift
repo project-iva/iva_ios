@@ -15,7 +15,10 @@ class RouterHelper {
             
             case is SleepAnalysis.Type:
                 return "sleep-analyses/"
-                
+
+            case is BodyMass.Type:
+                return "body-masses/"
+
             default:
                 fatalError("No endpoint defined for this model")
         }

@@ -14,6 +14,8 @@
 		7832EA792645A18100371FA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA782645A18100371FA7 /* ContentView.swift */; };
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
 		7832EA7E2645A18200371FA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */; };
+		7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */; };
+		7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C426A0C1E600F59BE2 /* BodyMass.swift */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
 		78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */; };
 		78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AEF269C73AD000EBCBF /* RoutineStep.swift */; };
@@ -115,6 +117,8 @@
 		7832EA7A2645A18200371FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7832EA7F2645A18200371FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassReporter.swift; sourceTree = "<group>"; };
+		7868B3C426A0C1E600F59BE2 /* BodyMass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMass.swift; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineControlSessionView.swift; sourceTree = "<group>"; };
 		78A15AEF269C73AD000EBCBF /* RoutineStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStep.swift; sourceTree = "<group>"; };
@@ -196,9 +200,10 @@
 			isa = PBXGroup;
 			children = (
 				78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */,
+				78A2434226851DD900CF78EC /* ModelReporter.swift */,
 				780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */,
 				78A243402685005700CF78EC /* MindfulSessionReporter.swift */,
-				78A2434226851DD900CF78EC /* ModelReporter.swift */,
+				7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */,
 			);
 			path = "HealthKit Reporting";
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 				78CE20A3269B707900AB55A0 /* ControlSession.swift */,
 				78CE20A5269B962C00AB55A0 /* Meal.swift */,
 				78A15AEF269C73AD000EBCBF /* RoutineStep.swift */,
+				7868B3C426A0C1E600F59BE2 /* BodyMass.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -555,6 +561,7 @@
 				78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */,
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
+				7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */,
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
 				78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */,
 				78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */,
@@ -575,6 +582,7 @@
 				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
+				7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */,
 				78C3056226499D8B0001BE1D /* IvaClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

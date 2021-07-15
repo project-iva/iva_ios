@@ -16,7 +16,7 @@ enum SleepAnalysisError: Error {
     case failedToRetrieveAutoSleepSource
 }
 
-class SleepAnalysisReporter: ModelReporter<SleepAnalysis> {
+class SleepAnalysisReporter: ModelReporter<SleepAnalysis, CategoryType> {
     
     func start() {
         firstly {

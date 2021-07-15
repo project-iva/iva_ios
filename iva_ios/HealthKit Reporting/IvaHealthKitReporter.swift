@@ -14,11 +14,13 @@ class IvaHealthKitReporter {
     private let reporter: HealthKitReporter
     private let sleepAnalysisReporter: SleepAnalysisReporter
     private let mindfulSessionReporter: MindfulSessionReporter
+    private let bodyMassReporter: BodyMassReporter
     
     init(reporter: HealthKitReporter) {
         self.reporter = reporter
         self.sleepAnalysisReporter = SleepAnalysisReporter(reporter: reporter)
         self.mindfulSessionReporter = MindfulSessionReporter(reporter: reporter)
+        self.bodyMassReporter = BodyMassReporter(reporter: reporter)
     }
     
     func start() {
@@ -26,9 +28,10 @@ class IvaHealthKitReporter {
     }
     
     private func requestAuthorization() {
-        let types = [
+        let types: [SampleType] = [
             CategoryType.mindfulSession,
-            CategoryType.sleepAnalysis
+            CategoryType.sleepAnalysis,
+            QuantityType.bodyMass
         ]
         
         reporter.manager.requestAuthorization(
@@ -38,6 +41,7 @@ class IvaHealthKitReporter {
             if success && error == nil {
                 self.sleepAnalysisReporter.start()
                 self.mindfulSessionReporter.start()
+                self.bodyMassReporter.start()
             } else {
                 print(error)
             }
