@@ -50,6 +50,12 @@
 		78C42E4F269C63E700FBCAE1 /* IvaRouters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */; };
 		78C42E51269C6C6400FBCAE1 /* ControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */; };
 		78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */; };
+		78C4C09B26C194C600A3DB50 /* DayGoals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4C09A26C194C600A3DB50 /* DayGoals.swift */; };
+		78C4C09D26C1980B00A3DB50 /* DayPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4C09C26C1980B00A3DB50 /* DayPlan.swift */; };
+		78C4C0A226C198AE00A3DB50 /* DayPlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4C0A126C198AE00A3DB50 /* DayPlanView.swift */; };
+		78C4C0A426C199EB00A3DB50 /* IvaBackendClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4C0A326C199EB00A3DB50 /* IvaBackendClient.swift */; };
+		78C4C0A626C19D5500A3DB50 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4C0A526C19D5500A3DB50 /* DayView.swift */; };
+		78C4C0A826C1A2A900A3DB50 /* DayGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C4C0A726C1A2A900A3DB50 /* DayGoalsView.swift */; };
 		78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */; };
 		78CE20A4269B707900AB55A0 /* ControlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A3269B707900AB55A0 /* ControlSession.swift */; };
 		78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A5269B962C00AB55A0 /* Meal.swift */; };
@@ -144,6 +150,12 @@
 		78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaRouters.swift; sourceTree = "<group>"; };
 		78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSessionView.swift; sourceTree = "<group>"; };
 		78C42E52269C6C9F00FBCAE1 /* MealControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealControlSessionView.swift; sourceTree = "<group>"; };
+		78C4C09A26C194C600A3DB50 /* DayGoals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGoals.swift; sourceTree = "<group>"; };
+		78C4C09C26C1980B00A3DB50 /* DayPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlan.swift; sourceTree = "<group>"; };
+		78C4C0A126C198AE00A3DB50 /* DayPlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanView.swift; sourceTree = "<group>"; };
+		78C4C0A326C199EB00A3DB50 /* IvaBackendClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaBackendClient.swift; sourceTree = "<group>"; };
+		78C4C0A526C19D5500A3DB50 /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		78C4C0A726C1A2A900A3DB50 /* DayGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayGoalsView.swift; sourceTree = "<group>"; };
 		78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSessionsView.swift; sourceTree = "<group>"; };
 		78CE20A3269B707900AB55A0 /* ControlSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSession.swift; sourceTree = "<group>"; };
 		78CE20A5269B962C00AB55A0 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
@@ -233,6 +245,7 @@
 		7832EA752645A18100371FA7 /* iva_ios */ = {
 			isa = PBXGroup;
 			children = (
+				78C4C09E26C1988800A3DB50 /* Day Planning */,
 				78CE20A0269B6F3000AB55A0 /* Control Sessions */,
 				780A46742683C12100EDED5A /* HealthKit Reporting */,
 				78E45054267FDA5800D04B3A /* API */,
@@ -288,6 +301,32 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		78C4C09E26C1988800A3DB50 /* Day Planning */ = {
+			isa = PBXGroup;
+			children = (
+				78C4C0A026C1989600A3DB50 /* Day Goals */,
+				78C4C09F26C1989000A3DB50 /* Day Plan */,
+				78C4C0A526C19D5500A3DB50 /* DayView.swift */,
+			);
+			path = "Day Planning";
+			sourceTree = "<group>";
+		};
+		78C4C09F26C1989000A3DB50 /* Day Plan */ = {
+			isa = PBXGroup;
+			children = (
+				78C4C0A126C198AE00A3DB50 /* DayPlanView.swift */,
+			);
+			path = "Day Plan";
+			sourceTree = "<group>";
+		};
+		78C4C0A026C1989600A3DB50 /* Day Goals */ = {
+			isa = PBXGroup;
+			children = (
+				78C4C0A726C1A2A900A3DB50 /* DayGoalsView.swift */,
+			);
+			path = "Day Goals";
+			sourceTree = "<group>";
+		};
 		78CE20A0269B6F3000AB55A0 /* Control Sessions */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				78C3056126499D8B0001BE1D /* IvaClient.swift */,
+				78C4C0A326C199EB00A3DB50 /* IvaBackendClient.swift */,
 				78E4505C267FE60B00D04B3A /* Models */,
 				78E4505B267FDE2B00D04B3A /* Routers */,
 				78E45055267FDA7500D04B3A /* ApiHandler.swift */,
@@ -332,6 +372,8 @@
 				78CE20A5269B962C00AB55A0 /* Meal.swift */,
 				78A15AEF269C73AD000EBCBF /* RoutineStep.swift */,
 				7868B3C426A0C1E600F59BE2 /* BodyMass.swift */,
+				78C4C09A26C194C600A3DB50 /* DayGoals.swift */,
+				78C4C09C26C1980B00A3DB50 /* DayPlan.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -561,7 +603,9 @@
 				78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */,
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
+				78C4C0A226C198AE00A3DB50 /* DayPlanView.swift in Sources */,
 				7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */,
+				78C4C09B26C194C600A3DB50 /* DayGoals.swift in Sources */,
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
 				78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */,
 				78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */,
@@ -570,6 +614,7 @@
 				78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */,
 				78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */,
 				78C42E51269C6C6400FBCAE1 /* ControlSessionView.swift in Sources */,
+				78C4C09D26C1980B00A3DB50 /* DayPlan.swift in Sources */,
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
@@ -583,7 +628,10 @@
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
 				7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */,
+				78C4C0A826C1A2A900A3DB50 /* DayGoalsView.swift in Sources */,
+				78C4C0A426C199EB00A3DB50 /* IvaBackendClient.swift in Sources */,
 				78C3056226499D8B0001BE1D /* IvaClient.swift in Sources */,
+				78C4C0A626C19D5500A3DB50 /* DayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,7 +803,7 @@
 				DEVELOPMENT_TEAM = UTS9P6BLKZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iva_ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -779,7 +827,7 @@
 				DEVELOPMENT_TEAM = UTS9P6BLKZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iva_ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

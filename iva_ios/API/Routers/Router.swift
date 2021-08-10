@@ -19,7 +19,7 @@ protocol RouterProtocol: URLRequestConvertible {
 
 extension RouterProtocol {
     var baseURL: URL {
-        return URL(string: "http://192.168.0.101:8000/api/")!
+        return URL(string: "http://192.168.0.102:8000/api/")!
     }
     
     func addParametersToRequest(request: URLRequest) throws -> URLRequest {

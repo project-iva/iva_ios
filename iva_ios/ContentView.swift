@@ -11,8 +11,14 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            NavigationLink(destination: ControlSessionsView()) {
-                Text("Go")
+            VStack {
+                NavigationLink(destination: ControlSessionsView()) {
+                    Text("Go")
+                }
+                
+                NavigationLink(destination: DayView()) {
+                    Text("Day")
+                }
             }
         }
     }

@@ -11,7 +11,7 @@ struct ControlSessionsView: View {
     @State private var controlSessions = [ControlSessionListItem]()
     
     var body: some View {
-        List(controlSessions, id: \.uuid) {  session in
+        List(controlSessions, id: \.uuid) { session in
             let text = Text(session.type.rawValue)
             switch session.type {
                 case .mealChoices:
@@ -26,7 +26,7 @@ struct ControlSessionsView: View {
         }.onAppear(perform: loadSessions)
         .navigationTitle("Control Sessions")
     }
-        
+    
     func loadSessions() {
         print("loading")
         IvaClient.fetchControlSessions().done { result in

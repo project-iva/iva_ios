@@ -37,3 +37,58 @@ enum ModelViewSetRouter<T: Encodable>: RouterProtocol {
         }
     }
 }
+
+enum CurrentDayPlanRouter: RouterProtocol {
+    case get
+    
+    var method: HTTPMethod {
+        return .get
+    }
+    
+    var path: String {
+        return "current-day-plan/"
+    }
+}
+
+enum CurrentDayGoalsRouter: RouterProtocol {
+    case get
+    
+    var method: HTTPMethod {
+        return .get
+    }
+    
+    var path: String {
+        return "current-day-goals/"
+    }
+}
+
+
+enum DayGoalRouter: RouterProtocol {
+    case patch(Int, DayGoal)
+    case delete(Int, DayGoal)
+    
+    var method: HTTPMethod {
+        switch self {
+            case .delete:
+                return .delete
+            case .patch:
+                return .patch
+        }
+    }
+    
+    var path: String {
+        switch self {
+            case .delete(let goalsListId, let goal), .patch(let goalsListId, let goal):
+                return "day-goals/\(goalsListId)/goals/\(goal.id)/"
+        }
+    }
+    
+    func addParametersToRequest(request: URLRequest) throws -> URLRequest {
+        switch self {
+            case .delete:
+                return request
+            case .patch(_, let goal):
+                return try encodeModelIntoRequest(model: goal, request: request)
+        }
+    }
+}
