@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct DayPlanView: View {
+    @State private var activities: [DayPlanActivity] = []
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        DayTimelineView(activities: $activities).onAppear(perform: fetchDayPlan)
+    }
+    
+    private func fetchDayPlan() {
+        IvaBackendClient.fetchCurrentDayPlan().done { dayPlan in
+            activities = dayPlan.activities
+        }.catch { error in
+            print(error)
+        }
     }
 }
 

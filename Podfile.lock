@@ -2,6 +2,7 @@ PODS:
   - Alamofire (5.4.3)
   - AwaitKit (5.2.0):
     - PromiseKit (~> 6)
+  - CalendarKit (1.0.6)
   - HealthKitReporter (1.4.3)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - AwaitKit (~> 5.2.0)
+  - CalendarKit
   - HealthKitReporter (~> 1.4)
   - PromiseKit (~> 6.8)
 
@@ -23,15 +25,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AwaitKit
+    - CalendarKit
     - HealthKitReporter
     - PromiseKit
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AwaitKit: 512626cd12c82b1fbffddc8f414d0364cb456004
+  CalendarKit: eb72185fdc61a65107e4edbedb7b6a8f409fb19b
   HealthKitReporter: 5f061ac7ecea833cf1374de6de8fc2780136066f
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
 
-PODFILE CHECKSUM: 7c5bfce45b4e6b3429b31e92c35437cee25d3938
+PODFILE CHECKSUM: 831253ba574dd31e5f8516c2a87ce32c8862b8a6
 
 COCOAPODS: 1.5.2

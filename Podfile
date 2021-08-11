@@ -10,6 +10,7 @@ target 'iva_ios' do
     pod 'HealthKitReporter', '~> 1.4'
     pod "PromiseKit", "~> 6.8"
     pod 'AwaitKit', '~> 5.2.0'
+    pod 'CalendarKit'
 end
 
 target 'iva_watch Extension' do

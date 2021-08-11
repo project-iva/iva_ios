@@ -30,10 +30,10 @@ struct DayGoalsView: View {
                 }
             }.onDelete(perform: deleteDayGoal)
             
-        }.onAppear(perform: loadDayGoals)
+        }.onAppear(perform: fetchDayGoals)
     }
     
-    func loadDayGoals() {
+    private func fetchDayGoals() {
         print("loading")
         IvaBackendClient.fetchCurrentDayGoals().done { result in
             dayGoals = result.goals
@@ -43,7 +43,7 @@ struct DayGoalsView: View {
         }
     }
     
-    func patchDayGoal(index: Int) {
+    private func patchDayGoal(index: Int) {
         print("patch")
         let goal = dayGoals[index]
         IvaBackendClient.patchDayGoal(goalsListId: dayGoalsListId, goal: goal).catch { error in
@@ -51,7 +51,7 @@ struct DayGoalsView: View {
         }
     }
     
-    func deleteDayGoal(at offsets: IndexSet) {
+    private func deleteDayGoal(at offsets: IndexSet) {
         offsets.forEach { index in
             print(index)
             IvaBackendClient.deleteDayGoal(goalsListId: dayGoalsListId, goal: dayGoals[index]).catch { error in
