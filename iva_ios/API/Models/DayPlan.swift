@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct DayPlanActivity: Codable {
+struct DayPlanActivity: Codable, Identifiable {
     let id: Int
     let name: String
-    let description: String
+    var description: String
     let startTime: String
     let endTime: String
 }

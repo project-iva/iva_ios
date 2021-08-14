@@ -28,6 +28,8 @@
 		78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434226851DD900CF78EC /* ModelReporter.swift */; };
 		78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434426851E7E00CF78EC /* ModelProtocols.swift */; };
 		78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8FB752683A63C0010423C /* RouterHelper.swift */; };
+		78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C626C825F000EDB53E /* ActivityEvent.swift */; };
+		78B116C926C82DBC00EDB53E /* EditDayPlanActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */; };
 		78C3053A26499B370001BE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3053926499B370001BE1D /* Assets.xcassets */; };
 		78C3054126499B370001BE1D /* iva_watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78C3054026499B370001BE1D /* iva_watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78C3054626499B370001BE1D /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3054526499B370001BE1D /* iva_iosApp.swift */; };
@@ -134,6 +136,8 @@
 		78A2434226851DD900CF78EC /* ModelReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelReporter.swift; sourceTree = "<group>"; };
 		78A2434426851E7E00CF78EC /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
 		78A8FB752683A63C0010423C /* RouterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHelper.swift; sourceTree = "<group>"; };
+		78B116C626C825F000EDB53E /* ActivityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEvent.swift; sourceTree = "<group>"; };
+		78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayPlanActivity.swift; sourceTree = "<group>"; };
 		78C3053726499B340001BE1D /* iva_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C3053926499B370001BE1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78C3053B26499B370001BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -321,6 +325,8 @@
 			children = (
 				78C4C0A126C198AE00A3DB50 /* DayPlanView.swift */,
 				78E7524026C3E9C7000BA320 /* DayTimelineView.swift */,
+				78B116C626C825F000EDB53E /* ActivityEvent.swift */,
+				78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */,
 			);
 			path = "Day Plan";
 			sourceTree = "<group>";
@@ -628,9 +634,11 @@
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
 				78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */,
+				78B116C926C82DBC00EDB53E /* EditDayPlanActivity.swift in Sources */,
 				78C42E4E269C63BF00FBCAE1 /* IvaRouters.swift in Sources */,
 				78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
+				78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */,
 				780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */,
 				78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */,
 				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,

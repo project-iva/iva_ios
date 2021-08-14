@@ -21,25 +21,3 @@ extension Date {
         return calendar.date(from: components)!
     }
 }
-
-// MARK: DayPlanActivity Extensions
-extension DayPlanActivity {
-    func toCalendarEvent() -> Event {
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
-        timeFormatter.locale = Locale.current
-        timeFormatter.timeZone = TimeZone.current
-        
-        let event = Event()
-        event.startDate = Date().setTime(from: timeFormatter.date(from: startTime)!)
-        event.endDate = Date().setTime(from: timeFormatter.date(from: endTime)!)
-        
-        event.text = """
-        \(name)
-        \(description)
-        \(event.startDate.formatted(with: "HH:mm")) - \(event.endDate.formatted(with: "HH:mm"))
-        """
-
-        return event
-    }
-}
