@@ -20,4 +20,25 @@ extension Date {
         
         return calendar.date(from: components)!
     }
+    
+    func toTimeString() -> String {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        timeFormatter.locale = Locale.current
+        timeFormatter.timeZone = TimeZone.current
+        
+        return timeFormatter.string(from: self)
+    }
+}
+
+// MARK: String Extensions
+extension String {
+    func toDateTime() -> Date? {
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "HH:mm:ss"
+        timeFormatter.locale = Locale.current
+        timeFormatter.timeZone = TimeZone.current
+        
+        return Date().setTime(from: timeFormatter.date(from: self)!)
+    }
 }

@@ -22,18 +22,10 @@ public final class ActivityEvent: EventDescriptor {
     public weak var editedEvent: EventDescriptor?
     var activity: DayPlanActivity
     
-    private let timeFormatter: DateFormatter = {
-        let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
-        timeFormatter.locale = Locale.current
-        timeFormatter.timeZone = TimeZone.current
-        return timeFormatter
-    }()
-    
     init(activity: DayPlanActivity) {
         self.activity = activity
-        startDate = Date().setTime(from: timeFormatter.date(from: activity.startTime)!)
-        endDate = Date().setTime(from: timeFormatter.date(from: activity.endTime)!)
+        startDate = activity.startTime.toDateTime()!
+        endDate = activity.endTime.toDateTime()!
         
         text = """
         \(activity.name)

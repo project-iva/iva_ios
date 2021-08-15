@@ -50,6 +50,42 @@ enum CurrentDayPlanRouter: RouterProtocol {
     }
 }
 
+enum DayPlanRouter: RouterProtocol {
+    case patch(Int, DayPlanActivity)
+    case delete(Int, DayPlanActivity)
+    case post(Int, DayPlanActivity)
+    
+    var method: HTTPMethod {
+        switch self {
+            case .delete:
+                return .delete
+            case .patch:
+                return .patch
+            case .post:
+                return .post
+        }
+    }
+    
+    var path: String {
+        switch self {
+            case .delete(let dayPlanId, let activity), .patch(let dayPlanId, let activity):
+                return "day-plans/\(dayPlanId)/activities/\(activity.id)/"
+            case .post(let dayPlanId, _):
+                return "day-plans/\(dayPlanId)/activities/"
+        }
+    }
+    
+    
+    func addParametersToRequest(request: URLRequest) throws -> URLRequest {
+        switch self {
+            case .delete:
+                return request
+            case .patch(_, let activity), .post(_, let activity):
+                return try encodeModelIntoRequest(model: activity, request: request)
+        }
+    }
+}
+
 enum CurrentDayGoalsRouter: RouterProtocol {
     case get
     

@@ -9,10 +9,10 @@ import Foundation
 
 struct DayPlanActivity: Codable, Identifiable {
     let id: Int
-    let name: String
+    var name: String
     var description: String
-    let startTime: String
-    let endTime: String
+    var startTime: String
+    var endTime: String
 }
 
 struct DayPlan: Codable {

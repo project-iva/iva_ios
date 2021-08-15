@@ -9,14 +9,41 @@ import SwiftUI
 
 struct EditDayPlanActivity: View {
     @State var activity: DayPlanActivity
-    var onUpdatedAction: ((DayPlanActivity) -> Void)
+    @State var addingActivity: Bool
+    var onSaveAction: ((DayPlanActivity) -> Void)
+    var onDeleteAction: ((DayPlanActivity) -> Void)?
     
     var body: some View {
-        HStack {
-            TextField("t", text: $activity.description)
-            Button("Save") {
-                onUpdatedAction(activity)
+        VStack {
+            if addingActivity {
+                Text("Create Activity")
+            } else {
+                Text("Edit Activity")
             }
-        }
+            TextField("Activity name", text: $activity.name).textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("Description", text: $activity.description).textFieldStyle(RoundedBorderTextFieldStyle())
+            DatePicker("Start time", selection: Binding(
+                get: { activity.startTime.toDateTime()!},
+                set: { activity.startTime = $0.toTimeString() }
+            ), displayedComponents: .hourAndMinute)
+            DatePicker("End time", selection: Binding(
+                get: { activity.endTime.toDateTime()!},
+                set: { activity.endTime = $0.toTimeString() }
+            ), displayedComponents: .hourAndMinute)
+            Spacer()
+            HStack {
+                if !addingActivity {
+                    Button("Delete") {
+                        onDeleteAction?(activity)
+                    }.foregroundColor(.red)
+                    
+                    Spacer()
+                }
+                
+                Button("Save") {
+                    onSaveAction(activity)
+                }
+            }
+        }.padding()
     }
 }

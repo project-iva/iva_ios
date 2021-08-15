@@ -53,4 +53,37 @@ class IvaBackendClient {
                                           }
         }
     }
+    
+    static func postDayPlanActivity(dayPlanId: Int, activity: DayPlanActivity) -> Promise<DayPlanActivity> {
+        return Promise<DayPlanActivity> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanRouter.post(dayPlanId, activity),
+                                          resultType: DayPlanActivity.self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
+    
+    static func patchDayPlanActivity(dayPlanId: Int, activity: DayPlanActivity) -> Promise<DayPlanActivity> {
+        return Promise<DayPlanActivity> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanRouter.patch(dayPlanId, activity),
+                                          resultType: DayPlanActivity.self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
+    
+    static func deleteDayPlanActivity(dayPlanId: Int, activity: DayPlanActivity) -> Promise<Empty> {
+        return Promise<Empty> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanRouter.delete(dayPlanId, activity),
+                                          resultType: Empty.self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
 }
