@@ -100,6 +100,7 @@ enum CurrentDayGoalsRouter: RouterProtocol {
 
 
 enum DayGoalRouter: RouterProtocol {
+    case post(Int, DayGoal)
     case patch(Int, DayGoal)
     case delete(Int, DayGoal)
     
@@ -109,6 +110,8 @@ enum DayGoalRouter: RouterProtocol {
                 return .delete
             case .patch:
                 return .patch
+            case .post:
+                return .post
         }
     }
     
@@ -116,6 +119,8 @@ enum DayGoalRouter: RouterProtocol {
         switch self {
             case .delete(let goalsListId, let goal), .patch(let goalsListId, let goal):
                 return "day-goals/\(goalsListId)/goals/\(goal.id)/"
+            case .post(let goalsListId, _):
+                return "day-goals/\(goalsListId)/goals/"
         }
     }
     
@@ -123,7 +128,7 @@ enum DayGoalRouter: RouterProtocol {
         switch self {
             case .delete:
                 return request
-            case .patch(_, let goal):
+            case .patch(_, let goal), .post(_, let goal):
                 return try encodeModelIntoRequest(model: goal, request: request)
         }
     }

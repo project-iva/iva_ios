@@ -27,6 +27,7 @@
 		78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A243402685005700CF78EC /* MindfulSessionReporter.swift */; };
 		78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434226851DD900CF78EC /* ModelReporter.swift */; };
 		78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434426851E7E00CF78EC /* ModelProtocols.swift */; };
+		78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */; };
 		78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8FB752683A63C0010423C /* RouterHelper.swift */; };
 		78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C626C825F000EDB53E /* ActivityEvent.swift */; };
 		78B116C926C82DBC00EDB53E /* EditDayPlanActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */; };
@@ -135,6 +136,7 @@
 		78A243402685005700CF78EC /* MindfulSessionReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulSessionReporter.swift; sourceTree = "<group>"; };
 		78A2434226851DD900CF78EC /* ModelReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelReporter.swift; sourceTree = "<group>"; };
 		78A2434426851E7E00CF78EC /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
+		78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayGoal.swift; sourceTree = "<group>"; };
 		78A8FB752683A63C0010423C /* RouterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHelper.swift; sourceTree = "<group>"; };
 		78B116C626C825F000EDB53E /* ActivityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEvent.swift; sourceTree = "<group>"; };
 		78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayPlanActivity.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				78C4C0A726C1A2A900A3DB50 /* DayGoalsView.swift */,
+				78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */,
 			);
 			path = "Day Goals";
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				78C42E51269C6C6400FBCAE1 /* ControlSessionView.swift in Sources */,
 				78C4C09D26C1980B00A3DB50 /* DayPlan.swift in Sources */,
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
+				78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
 				78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */,

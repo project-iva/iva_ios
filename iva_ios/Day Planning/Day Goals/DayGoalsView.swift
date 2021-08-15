@@ -10,6 +10,9 @@ import SwiftUI
 struct DayGoalsView: View {
     @State private var dayGoals: [DayGoal] = []
     @State private var dayGoalsListId: Int = 0
+    @Environment(\.editMode) var editMode
+    @State var editingDayGoal: DayGoal?
+    @State var addingDayGoal = false
     
     var body: some View {
         List {
@@ -24,17 +27,68 @@ struct DayGoalsView: View {
                     VStack(alignment: .leading) {
                         Text(goal.name)
                         Text(goal.description).fontWeight(.light)
+                        
                     }
-                }.onChange(of: dayGoals[index].finished) { _ in
+                }
+                .onChange(of: dayGoals[index].finished) { _ in
                     patchDayGoal(index: index)
                 }
-            }.onDelete(perform: deleteDayGoal)
+                .contentShape(Rectangle())
+                .onTapGesture {
+                    if editMode?.wrappedValue.isEditing ?? false {
+                        editingDayGoal = goal
+                    }
+                }
+            }
+            .onDelete(perform: deleteDayGoal)
             
-        }.onAppear(perform: fetchDayGoals)
+        }
+        .onAppear(perform: fetchDayGoals)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    addingDayGoal = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
+        }
+        .sheet(item: $editingDayGoal, onDismiss: {
+            editMode?.wrappedValue = .inactive
+        }, content: { dayGoal in
+            EditDayGoal(dayGoal: dayGoal, addingDayGoal: false) { updatedDayGoal in
+                let index = dayGoals.firstIndex { checkingDayGoal in
+                    return checkingDayGoal.id == updatedDayGoal.id
+                }!
+                dayGoals[index] = updatedDayGoal
+                editingDayGoal = nil
+                patchDayGoal(index: index)
+            } onDeleteAction: { deletedDayGoal in
+                let index = dayGoals.firstIndex { checkingDayGoal in
+                    return checkingDayGoal.id == deletedDayGoal.id
+                }!
+                editingDayGoal = nil
+                deleteDayGoal(at: IndexSet([index]))
+            }
+        })
+        .sheet(isPresented: $addingDayGoal) {
+            let dayGoal = DayGoal(id: -1, name: "", description: "", finished: false)
+            EditDayGoal(dayGoal: dayGoal, addingDayGoal: true) { newDayGoal in
+                addingDayGoal = false
+                IvaBackendClient.posthDayGoal(goalsListId: dayGoalsListId, goal: newDayGoal).done { responseDayGoal in
+                    dayGoals.append(responseDayGoal)
+                }.catch { error in
+                    print("Error adding day goal: \(error)")
+                }
+            }
+        }
     }
     
     private func fetchDayGoals() {
-        print("loading")
         IvaBackendClient.fetchCurrentDayGoals().done { result in
             dayGoals = result.goals
             dayGoalsListId = result.id
@@ -44,7 +98,6 @@ struct DayGoalsView: View {
     }
     
     private func patchDayGoal(index: Int) {
-        print("patch")
         let goal = dayGoals[index]
         IvaBackendClient.patchDayGoal(goalsListId: dayGoalsListId, goal: goal).catch { error in
             print(error)
@@ -57,7 +110,7 @@ struct DayGoalsView: View {
             IvaBackendClient.deleteDayGoal(goalsListId: dayGoalsListId, goal: dayGoals[index]).catch { error in
                 print(error)
             }
-
+            
         }
         dayGoals.remove(atOffsets: offsets)
     }

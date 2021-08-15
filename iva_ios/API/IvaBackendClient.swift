@@ -32,6 +32,17 @@ class IvaBackendClient {
         }
     }
     
+    static func posthDayGoal(goalsListId: Int, goal: DayGoal) -> Promise<DayGoal> {
+        return Promise<DayGoal> { seal in
+            ApiHandler.shared.makeRequest(request: DayGoalRouter.post(goalsListId, goal),
+                                          resultType: DayGoal.self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
+    
     static func patchDayGoal(goalsListId: Int, goal: DayGoal) -> Promise<DayGoal> {
         return Promise<DayGoal> { seal in
             ApiHandler.shared.makeRequest(request: DayGoalRouter.patch(goalsListId, goal),

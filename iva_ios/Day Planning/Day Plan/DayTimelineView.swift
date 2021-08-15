@@ -20,15 +20,17 @@ struct DayTimelineView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: TimelineContainerController, context: Context) {
         uiViewController.timeline.delegate = delegate
-        uiViewController.timeline.layoutAttributes = activities.map({ EventLayoutAttributes(ActivityEvent(activity: $0)) })
+        uiViewController.timeline.layoutAttributes = activities.map({
+            EventLayoutAttributes(ActivityEvent(activity: $0))
+        })
     }
 }
 
 extension DayTimelineView {
     class Delegate: TimelineViewDelegate {
-        private let didTap: (ActivityEvent) -> ()
+        private let didTap: (ActivityEvent) -> Void
         
-        init(didTap: @escaping (ActivityEvent) -> ()) {
+        init(didTap: @escaping (ActivityEvent) -> Void) {
             self.didTap = didTap
         }
         

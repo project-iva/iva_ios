@@ -11,7 +11,6 @@ struct DayPlanView: View {
     @State private var activities: [DayPlanActivity] = []
     @State private var dayPlanId: Int = 0
     @Environment(\.editMode) var editMode
-    @State var selection: Int?
     @State var editingActivity: DayPlanActivity?
     @State var addingActivity = false
     
