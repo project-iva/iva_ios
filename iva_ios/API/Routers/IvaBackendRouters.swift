@@ -38,19 +38,22 @@ enum ModelViewSetRouter<T: Encodable>: RouterProtocol {
     }
 }
 
-enum CurrentDayPlanRouter: RouterProtocol {
-    case get
+enum DayPlanRouter: RouterProtocol {
+    case get(Date)
     
     var method: HTTPMethod {
         return .get
     }
     
     var path: String {
-        return "current-day-plan/"
+        switch self {
+            case .get(let date):
+                return "day-plan/\(date.formatted(with: "yyyy-MM-dd"))/"
+        }
     }
 }
 
-enum DayPlanRouter: RouterProtocol {
+enum DayPlanActivityRouter: RouterProtocol {
     case patch(Int, DayPlanActivity)
     case delete(Int, DayPlanActivity)
     case post(Int, DayPlanActivity)
@@ -86,18 +89,21 @@ enum DayPlanRouter: RouterProtocol {
     }
 }
 
-enum CurrentDayGoalsRouter: RouterProtocol {
-    case get
+enum DayGoalsRouter: RouterProtocol {
+    case get(Date)
     
     var method: HTTPMethod {
         return .get
     }
+
     
     var path: String {
-        return "current-day-goals/"
+        switch self {
+            case .get(let date):
+                return "day-goal/\(date.formatted(with: "yyyy-MM-dd"))/"
+        }
     }
 }
-
 
 enum DayGoalRouter: RouterProtocol {
     case post(Int, DayGoal)

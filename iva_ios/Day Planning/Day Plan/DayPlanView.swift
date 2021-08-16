@@ -83,7 +83,7 @@ struct DayPlanView: View {
     }
     
     private func fetchDayPlan(for date: Date) {
-        IvaBackendClient.fetchCurrentDayPlan().done { dayPlan in
+        IvaBackendClient.fetchDayPlan(for: date).done { dayPlan in
             activities = dayPlan.activities
             dayPlanId = dayPlan.id
         }.catch { error in

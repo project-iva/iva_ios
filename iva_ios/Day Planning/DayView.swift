@@ -49,7 +49,7 @@ struct DayView: View {
                 case .dayPlan:
                     DayPlanView(dayDate: dayDate)
                 case .dayGoals:
-                    DayGoalsView()
+                    DayGoalsView(dayDate: dayDate)
             }
         }
     }

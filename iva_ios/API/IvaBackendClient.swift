@@ -10,9 +10,9 @@ import Alamofire
 import PromiseKit
 
 class IvaBackendClient {
-    static func fetchCurrentDayPlan() -> Promise<DayPlan> {
+    static func fetchDayPlan(for date: Date) -> Promise<DayPlan> {
         return Promise<DayPlan> { seal in
-            ApiHandler.shared.makeRequest(request: CurrentDayPlanRouter.get,
+            ApiHandler.shared.makeRequest(request: DayPlanRouter.get(date),
                                           resultType: DayPlan.self).done { response in
                                             seal.fulfill(response.result)
                                           }.catch { error in
@@ -21,9 +21,9 @@ class IvaBackendClient {
         }
     }
     
-    static func fetchCurrentDayGoals() -> Promise<DayGoals> {
+    static func fetchDayGoals(for date: Date) -> Promise<DayGoals> {
         return Promise<DayGoals> { seal in
-            ApiHandler.shared.makeRequest(request: CurrentDayGoalsRouter.get,
+            ApiHandler.shared.makeRequest(request: DayGoalsRouter.get(date),
                                           resultType: DayGoals.self).done { response in
                                             seal.fulfill(response.result)
                                           }.catch { error in
@@ -67,7 +67,7 @@ class IvaBackendClient {
     
     static func postDayPlanActivity(dayPlanId: Int, activity: DayPlanActivity) -> Promise<DayPlanActivity> {
         return Promise<DayPlanActivity> { seal in
-            ApiHandler.shared.makeRequest(request: DayPlanRouter.post(dayPlanId, activity),
+            ApiHandler.shared.makeRequest(request: DayPlanActivityRouter.post(dayPlanId, activity),
                                           resultType: DayPlanActivity.self).done { response in
                                             seal.fulfill(response.result)
                                           }.catch { error in
@@ -78,7 +78,7 @@ class IvaBackendClient {
     
     static func patchDayPlanActivity(dayPlanId: Int, activity: DayPlanActivity) -> Promise<DayPlanActivity> {
         return Promise<DayPlanActivity> { seal in
-            ApiHandler.shared.makeRequest(request: DayPlanRouter.patch(dayPlanId, activity),
+            ApiHandler.shared.makeRequest(request: DayPlanActivityRouter.patch(dayPlanId, activity),
                                           resultType: DayPlanActivity.self).done { response in
                                             seal.fulfill(response.result)
                                           }.catch { error in
@@ -89,7 +89,7 @@ class IvaBackendClient {
     
     static func deleteDayPlanActivity(dayPlanId: Int, activity: DayPlanActivity) -> Promise<Empty> {
         return Promise<Empty> { seal in
-            ApiHandler.shared.makeRequest(request: DayPlanRouter.delete(dayPlanId, activity),
+            ApiHandler.shared.makeRequest(request: DayPlanActivityRouter.delete(dayPlanId, activity),
                                           resultType: Empty.self).done { response in
                                             seal.fulfill(response.result)
                                           }.catch { error in

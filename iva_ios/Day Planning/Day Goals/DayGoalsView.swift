@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DayGoalsView: View {
+    var dayDate: Date
     @State private var dayGoals: [DayGoal] = []
     @State private var dayGoalsListId: Int = 0
     @Environment(\.editMode) var editMode
@@ -43,7 +44,12 @@ struct DayGoalsView: View {
             .onDelete(perform: deleteDayGoal)
             
         }
-        .onAppear(perform: fetchDayGoals)
+        .onChange(of: dayDate, perform: { newDayDate in
+            fetchDayGoals(for: newDayDate)
+        })
+        .onAppear(perform: {
+            fetchDayGoals(for: dayDate)
+        })
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -88,8 +94,8 @@ struct DayGoalsView: View {
         }
     }
     
-    private func fetchDayGoals() {
-        IvaBackendClient.fetchCurrentDayGoals().done { result in
+    private func fetchDayGoals(for date: Date) {
+        IvaBackendClient.fetchDayGoals(for: date).done { result in
             dayGoals = result.goals
             dayGoalsListId = result.id
         }.catch { error in
@@ -118,6 +124,6 @@ struct DayGoalsView: View {
 
 struct DayGoalsView_Previews: PreviewProvider {
     static var previews: some View {
-        DayGoalsView()
+        DayGoalsView(dayDate: Date())
     }
 }
