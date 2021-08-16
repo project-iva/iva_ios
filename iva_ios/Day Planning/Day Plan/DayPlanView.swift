@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DayPlanView: View {
+    var dayDate: Date
     @State private var activities: [DayPlanActivity] = []
     @State private var dayPlanId: Int = 0
     @Environment(\.editMode) var editMode
@@ -22,7 +23,12 @@ struct DayPlanView: View {
                 editingActivity = activities[index]
             }
         }))
-        .onAppear(perform: fetchDayPlan)
+        .onChange(of: dayDate, perform: { newDayDate in
+            fetchDayPlan(for: newDayDate)
+        })
+        .onAppear(perform: {
+            fetchDayPlan(for: dayDate)
+        })
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -76,7 +82,7 @@ struct DayPlanView: View {
         }
     }
     
-    private func fetchDayPlan() {
+    private func fetchDayPlan(for date: Date) {
         IvaBackendClient.fetchCurrentDayPlan().done { dayPlan in
             activities = dayPlan.activities
             dayPlanId = dayPlan.id
@@ -88,6 +94,6 @@ struct DayPlanView: View {
 
 struct DayPlanView_Previews: PreviewProvider {
     static var previews: some View {
-        DayPlanView()
+        DayPlanView(dayDate: Date())
     }
 }
