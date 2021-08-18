@@ -78,7 +78,6 @@ enum DayPlanActivityRouter: RouterProtocol {
         }
     }
     
-    
     func addParametersToRequest(request: URLRequest) throws -> URLRequest {
         switch self {
             case .delete:
@@ -96,7 +95,6 @@ enum DayGoalsRouter: RouterProtocol {
         return .get
     }
 
-    
     var path: String {
         switch self {
             case .get(let date):

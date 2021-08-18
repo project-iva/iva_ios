@@ -45,7 +45,7 @@ extension ControlSessionView {
         return nil
     }
     
-    func postControlAction(action: ControlSessionAction, completionHandler: (() -> ())? = nil) {
+    func postControlAction(action: ControlSessionAction, completionHandler: (() -> Void)? = nil) {
         IvaClient.postSessionAction(sessionUUID: sessionUUID, action: action).done { _ in
             completionHandler?()
         }.catch { error in

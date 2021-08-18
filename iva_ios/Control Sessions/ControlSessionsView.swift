@@ -15,7 +15,7 @@ struct ControlSessionsView: View {
             let text = Text(session.type.rawValue)
             switch session.type {
                 case .mealChoices:
-                    NavigationLink(destination: MealControlSessionView(sessionUUID: session.uuid))  {
+                    NavigationLink(destination: MealControlSessionView(sessionUUID: session.uuid)) {
                         text
                     }
                 case .routine:

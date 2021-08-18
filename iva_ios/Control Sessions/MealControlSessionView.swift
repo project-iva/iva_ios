@@ -30,7 +30,7 @@ struct MealControlSessionView: ControlSessionView {
     }
     
     func handleAction(action: ControlSessionAction) {
-        var completionHandler: (() -> ())?
+        var completionHandler: (() -> Void)?
         
         switch action {
             case .next:
