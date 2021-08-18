@@ -68,7 +68,9 @@ struct DayPlanView: View {
         })
         .sheet(isPresented: $addingActivity) {
             let activity = DayPlanActivity(
-                id: -1, name: "", description: "", startTime: Date().toTimeString(), endTime: Date().toTimeString()
+                id: -1, name: "", description: "",
+                startTime: Date().toTimeString(), endTime: Date().toTimeString(),
+                type: .other
             )
             EditDayPlanActivity(activity: activity, addingActivity: true) { newActivity in
                 addingActivity = false

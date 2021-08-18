@@ -16,9 +16,9 @@ struct EditDayPlanActivity: View {
     var body: some View {
         VStack {
             if addingActivity {
-                Text("Create Activity")
+                Text("Create Activity").font(.title)
             } else {
-                Text("Edit Activity")
+                Text("Edit Activity").font(.title)
             }
             TextField("Activity name", text: $activity.name).textFieldStyle(RoundedBorderTextFieldStyle())
             TextField("Description", text: $activity.description).textFieldStyle(RoundedBorderTextFieldStyle())
@@ -30,6 +30,16 @@ struct EditDayPlanActivity: View {
                 get: { activity.endTime.toDateTime()!},
                 set: { activity.endTime = $0.toTimeString() }
             ), displayedComponents: .hourAndMinute)
+            
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Activity type")
+                Picker("Type", selection: $activity.type) {
+                    ForEach(DayPlanActivityType.allCases, id: \.self) {
+                        Text($0.displayName)
+                    }
+                }.pickerStyle(WheelPickerStyle())
+            }
+            
             Spacer()
             HStack {
                 if !addingActivity {

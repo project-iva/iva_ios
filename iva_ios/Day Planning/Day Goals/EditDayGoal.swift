@@ -16,9 +16,9 @@ struct EditDayGoal: View {
     var body: some View {
         VStack {
             if addingDayGoal {
-                Text("Create Goal")
+                Text("Create Goal").font(.title)
             } else {
-                Text("Edit Goal")
+                Text("Edit Goal").font(.title)
             }
             TextField("Goal name", text: $dayGoal.name).textFieldStyle(RoundedBorderTextFieldStyle())
             TextField("Description", text: $dayGoal.description).textFieldStyle(RoundedBorderTextFieldStyle())
