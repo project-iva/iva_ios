@@ -10,6 +10,7 @@ import Foundation
 enum DayPlanActivityType: String, CaseIterable, Codable {
     case morningRoutine = "MORNING_ROUTINE"
     case eveningRoutine = "EVENINING_ROUTINE"
+    case meal = "MEAL"
     case leisure = "LEISURE"
     case workout = "WORKOUT"
     case job = "JOB"
@@ -22,6 +23,8 @@ enum DayPlanActivityType: String, CaseIterable, Codable {
                 return "Morning routine"
             case .eveningRoutine:
                 return "Evening routine"
+            case .meal:
+                return "Meal"
             case .leisure:
                 return "Leisure"
             case .workout:
