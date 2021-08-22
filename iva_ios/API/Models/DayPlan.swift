@@ -53,3 +53,8 @@ struct DayPlan: Codable {
     let activities: [DayPlanActivity]
     let date: String
 }
+
+struct DayPlanTemplate: Codable {
+    let id: Int
+    let name: String
+}

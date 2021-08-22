@@ -88,6 +88,29 @@ enum DayPlanActivityRouter: RouterProtocol {
     }
 }
 
+enum DayPlanTemplateRouter: RouterProtocol {
+    case get
+    case post(Int, Int)
+    
+    var method: HTTPMethod {
+        switch self {
+            case .get:
+                return .get
+            case .post:
+                return .post
+        }
+    }
+    
+    var path: String {
+        switch self {
+            case .get:
+                return "day-plan-templates/"
+            case .post(let dayPlanId, let dayPlanTemplateId):
+                return "day-plan/\(dayPlanId)/activities-from-template/\(dayPlanTemplateId)/"
+        }
+    }
+}
+
 enum DayGoalsRouter: RouterProtocol {
     case get(Date)
     

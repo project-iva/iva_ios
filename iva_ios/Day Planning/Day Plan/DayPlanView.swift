@@ -12,8 +12,10 @@ struct DayPlanView: View {
     @State private var activities: [DayPlanActivity] = []
     @State private var dayPlanId: Int = 0
     @Environment(\.editMode) var editMode
-    @State var editingActivity: DayPlanActivity?
-    @State var addingActivity = false
+    @State private var editingActivity: DayPlanActivity?
+    @State private var showAddActivitySheet = false
+    @State private var showAddActivitiesFromTemplateSheet = false
+    @State private var showAddActionSheet = false
     
     var body: some View {
         DayTimelineView(activities: $activities, delegate: DayTimelineView.Delegate(didTap: { activityEvent in
@@ -32,7 +34,7 @@ struct DayPlanView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    addingActivity = true
+                    showAddActionSheet = true
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -66,14 +68,14 @@ struct DayPlanView: View {
                 }
             }
         })
-        .sheet(isPresented: $addingActivity) {
+        .sheet(isPresented: $showAddActivitySheet) {
             let activity = DayPlanActivity(
                 id: -1, name: "", description: "",
                 startTime: Date().toTimeString(), endTime: Date().toTimeString(),
                 type: .other
             )
             EditDayPlanActivity(activity: activity, addingActivity: true) { newActivity in
-                addingActivity = false
+                showAddActivitySheet = false
                 IvaBackendClient.postDayPlanActivity(dayPlanId: dayPlanId, activity: newActivity)
                     .done { responseActivity in
                         activities.append(responseActivity)
@@ -81,6 +83,25 @@ struct DayPlanView: View {
                         print("Error adding day plan activity: \(error)")
                     }
             }
+        }
+        .sheet(isPresented: $showAddActivitiesFromTemplateSheet, content: {
+            SelectTemplateView { template in
+                showAddActivitiesFromTemplateSheet = false
+                IvaBackendClient.addActivitiesFromDayPlanTemplate(dayPlanId: dayPlanId, dayPlanTemplateId: template.id)
+                    .done { updatedDayPlan in
+                        activities = updatedDayPlan.activities
+                    }.catch { error in
+                        print(error)
+                    }
+                
+            }
+        })
+        .actionSheet(isPresented: $showAddActionSheet) {
+            ActionSheet(title: Text("Add activities"), buttons: [
+                .default(Text("Add an activity")) { showAddActivitySheet = true },
+                .default(Text("Add activities from template")) { showAddActivitiesFromTemplateSheet = true },
+                .cancel()
+            ])
         }
     }
     

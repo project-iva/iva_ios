@@ -97,4 +97,26 @@ class IvaBackendClient {
                                           }
         }
     }
+    
+    static func fetchDayPlanTemplates() -> Promise<[DayPlanTemplate]> {
+        return Promise<[DayPlanTemplate]> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateRouter.get,
+                                          resultType: [DayPlanTemplate].self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
+    
+    static func addActivitiesFromDayPlanTemplate(dayPlanId: Int, dayPlanTemplateId: Int) -> Promise<DayPlan> {
+        return Promise<DayPlan> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateRouter.post(dayPlanId, dayPlanTemplateId),
+                                          resultType: DayPlan.self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
 }
