@@ -56,8 +56,10 @@
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "8"
       notificationPayloadFile = "iva_watch Extension/PushNotificationPayload.apns">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/iva_ios">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78C3053626499B340001BE1D"
@@ -65,7 +67,7 @@
             BlueprintName = "iva_watch"
             ReferencedContainer = "container:iva_ios.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -75,8 +77,10 @@
       debugDocumentVersioning = "YES"
       launchAutomaticallySubstyle = "8"
       notificationPayloadFile = "iva_watch Extension/PushNotificationPayload.apns">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/iva_ios">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "78C3053626499B340001BE1D"
@@ -84,7 +88,16 @@
             BlueprintName = "iva_watch"
             ReferencedContainer = "container:iva_ios.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "78C3053626499B340001BE1D"
+            BuildableName = "iva_watch.app"
+            BlueprintName = "iva_watch"
+            ReferencedContainer = "container:iva_ios.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

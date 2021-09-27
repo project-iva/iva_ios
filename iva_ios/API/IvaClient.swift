@@ -10,11 +10,6 @@ import Alamofire
 import PromiseKit
 
 class IvaClient {
-    func next() {
-        AF.request("http://192.168.0.101:8001", method: .post).response { data in
-            print(data)
-        }
-    }
     
     static func fetchControlSessions() -> Promise<[ControlSessionListItem]> {
         return Promise<[ControlSessionListItem]> { seal in

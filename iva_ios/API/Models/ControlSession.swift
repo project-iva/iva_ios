@@ -8,14 +8,14 @@
 import Foundation
 
 enum ControlSessionAction: String, Codable {
-    case next
-    case prev
-    case confirm
+    case next = "NEXT"
+    case prev = "PREV"
+    case confirm = "CONFIRM"
 }
 
 enum ControlSessionType: String, Codable {
-    case routine
-    case mealChoices = "meal_choices"
+    case routine = "ROUTINE"
+    case mealChoices = "MEAL_CHOICES"
 }
 
 struct ControlSessionListItem: Codable {
