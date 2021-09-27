@@ -14,6 +14,9 @@ struct DayTimelineView: UIViewControllerRepresentable {
     
     func makeUIViewController(context: Context) -> TimelineContainerController {
         let controller = TimelineContainerController()
+        var style = TimelineStyle()
+        style.backgroundColor = UIColor.black
+        controller.timeline.updateStyle(style)
         controller.timeline.delegate = delegate
         return controller
     }
