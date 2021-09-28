@@ -44,4 +44,15 @@ class IvaClient {
         }
     }
     
+    
+    static func invokeRaspberryClient(action: RaspberryClientAction) -> Promise<Empty> {
+        return Promise<Empty> { seal in
+            ApiHandler.shared.makeRequest(request: RaspberryClientRouter.invokeAction(action),
+                                          resultType: Empty.self).done { response in
+                                            seal.fulfill(response.result)
+                                          }.catch { error in
+                                            seal.reject(error)
+                                          }
+        }
+    }
 }
