@@ -38,6 +38,7 @@
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>processing</string>
 		<string>voip</string>
 	</array>
 	<key>UILaunchScreen</key>

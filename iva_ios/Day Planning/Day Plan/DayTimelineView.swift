@@ -37,16 +37,16 @@ extension DayTimelineView {
             self.didTap = didTap
         }
         
-        func timelineView(_ timelineView: TimelineView, didTapAt date: Date) {}
+        func timelineView(_ timelineView: CalendarKit.TimelineView, didTapAt date: Date) {}
         
-        func timelineView(_ timelineView: TimelineView, didLongPressAt date: Date) {}
+        func timelineView(_ timelineView: CalendarKit.TimelineView, didLongPressAt date: Date) {}
         
-        func timelineView(_ timelineView: TimelineView, didTap event: EventView) {
+        func timelineView(_ timelineView: CalendarKit.TimelineView, didTap event: EventView) {
             if let activityEvent = event.descriptor as? ActivityEvent {
                 didTap(activityEvent)
             }
         }
         
-        func timelineView(_ timelineView: TimelineView, didLongPress event: EventView) {}
+        func timelineView(_ timelineView: CalendarKit.TimelineView, didLongPress event: EventView) {}
     }
 }

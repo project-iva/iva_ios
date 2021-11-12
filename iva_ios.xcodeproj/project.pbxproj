@@ -17,6 +17,7 @@
 		7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */; };
 		7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C426A0C1E600F59BE2 /* BodyMass.swift */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
+		78878629273C7582005475B5 /* VoiceControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78878628273C7582005475B5 /* VoiceControlView.swift */; };
 		78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */; };
 		78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AEF269C73AD000EBCBF /* RoutineStep.swift */; };
 		78A15AF1269CACD2000EBCBF /* ControlSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */; };
@@ -136,6 +137,7 @@
 		7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassReporter.swift; sourceTree = "<group>"; };
 		7868B3C426A0C1E600F59BE2 /* BodyMass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMass.swift; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		78878628273C7582005475B5 /* VoiceControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlView.swift; sourceTree = "<group>"; };
 		78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineControlSessionView.swift; sourceTree = "<group>"; };
 		78A15AEF269C73AD000EBCBF /* RoutineStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStep.swift; sourceTree = "<group>"; };
 		78A243402685005700CF78EC /* MindfulSessionReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulSessionReporter.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 		7832EA752645A18100371FA7 /* iva_ios */ = {
 			isa = PBXGroup;
 			children = (
+				78878627273C7565005475B5 /* Voice Control */,
 				78F2B9F72703752B00105763 /* Raspberry Client Controls */,
 				78C4C09E26C1988800A3DB50 /* Day Planning */,
 				78CE20A0269B6F3000AB55A0 /* Control Sessions */,
@@ -286,6 +289,14 @@
 				7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		78878627273C7565005475B5 /* Voice Control */ = {
+			isa = PBXGroup;
+			children = (
+				78878628273C7582005475B5 /* VoiceControlView.swift */,
+			);
+			path = "Voice Control";
 			sourceTree = "<group>";
 		};
 		78C3053826499B340001BE1D /* iva_watch */ = {
@@ -673,6 +684,7 @@
 				7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */,
 				78C4C0A826C1A2A900A3DB50 /* DayGoalsView.swift in Sources */,
 				78C4C0A426C199EB00A3DB50 /* IvaBackendClient.swift in Sources */,
+				78878629273C7582005475B5 /* VoiceControlView.swift in Sources */,
 				78E7524526C42F08000BA320 /* Extensions.swift in Sources */,
 				78C3056226499D8B0001BE1D /* IvaClient.swift in Sources */,
 				78C4C0A626C19D5500A3DB50 /* DayView.swift in Sources */,
@@ -844,6 +856,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iva_ios/iva_ios.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iva_ios/Preview Content\"";
 				DEVELOPMENT_TEAM = UTS9P6BLKZ;
@@ -856,6 +869,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igor.pidik.iva-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -868,6 +882,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = iva_ios/iva_ios.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iva_ios/Preview Content\"";
 				DEVELOPMENT_TEAM = UTS9P6BLKZ;
@@ -880,6 +895,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.igor.pidik.iva-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
