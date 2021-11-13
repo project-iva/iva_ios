@@ -23,6 +23,10 @@ struct ContentView: View {
                 NavigationLink(destination: RaspberryClientControlsView()) {
                     Text("Raspberry client controls")
                 }
+                
+                NavigationLink(destination: VoiceControlView()) {
+                    Text("Voice control")
+                }
             }
         }
     }

@@ -10,15 +10,14 @@ import Alamofire
 import PromiseKit
 
 class IvaClient {
-    
     static func fetchControlSessions() -> Promise<[ControlSessionListItem]> {
         return Promise<[ControlSessionListItem]> { seal in
             ApiHandler.shared.makeRequest(request: ControlSessionsRouter.getControlSessions,
                                           resultType: [ControlSessionListItem].self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -26,10 +25,10 @@ class IvaClient {
         return Promise<ControlSessionResponse<T>> { seal in
             ApiHandler.shared.makeRequest(request: ControlSessionsRouter.getControlSession(sessionUUID),
                                           resultType: ControlSessionResponse<T>.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -37,10 +36,10 @@ class IvaClient {
         return Promise<Empty> { seal in
             ApiHandler.shared.makeRequest(request: ControlSessionsRouter.postControlSessionAction(sessionUUID, action),
                                           resultType: Empty.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -49,10 +48,21 @@ class IvaClient {
         return Promise<Empty> { seal in
             ApiHandler.shared.makeRequest(request: RaspberryClientRouter.invokeAction(action),
                                           resultType: Empty.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    static func postUtterance(utterance: String) -> Promise<Empty> {
+        return Promise<Empty> { seal in
+            ApiHandler.shared.makeRequest(request:  UtteranceRouter.postUtterance(utterance),
+                                          resultType: Empty.self).done { response in
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
 }

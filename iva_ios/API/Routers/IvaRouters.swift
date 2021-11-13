@@ -69,3 +69,26 @@ enum RaspberryClientRouter: RouterProtocol {
         }
     }
 }
+
+enum UtteranceRouter: RouterProtocol {
+case postUtterance(String)
+    
+    var method: HTTPMethod {
+        return .post
+    }
+    
+    var baseURL: URL {
+        return URL(string: "http://192.168.0.104:5000")!
+    }
+    
+    var path: String {
+        return "/utterance/"
+    }
+    
+    func addParametersToRequest(request: URLRequest) throws -> URLRequest {
+        switch self {
+            case .postUtterance(let utterance):
+                return try URLEncodedFormParameterEncoder().encode(["utterance": utterance], into: request)
+        }
+    }
+}

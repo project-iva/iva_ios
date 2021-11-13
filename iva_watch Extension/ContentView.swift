@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let ivaController = IvaClient()
     var body: some View {
         VStack {
             NavigationLink(destination: ControlSessionsView()) {
@@ -17,6 +16,10 @@ struct ContentView: View {
             
             NavigationLink(destination: RaspberryClientControlsView()) {
                 Text("Raspberry controls")
+            }
+            
+            NavigationLink(destination: VoiceControlViewWatch()) {
+                Text("Voice control")
             }
         }
     }

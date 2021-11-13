@@ -70,6 +70,8 @@
 		78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E4505D267FE65D00D04B3A /* MindfulSession.swift */; };
 		78E7524126C3E9C7000BA320 /* DayTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7524026C3E9C7000BA320 /* DayTimelineView.swift */; };
 		78E7524526C42F08000BA320 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E7524426C42F08000BA320 /* Extensions.swift */; };
+		78F1C7E8273F0AC700AD2551 /* VoiceControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1C7E7273F0AC700AD2551 /* VoiceControlHelper.swift */; };
+		78F1C7ED273F18AA00AD2551 /* VoiceControlViewWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F1C7EB273F152500AD2551 /* VoiceControlViewWatch.swift */; };
 		78F2B9F5270373E000105763 /* RaspberryClientAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F4270373E000105763 /* RaspberryClientAction.swift */; };
 		78F2B9F62703744200105763 /* RaspberryClientAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F4270373E000105763 /* RaspberryClientAction.swift */; };
 		78F2B9F92703756300105763 /* RaspberryClientControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */; };
@@ -182,6 +184,8 @@
 		78E4505D267FE65D00D04B3A /* MindfulSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulSession.swift; sourceTree = "<group>"; };
 		78E7524026C3E9C7000BA320 /* DayTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTimelineView.swift; sourceTree = "<group>"; };
 		78E7524426C42F08000BA320 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		78F1C7E7273F0AC700AD2551 /* VoiceControlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlHelper.swift; sourceTree = "<group>"; };
+		78F1C7EB273F152500AD2551 /* VoiceControlViewWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlViewWatch.swift; sourceTree = "<group>"; };
 		78F2B9F4270373E000105763 /* RaspberryClientAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryClientAction.swift; sourceTree = "<group>"; };
 		78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryClientControlsView.swift; sourceTree = "<group>"; };
 		78F6E3A026D29309000F1B28 /* SelectTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTemplateView.swift; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				78878628273C7582005475B5 /* VoiceControlView.swift */,
+				78F1C7E7273F0AC700AD2551 /* VoiceControlHelper.swift */,
+				78F1C7EB273F152500AD2551 /* VoiceControlViewWatch.swift */,
 			);
 			path = "Voice Control";
 			sourceTree = "<group>";
@@ -647,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F1C7E8273F0AC700AD2551 /* VoiceControlHelper.swift in Sources */,
 				78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */,
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
@@ -711,6 +718,7 @@
 				78A15AF5269CAD19000EBCBF /* RoutineStep.swift in Sources */,
 				78C42E40269C62A400FBCAE1 /* ControlSession.swift in Sources */,
 				78C42E44269C62CB00FBCAE1 /* Responses.swift in Sources */,
+				78F1C7ED273F18AA00AD2551 /* VoiceControlViewWatch.swift in Sources */,
 				78F2B9F62703744200105763 /* RaspberryClientAction.swift in Sources */,
 				78A15AF3269CACD7000EBCBF /* MealControlSessionView.swift in Sources */,
 				78A15AF1269CACD2000EBCBF /* ControlSessionsView.swift in Sources */,

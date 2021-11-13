@@ -60,5 +60,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Necessary to use voice control</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Necessary to use voice control</string>
 </dict>
 </plist>
