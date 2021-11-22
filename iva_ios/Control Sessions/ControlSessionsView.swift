@@ -27,8 +27,7 @@ struct ControlSessionsView: View {
         .navigationTitle("Control Sessions")
     }
     
-    func loadSessions() {
-        print("loading")
+    private func loadSessions() {
         IvaClient.fetchControlSessions().done { result in
             controlSessions = result
         }.catch { error in

@@ -23,7 +23,7 @@ struct RoutineControlSessionView: ControlSessionView {
         }
     }
     
-    func loadSession() {
+    private func loadSession() {
         IvaClient.fetchSessionDetails(sessionUUID: sessionUUID).done { response in
             controlSession = response
         }.catch { error in

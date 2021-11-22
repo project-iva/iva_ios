@@ -43,13 +43,13 @@ class ModelReporter<Model: Codable & ModelWithStartTimeAndUUID, HealthKitSampleT
             ) { (_, identifier, error) in
                 if error == nil && identifier != nil {
                     self.queue.async {
-                        print("update started for \(identifier)")
+                        print("update started for \(String(describing: identifier))")
                         let semaphore = DispatchSemaphore(value: 0)
                         self.handleUpdate(for: type, predicate).done { _ in
                             semaphore.signal()
                         }
                         semaphore.wait()
-                        print("update finished for \(identifier)")
+                        print("update finished for \(String(describing: identifier))")
                     }
                 }
             }
