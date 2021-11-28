@@ -55,6 +55,7 @@ struct DayPlanView: View {
                 editingActivity = nil
                 
                 IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: updatedActivity).catch { error in
+                    print(updatedActivity)
                     print("Error updating day plan activity: \(error)")
                 }
             } onDeleteAction: { deletedActivity in

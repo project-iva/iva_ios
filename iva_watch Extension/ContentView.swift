@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             NavigationLink(destination: ControlSessionsView()) {
-                Text("Go")
+                Text("Control sessions")
             }
             
             NavigationLink(destination: RaspberryClientControlsView()) {

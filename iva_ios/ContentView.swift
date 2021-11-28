@@ -13,7 +13,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink(destination: ControlSessionsView()) {
-                    Text("Go")
+                    Text("Control sessions")
                 }
                 
                 NavigationLink(destination: DayView()) {
