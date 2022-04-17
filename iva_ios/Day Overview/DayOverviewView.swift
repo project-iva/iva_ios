@@ -27,7 +27,16 @@ struct DayOverviewView: View {
             if currentActivity != nil {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Current activity").font(.title)
-                    ActivityView(activity: currentActivity!)
+                    ZStack {
+                        ActivityView(activity: currentActivity!, isCurrentActivity: true)
+                            .padding()
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                print("pressed")
+                            }
+                    }
+                    .background(Color(.systemGray6))
+                    .cornerRadius(10)
                 }.padding().onReceive(timer) { _ in
                     timeRemaining += 1
                 }
@@ -44,17 +53,19 @@ struct DayOverviewView: View {
                     }
                 }.pickerStyle(SegmentedPickerStyle())
             }.padding()
-            
-            switch overviewSegment {
-                case .upcoming:
-                    List(upcomingActivities) { upcomingActivity in
-                        Text(upcomingActivity.name)
-                    }
-                case .history:
-                    List {
-                        ForEach(pastActivities) { pastActivity in
-                            Text(pastActivity.name).listRowInsets(.init(top: 25, leading: 25, bottom: 25, trailing: 25))
-                        }
+            let otherActivities: [DayPlanActivity] = {
+                switch overviewSegment {
+                    case .upcoming:
+                        return upcomingActivities
+                    case .history:
+                        return pastActivities
+                }
+            }()
+            List(otherActivities) { activity in
+                ActivityView(activity: activity)
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        print("pressed 2")
                     }
             }
         }

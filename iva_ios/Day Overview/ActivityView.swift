@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ActivityView: View {
     var activity: DayPlanActivity
+    var isCurrentActivity = false
+    
     private var startTime: String {
         if activity.startedAt != nil {
             return activity.startedAt!
@@ -36,42 +38,45 @@ struct ActivityView: View {
     
     @State private var elapsedTime = 0
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
         VStack {
+            HStack(spacing: 10) {
+                Image(systemName: "pencil.circle.fill").resizable()
+                    .frame(width: 64, height: 64)
+                VStack(alignment: .leading) {
+                    Text(activity.name).font(.headline)
+                    Text(activity.description).fontWeight(.light).lineLimit(3)
+                }
+                Spacer()
+            }
             VStack {
-                HStack(spacing: 10) {
-                    Image(systemName: "pencil.circle.fill").resizable()
-                        .frame(width: 64, height: 64)
-                    VStack(alignment: .leading) {
-                        Text(activity.name).font(.headline)
-                        Text(activity.description).fontWeight(.light).lineLimit(3)
+                HStack {
+                    VStack {
+                        Text("From").font(.footnote).fontWeight(.light)
+                        Text(startTime.toDateTime().toTimeString(format: "HH:mm"))
                     }
                     Spacer()
-                }
-                VStack {
-                    HStack {
-                        VStack {
-                            Text("From").font(.footnote).fontWeight(.light)
-                            Text(startTime.toDateTime().toTimeString(format: "HH:mm"))
-                        }
-                        Spacer()
+                    if isCurrentActivity {
                         VStack {
                             Text("Progress").font(.footnote).fontWeight(.light)
                             Text("\(formatSeconds(elapsedTime)) / \(formatSeconds(timespanSeconds))")
                         }
                         
                         Spacer()
-                        VStack {
-                            Text("To").font(.footnote).fontWeight(.light)
-                            Text(endTime.toDateTime().toTimeString(format: "HH:mm"))
-                        }
                     }
+                    VStack {
+                        Text("To").font(.footnote).fontWeight(.light)
+                        Text(endTime.toDateTime().toTimeString(format: "HH:mm"))
+                    }
+                }
+                if isCurrentActivity {
                     ProgressView(value: Double(min(elapsedTime, timespanSeconds)), total: Double(timespanSeconds)).onReceive(timer) { time in
                         elapsedTime = Int(abs(time.distance(to: startTime.toDateTime())))
                     }
                 }
-            }.padding()
-        }.background(Color(.systemGray6)).cornerRadius(10)
+            }
+        }
     }
     
     private func formatSeconds(_ seconds: Int) -> String {
