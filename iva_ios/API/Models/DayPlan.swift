@@ -45,6 +45,9 @@ struct DayPlanActivity: Codable, Identifiable {
     var description: String
     var startTime: String
     var endTime: String
+    var startedAt: String?
+    var endedAt: String?
+    var skipped: Bool = false
     var type: DayPlanActivityType
 }
 

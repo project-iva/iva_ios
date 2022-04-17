@@ -5,3 +5,4 @@ disabled_rules:
   - trailing_whitespace
   - switch_case_alignment
   - identifier_name
+  - line_length

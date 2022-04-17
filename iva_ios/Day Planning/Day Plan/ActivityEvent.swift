@@ -24,8 +24,8 @@ public final class ActivityEvent: EventDescriptor {
     
     init(activity: DayPlanActivity) {
         self.activity = activity
-        startDate = activity.startTime.toDateTime()!
-        endDate = activity.endTime.toDateTime()!
+        startDate = activity.startTime.toDateTime()
+        endDate = activity.endTime.toDateTime()
         
         text = """
         \(activity.name)

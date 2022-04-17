@@ -23,11 +23,11 @@ struct EditDayPlanActivity: View {
             TextField("Activity name", text: $activity.name).textFieldStyle(RoundedBorderTextFieldStyle())
             TextField("Description", text: $activity.description).textFieldStyle(RoundedBorderTextFieldStyle())
             DatePicker("Start time", selection: Binding(
-                get: { activity.startTime.toDateTime()!},
+                get: { activity.startTime.toDateTime()},
                 set: { activity.startTime = $0.toTimeString() }
             ), displayedComponents: .hourAndMinute)
             DatePicker("End time", selection: Binding(
-                get: { activity.endTime.toDateTime()!},
+                get: { activity.endTime.toDateTime()},
                 set: { activity.endTime = $0.toTimeString() }
             ), displayedComponents: .hourAndMinute)
             

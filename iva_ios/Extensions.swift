@@ -21,9 +21,9 @@ extension Date {
         return calendar.date(from: components)!
     }
     
-    func toTimeString() -> String {
+    func toTimeString(format: String = "HH:mm:ss") -> String {
         let timeFormatter = DateFormatter()
-        timeFormatter.dateFormat = "HH:mm:ss"
+        timeFormatter.dateFormat = format
         timeFormatter.locale = Locale.current
         timeFormatter.timeZone = TimeZone.current
         
@@ -33,7 +33,7 @@ extension Date {
 
 // MARK: String Extensions
 extension String {
-    func toDateTime() -> Date? {
+    func toDateTime() -> Date {
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm:ss"
         timeFormatter.locale = Locale.current

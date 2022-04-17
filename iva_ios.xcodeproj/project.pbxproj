@@ -14,6 +14,7 @@
 		7832EA792645A18100371FA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA782645A18100371FA7 /* ContentView.swift */; };
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
 		7832EA7E2645A18200371FA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */; };
+		784A47BB280C3D490025A10B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784A47BA280C3D490025A10B /* ActivityView.swift */; };
 		7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */; };
 		7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C426A0C1E600F59BE2 /* BodyMass.swift */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A2434426851E7E00CF78EC /* ModelProtocols.swift */; };
 		78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */; };
 		78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8FB752683A63C0010423C /* RouterHelper.swift */; };
+		78AA1AF62809E76800B04D0D /* DayOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA1AF52809E76800B04D0D /* DayOverviewView.swift */; };
 		78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C626C825F000EDB53E /* ActivityEvent.swift */; };
 		78B116C926C82DBC00EDB53E /* EditDayPlanActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */; };
 		78C3053A26499B370001BE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3053926499B370001BE1D /* Assets.xcassets */; };
@@ -136,6 +138,7 @@
 		7832EA7A2645A18200371FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7832EA7F2645A18200371FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		784A47BA280C3D490025A10B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassReporter.swift; sourceTree = "<group>"; };
 		7868B3C426A0C1E600F59BE2 /* BodyMass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMass.swift; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		78A2434426851E7E00CF78EC /* ModelProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelProtocols.swift; sourceTree = "<group>"; };
 		78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayGoal.swift; sourceTree = "<group>"; };
 		78A8FB752683A63C0010423C /* RouterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHelper.swift; sourceTree = "<group>"; };
+		78AA1AF52809E76800B04D0D /* DayOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOverviewView.swift; sourceTree = "<group>"; };
 		78B116C626C825F000EDB53E /* ActivityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEvent.swift; sourceTree = "<group>"; };
 		78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayPlanActivity.swift; sourceTree = "<group>"; };
 		78C3053726499B340001BE1D /* iva_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -269,6 +273,7 @@
 		7832EA752645A18100371FA7 /* iva_ios */ = {
 			isa = PBXGroup;
 			children = (
+				78AA1AF42809E74C00B04D0D /* Day Overview */,
 				78878627273C7565005475B5 /* Voice Control */,
 				78F2B9F72703752B00105763 /* Raspberry Client Controls */,
 				78C4C09E26C1988800A3DB50 /* Day Planning */,
@@ -303,6 +308,15 @@
 				78F1C7EB273F152500AD2551 /* VoiceControlViewWatch.swift */,
 			);
 			path = "Voice Control";
+			sourceTree = "<group>";
+		};
+		78AA1AF42809E74C00B04D0D /* Day Overview */ = {
+			isa = PBXGroup;
+			children = (
+				78AA1AF52809E76800B04D0D /* DayOverviewView.swift */,
+				784A47BA280C3D490025A10B /* ActivityView.swift */,
+			);
+			path = "Day Overview";
 			sourceTree = "<group>";
 		};
 		78C3053826499B340001BE1D /* iva_watch */ = {
@@ -665,6 +679,7 @@
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
 				78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */,
 				78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */,
+				78AA1AF62809E76800B04D0D /* DayOverviewView.swift in Sources */,
 				78E7524126C3E9C7000BA320 /* DayTimelineView.swift in Sources */,
 				78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */,
 				78CE20A4269B707900AB55A0 /* ControlSession.swift in Sources */,
@@ -685,6 +700,7 @@
 				78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */,
 				780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */,
 				78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */,
+				784A47BB280C3D490025A10B /* ActivityView.swift in Sources */,
 				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
