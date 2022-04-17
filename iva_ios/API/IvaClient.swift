@@ -43,7 +43,6 @@ class IvaClient {
         }
     }
     
-    
     static func invokeRaspberryClient(action: RaspberryClientAction) -> Promise<Empty> {
         return Promise<Empty> { seal in
             ApiHandler.shared.makeRequest(request: RaspberryClientRouter.invokeAction(action),
@@ -57,7 +56,7 @@ class IvaClient {
     
     static func postUtterance(utterance: String) -> Promise<Empty> {
         return Promise<Empty> { seal in
-            ApiHandler.shared.makeRequest(request:  UtteranceRouter.postUtterance(utterance),
+            ApiHandler.shared.makeRequest(request: UtteranceRouter.postUtterance(utterance),
                                           resultType: Empty.self).done { response in
                 seal.fulfill(response.result)
             }.catch { error in
