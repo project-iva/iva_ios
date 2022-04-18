@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PromiseKit
 
 enum OverviewSegment: String, CaseIterable {
     case upcoming = "Upcoming"
@@ -19,9 +20,9 @@ struct DayOverviewView: View {
     @State private var pastActivities: [DayPlanActivity] = []
     @State private var activities: [DayPlanActivity] = []
     @State private var dayPlanId: Int = 0
-    @State private var timeRemaining = 100
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    @State private var showActionSheet = false
+    @State private var actionSheetActivity: DayPlanActivity?
+
     var body: some View {
         VStack {
             if currentActivity != nil {
@@ -32,14 +33,13 @@ struct DayOverviewView: View {
                             .padding()
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                print("pressed")
+                                actionSheetActivity = currentActivity
+                                showActionSheet = true
                             }
                     }
                     .background(Color(.systemGray6))
                     .cornerRadius(10)
-                }.padding().onReceive(timer) { _ in
-                    timeRemaining += 1
-                }
+                }.padding()
             }
             VStack(alignment: .leading) {
                 if currentActivity != nil {
@@ -53,6 +53,7 @@ struct DayOverviewView: View {
                     }
                 }.pickerStyle(SegmentedPickerStyle())
             }.padding()
+            
             let otherActivities: [DayPlanActivity] = {
                 switch overviewSegment {
                     case .upcoming:
@@ -65,11 +66,73 @@ struct DayOverviewView: View {
                 ActivityView(activity: activity)
                     .contentShape(Rectangle())
                     .onTapGesture {
-                        print("pressed 2")
-                    }
+                        actionSheetActivity = activity
+                        showActionSheet = true
+                }
             }
         }
         .navigationBarTitle("", displayMode: .inline)
+        .actionSheet(isPresented: $showActionSheet, content: {
+            guard var actionSheetActivity = actionSheetActivity else {
+                fatalError("Action sheet activity is null")
+            }
+
+            if actionSheetActivity.isCurrentActivity {
+                return ActionSheet(title: Text("Manage current activity"), buttons: [
+                    .default(Text("Finish")) {
+                        actionSheetActivity.endedAt = Date().toTimeString()
+                        IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity).done { _ in
+                            fetchDayPlan()
+                        }.catch { error in
+                            print(error)
+                        }
+                    },
+                    .default(Text("Finish and start next activity")) {
+                        actionSheetActivity.endedAt = Date().toTimeString()
+                        var promises = [IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity)]
+                        if var upcomingActivity = upcomingActivities.first {
+                            upcomingActivity.startedAt = Date().toTimeString()
+                            promises.append(IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: upcomingActivity))
+                        }
+                        
+                        when(fulfilled: promises).done { _ in
+                           fetchDayPlan()
+                        }.catch { error in
+                           print(error)
+                        }
+
+                    },
+                    .cancel()
+                ])
+            } else {
+                return ActionSheet(title: Text("Manage upcoming activity"), buttons: [
+                    .default(Text("Start activity")) {
+                        actionSheetActivity.startedAt = Date().toTimeString()
+                        var promises = [IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity)]
+                        
+                        // finish current activity
+                        if currentActivity != nil {
+                            currentActivity!.endedAt = Date().toTimeString()
+                            promises.append(IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: currentActivity!))
+                        }
+                        when(fulfilled: promises).done { _ in
+                            fetchDayPlan()
+                        }.catch { error in
+                            print(error)
+                        }
+                    },
+                    .default(Text("Skip activity")) {
+                        actionSheetActivity.skipped = true
+                        IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity).done { _ in
+                            fetchDayPlan()
+                        }.catch { error in
+                            print(error)
+                        }
+                    },
+                    .cancel()
+                ])
+            }
+        })
         .onAppear(perform: fetchDayPlan)
     }
     
@@ -88,7 +151,7 @@ struct DayOverviewView: View {
         upcomingActivities = []
         pastActivities = []
         for activity in activities.sorted(by: { $0.startTime.toDateTime() < $1.startTime.toDateTime() }) {
-            if activity.startedAt != nil && activity.endedAt == nil {
+            if activity.isCurrentActivity {
                 currentActivity = activity
                 continue
             }

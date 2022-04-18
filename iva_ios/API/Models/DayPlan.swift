@@ -51,6 +51,12 @@ struct DayPlanActivity: Codable, Identifiable {
     var type: DayPlanActivityType
 }
 
+extension DayPlanActivity {
+    var isCurrentActivity: Bool {
+        return self.startedAt != nil && self.endedAt == nil
+    }
+}
+
 struct DayPlan: Codable {
     let id: Int
     let activities: [DayPlanActivity]
