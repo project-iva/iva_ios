@@ -49,9 +49,7 @@ struct DayPlanActivity: Codable, Identifiable {
     var endedAt: String?
     var skipped: Bool = false
     var type: DayPlanActivityType
-}
-
-extension DayPlanActivity {
+    
     var isCurrentActivity: Bool {
         return self.startedAt != nil && self.endedAt == nil
     }

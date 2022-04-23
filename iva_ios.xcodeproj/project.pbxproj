@@ -32,6 +32,8 @@
 		78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */; };
 		78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A8FB752683A63C0010423C /* RouterHelper.swift */; };
 		78AA1AF62809E76800B04D0D /* DayOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA1AF52809E76800B04D0D /* DayOverviewView.swift */; };
+		78AE3D4828146CFF00DA8687 /* DayPlanning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AE3D4728146CFF00DA8687 /* DayPlanning.swift */; };
+		78AE3D4A28146E6000DA8687 /* DayPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AE3D4928146E6000DA8687 /* DayPlanningView.swift */; };
 		78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C626C825F000EDB53E /* ActivityEvent.swift */; };
 		78B116C926C82DBC00EDB53E /* EditDayPlanActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */; };
 		78C3053A26499B370001BE1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C3053926499B370001BE1D /* Assets.xcassets */; };
@@ -151,6 +153,8 @@
 		78A275FC26C9A88B00CCBF9E /* EditDayGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayGoal.swift; sourceTree = "<group>"; };
 		78A8FB752683A63C0010423C /* RouterHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterHelper.swift; sourceTree = "<group>"; };
 		78AA1AF52809E76800B04D0D /* DayOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOverviewView.swift; sourceTree = "<group>"; };
+		78AE3D4728146CFF00DA8687 /* DayPlanning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanning.swift; sourceTree = "<group>"; };
+		78AE3D4928146E6000DA8687 /* DayPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanningView.swift; sourceTree = "<group>"; };
 		78B116C626C825F000EDB53E /* ActivityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityEvent.swift; sourceTree = "<group>"; };
 		78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayPlanActivity.swift; sourceTree = "<group>"; };
 		78C3053726499B340001BE1D /* iva_watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +319,8 @@
 			children = (
 				78AA1AF52809E76800B04D0D /* DayOverviewView.swift */,
 				784A47BA280C3D490025A10B /* ActivityView.swift */,
+				78AE3D4728146CFF00DA8687 /* DayPlanning.swift */,
+				78AE3D4928146E6000DA8687 /* DayPlanningView.swift */,
 			);
 			path = "Day Overview";
 			sourceTree = "<group>";
@@ -691,6 +697,7 @@
 				78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
+				78AE3D4A28146E6000DA8687 /* DayPlanningView.swift in Sources */,
 				78F2B9F5270373E000105763 /* RaspberryClientAction.swift in Sources */,
 				78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */,
 				78B116C926C82DBC00EDB53E /* EditDayPlanActivity.swift in Sources */,
@@ -702,6 +709,7 @@
 				78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */,
 				784A47BB280C3D490025A10B /* ActivityView.swift in Sources */,
 				780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */,
+				78AE3D4828146CFF00DA8687 /* DayPlanning.swift in Sources */,
 				78E45058267FDB5700D04B3A /* Responses.swift in Sources */,
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
 				7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */,
