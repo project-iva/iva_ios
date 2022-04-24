@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ActivityView: View {
     var activity: DayPlanActivity
-    var isCurrentActivity = false
     
     private var startTime: String {
         if activity.startedAt != nil {
@@ -57,20 +56,21 @@ struct ActivityView: View {
                         Text(startTime.toDateTime().toTimeString(format: "HH:mm"))
                     }
                     Spacer()
-                    if isCurrentActivity {
-                        VStack {
-                            Text("Progress").font(.footnote).fontWeight(.light)
+                    VStack {
+                        Text("Status").font(.footnote).fontWeight(.light)
+                        if activity.status == .current {
                             Text("\(formatSeconds(elapsedTime)) / \(formatSeconds(timespanSeconds))")
+                        } else {
+                            Text(activity.status.rawValue)
                         }
-                        
-                        Spacer()
                     }
+                    Spacer()
                     VStack {
                         Text("To").font(.footnote).fontWeight(.light)
                         Text(endTime.toDateTime().toTimeString(format: "HH:mm"))
                     }
                 }
-                if isCurrentActivity {
+                if activity.status == .current {
                     ProgressView(value: Double(min(elapsedTime, timespanSeconds)), total: Double(timespanSeconds)).onReceive(timer) { time in
                         elapsedTime = Int(abs(time.distance(to: startTime.toDateTime())))
                     }

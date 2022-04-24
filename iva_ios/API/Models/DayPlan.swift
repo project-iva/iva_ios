@@ -39,7 +39,16 @@ enum DayPlanActivityType: String, CaseIterable, Codable {
     }
 }
 
+enum DayPlanActivityStatus {}
+
 struct DayPlanActivity: Codable, Identifiable {
+    enum Status: String {
+        case upcoming = "Upcoming"
+        case current = "Current"
+        case finished = "Finished"
+        case skipped = "Skipped"
+    }
+    
     let id: Int
     var name: String
     var description: String
@@ -50,8 +59,11 @@ struct DayPlanActivity: Codable, Identifiable {
     var skipped: Bool = false
     var type: DayPlanActivityType
     
-    var isCurrentActivity: Bool {
-        return self.startedAt != nil && self.endedAt == nil
+    var status: Status {
+        if self.startedAt != nil && self.endedAt == nil { return .current }
+        if self.startedAt != nil && self.endedAt != nil { return .finished }
+        if self.skipped { return .skipped }
+        return .upcoming
     }
 }
 
@@ -61,7 +73,17 @@ struct DayPlan: Codable {
     let date: String
 }
 
+struct DayPlanTemplateActivity: Codable, Identifiable {
+    let id: Int
+    var name: String
+    var description: String
+    var startTime: String
+    var endTime: String
+    var type: DayPlanActivityType
+}
+
 struct DayPlanTemplate: Codable {
     let id: Int
     let name: String
+    let activities: [DayPlanTemplateActivity]
 }

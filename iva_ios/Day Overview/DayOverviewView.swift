@@ -32,7 +32,7 @@ struct DayOverviewView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Current activity").font(.title)
                     ZStack {
-                        ActivityView(activity: currentActivity!, isCurrentActivity: true)
+                        ActivityView(activity: currentActivity!)
                             .padding()
                             .contentShape(Rectangle())
                             .onTapGesture {
@@ -101,7 +101,7 @@ struct DayOverviewView: View {
                 fatalError("Action sheet activity is null")
             }
             
-            if actionSheetActivity.isCurrentActivity {
+            if actionSheetActivity.status == .current {
                 return ActionSheet(title: Text("Manage current activity"), buttons: [
                     .default(Text("Finish")) {
                         actionSheetActivity.endedAt = Date().toTimeString()
@@ -192,17 +192,16 @@ struct DayOverviewView: View {
     }
     
     private func filterActivities(_ activities: [DayPlanActivity]) {
-        print(activities)
         currentActivity = nil
         upcomingActivities = []
         pastActivities = []
         for activity in activities.sorted(by: { $0.startTime.toDateTime() < $1.startTime.toDateTime() }) {
-            if activity.isCurrentActivity {
+            if activity.status == .current {
                 currentActivity = activity
                 continue
             }
             
-            if activity.endedAt != nil || activity.skipped {
+            if activity.status == .finished || activity.status == .skipped {
                 pastActivities.append(activity)
                 continue
             }
