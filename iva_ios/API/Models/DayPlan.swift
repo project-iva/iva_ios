@@ -5,7 +5,7 @@
 //  Created by Igor Pidik on 09/08/2021.
 //
 
-import Foundation
+import UIKit
 
 enum DayPlanActivityType: String, CaseIterable, Codable {
     case morningRoutine = "MORNING_ROUTINE"
@@ -35,6 +35,27 @@ enum DayPlanActivityType: String, CaseIterable, Codable {
                 return "Hobby"
             case .other:
                 return "Other"
+        }
+    }
+    
+    var icon: UIImage {
+        switch self {
+            case .morningRoutine:
+                return UIImage(named: "MorningIcon")!
+            case .eveningRoutine:
+                return UIImage(named: "EveningIcon")!
+            case .meal:
+                return UIImage(named: "MealIcon")!
+            case .leisure:
+                return UIImage(named: "LeisureIcon")!
+            case .workout:
+                return UIImage(named: "WorkoutIcon")!
+            case .job:
+                return UIImage(named: "JobIcon")!
+            case .hobby:
+                return UIImage(named: "HobbyIcon")!
+            case .other:
+                return UIImage(named: "OtherIcon")!
         }
     }
 }
