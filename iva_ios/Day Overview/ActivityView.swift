@@ -41,8 +41,7 @@ struct ActivityView: View {
     var body: some View {
         VStack {
             HStack(spacing: 10) {
-                Image(systemName: "pencil.circle.fill").resizable()
-                    .frame(width: 64, height: 64)
+                Image(uiImage: activity.type.icon).resizable().frame(width: 64, height: 64)
                 VStack(alignment: .leading) {
                     Text(activity.name).font(.headline)
                     Text(activity.description).fontWeight(.light).lineLimit(3)
