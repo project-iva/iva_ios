@@ -72,6 +72,7 @@ struct DayOverviewView: View {
             List(otherActivities) { activity in
                 ActivityView(activity: activity)
                     .padding(.top, 8)
+                    .padding(.bottom, 8)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         if editMode?.wrappedValue.isEditing ?? false {

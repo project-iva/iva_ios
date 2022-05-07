@@ -10,11 +10,15 @@
 		189CAF757DE933D103CF0C1B /* Pods_iva_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */; };
 		780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780530B126825A43007A7EAA /* SleepAnalysis.swift */; };
 		780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */; };
+		78182C99282573FC004B5FB8 /* DPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78182C98282573FC004B5FB8 /* DPView.swift */; };
 		7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA762645A18100371FA7 /* iva_iosApp.swift */; };
 		7832EA792645A18100371FA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA782645A18100371FA7 /* ContentView.swift */; };
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
 		7832EA7E2645A18200371FA7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */; };
 		784A47BB280C3D490025A10B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784A47BA280C3D490025A10B /* ActivityView.swift */; };
+		785071A32826B39B00A28761 /* TemplateActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A22826B39B00A28761 /* TemplateActivityView.swift */; };
+		785071A52826B96500A28761 /* SelectActivitiesFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */; };
+		785071A72826CA0C00A28761 /* SaveDayPlanTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A62826CA0C00A28761 /* SaveDayPlanTemplateView.swift */; };
 		7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */; };
 		7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C426A0C1E600F59BE2 /* BodyMass.swift */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
@@ -134,6 +138,7 @@
 		72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		780530B126825A43007A7EAA /* SleepAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysis.swift; sourceTree = "<group>"; };
 		780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysisReporter.swift; sourceTree = "<group>"; };
+		78182C98282573FC004B5FB8 /* DPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPView.swift; sourceTree = "<group>"; };
 		7832EA732645A18100371FA7 /* iva_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832EA762645A18100371FA7 /* iva_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iva_iosApp.swift; sourceTree = "<group>"; };
 		7832EA782645A18100371FA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,6 +146,9 @@
 		7832EA7D2645A18200371FA7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7832EA7F2645A18200371FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		784A47BA280C3D490025A10B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		785071A22826B39B00A28761 /* TemplateActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateActivityView.swift; sourceTree = "<group>"; };
+		785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActivitiesFromTemplate.swift; sourceTree = "<group>"; };
+		785071A62826CA0C00A28761 /* SaveDayPlanTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDayPlanTemplateView.swift; sourceTree = "<group>"; };
 		7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassReporter.swift; sourceTree = "<group>"; };
 		7868B3C426A0C1E600F59BE2 /* BodyMass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMass.swift; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -321,6 +329,10 @@
 				784A47BA280C3D490025A10B /* ActivityView.swift */,
 				78AE3D4728146CFF00DA8687 /* DayPlanning.swift */,
 				78AE3D4928146E6000DA8687 /* DayPlanningView.swift */,
+				78182C98282573FC004B5FB8 /* DPView.swift */,
+				785071A22826B39B00A28761 /* TemplateActivityView.swift */,
+				785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */,
+				785071A62826CA0C00A28761 /* SaveDayPlanTemplateView.swift */,
 			);
 			path = "Day Overview";
 			sourceTree = "<group>";
@@ -676,12 +688,14 @@
 				78F1C7E8273F0AC700AD2551 /* VoiceControlHelper.swift in Sources */,
 				78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */,
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
+				785071A72826CA0C00A28761 /* SaveDayPlanTemplateView.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
 				78C4C0A226C198AE00A3DB50 /* DayPlanView.swift in Sources */,
 				78F2B9F92703756300105763 /* RaspberryClientControlsView.swift in Sources */,
 				7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */,
 				78F6E3A126D29309000F1B28 /* SelectTemplateView.swift in Sources */,
 				78C4C09B26C194C600A3DB50 /* DayGoals.swift in Sources */,
+				785071A32826B39B00A28761 /* TemplateActivityView.swift in Sources */,
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
 				78C42E4C269C63B300FBCAE1 /* IvaBackendRouters.swift in Sources */,
 				78CE20A6269B962C00AB55A0 /* Meal.swift in Sources */,
@@ -695,6 +709,7 @@
 				78C4C09D26C1980B00A3DB50 /* DayPlan.swift in Sources */,
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
 				78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */,
+				785071A52826B96500A28761 /* SelectActivitiesFromTemplate.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
 				78AE3D4A28146E6000DA8687 /* DayPlanningView.swift in Sources */,
@@ -714,6 +729,7 @@
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
 				7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */,
 				78C4C0A826C1A2A900A3DB50 /* DayGoalsView.swift in Sources */,
+				78182C99282573FC004B5FB8 /* DPView.swift in Sources */,
 				78C4C0A426C199EB00A3DB50 /* IvaBackendClient.swift in Sources */,
 				78878629273C7582005475B5 /* VoiceControlView.swift in Sources */,
 				78E7524526C42F08000BA320 /* Extensions.swift in Sources */,

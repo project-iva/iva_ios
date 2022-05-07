@@ -16,6 +16,7 @@ struct DayPlanningView: View {
     @State private var showAddActivitySheet = false
     @State private var showAddActivitiesFromTemplateSheet = false
     @State private var showAddActionSheet = false
+    @State private var showSaveTemplateSheet = false
     
     var body: some View {
         List(activities) { activity in
@@ -88,21 +89,29 @@ struct DayPlanningView: View {
             }
         }
         .sheet(isPresented: $showAddActivitiesFromTemplateSheet, content: {
-            SelectTemplateView { template in
+            DPView { templateActivities in
                 showAddActivitiesFromTemplateSheet = false
-                IvaBackendClient.addActivitiesFromDayPlanTemplate(dayPlanId: dayPlanId, dayPlanTemplateId: template.id)
-                    .done { updatedDayPlan in
-                        activities = updatedDayPlan.activities
-                    }.catch { error in
-                        print(error)
-                    }
-                
+                let activitiesToBeAdded = templateActivities.map({ $0.toDayPlanActivity()})
+                activities.append(contentsOf: activitiesToBeAdded)
+                for newActivity in activitiesToBeAdded {
+                    IvaBackendClient.postDayPlanActivity(dayPlanId: dayPlanId, activity: newActivity)
+                        .catch { error in
+                            print("Error adding day plan activity: \(error)")
+                        }
+                }
+            }
+        })
+        .sheet(isPresented: $showSaveTemplateSheet, content: {
+            let template = DayPlanTemplate(id: -1, name: "", activities: activities.map({ $0.toDayPlanTemplateActivity() }))
+            SaveDayPlanTemplateView(template: template) { newTemplate in
+                showSaveTemplateSheet = false
             }
         })
         .actionSheet(isPresented: $showAddActionSheet) {
-            ActionSheet(title: Text("Add activities"), buttons: [
+            ActionSheet(title: Text("Add/Save"), buttons: [
                 .default(Text("Add an activity")) { showAddActivitySheet = true },
                 .default(Text("Add activities from template")) { showAddActivitiesFromTemplateSheet = true },
+                .default(Text("Save as a template")) { showSaveTemplateSheet = true },
                 .cancel()
             ])
         }

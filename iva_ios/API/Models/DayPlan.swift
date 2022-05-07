@@ -60,9 +60,16 @@ enum DayPlanActivityType: String, CaseIterable, Codable {
     }
 }
 
-enum DayPlanActivityStatus {}
+protocol Activity {
+    var id: Int { get }
+    var name: String { get set }
+    var description: String { get set }
+    var startTime: String { get set }
+    var endTime: String { get set }
+    var type: DayPlanActivityType { get set }
+}
 
-struct DayPlanActivity: Codable, Identifiable {
+struct DayPlanActivity: Codable, Identifiable, Activity {
     enum Status: String {
         case upcoming = "Upcoming"
         case current = "Current"
@@ -86,6 +93,10 @@ struct DayPlanActivity: Codable, Identifiable {
         if self.skipped { return .skipped }
         return .upcoming
     }
+    
+    func toDayPlanTemplateActivity() -> DayPlanTemplateActivity {
+        return DayPlanTemplateActivity(id: id, name: name, description: description, startTime: startTime, endTime: endTime, type: type)
+    }
 }
 
 struct DayPlan: Codable {
@@ -94,17 +105,21 @@ struct DayPlan: Codable {
     let date: String
 }
 
-struct DayPlanTemplateActivity: Codable, Identifiable {
+struct DayPlanTemplateActivity: Codable, Identifiable, Activity, Hashable {
     let id: Int
     var name: String
     var description: String
     var startTime: String
     var endTime: String
     var type: DayPlanActivityType
+    
+    func toDayPlanActivity() -> DayPlanActivity {
+        return DayPlanActivity(id: id, name: name, description: description, startTime: startTime, endTime: endTime, startedAt: nil, endedAt: nil, skipped: false, type: type)
+    }
 }
 
-struct DayPlanTemplate: Codable {
+struct DayPlanTemplate: Codable, Identifiable {
     let id: Int
-    let name: String
+    var name: String
     let activities: [DayPlanTemplateActivity]
 }
