@@ -28,6 +28,10 @@ struct ContentView: View {
                     Text("Planning")
                 }
                 
+                NavigationLink(destination: DayPlanTemplatesView()) {
+                    Text("Templates")
+                }
+                
                 NavigationLink(destination: RaspberryClientControlsView()) {
                     Text("Raspberry client controls")
                 }

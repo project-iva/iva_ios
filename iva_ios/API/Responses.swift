@@ -25,7 +25,7 @@ class SuccessfulAPIResponse<T: Decodable>: APIResponse {
     }
 }
 
-class ErrorAPIResponse: APIResponse, Error {
+class ErrorAPIResponse: APIResponse, Error, @unchecked Sendable {
     let error: Error
     let errorData: Data?
 

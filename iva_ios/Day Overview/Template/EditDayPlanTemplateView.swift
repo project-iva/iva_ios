@@ -7,14 +7,19 @@
 
 import SwiftUI
 
-struct SaveDayPlanTemplateView: View {
+struct EditDayPlanTemplateView: View {
     @State var template: DayPlanTemplate
+    let creatingTemplate = false
     let onSave: (DayPlanTemplate) -> Void
     
     var body: some View {
         VStack(spacing: 0) {
             VStack {
-                Text("Save template").font(.title)
+                if creatingTemplate {
+                    Text("Save template").font(.title)
+                } else {
+                    Text("Edit template").font(.title)
+                }
                 TextField("Template name", text: $template.name).textFieldStyle(RoundedBorderTextFieldStyle())
             }.padding().padding(.bottom, 0)
             List(template.activities) { activity in

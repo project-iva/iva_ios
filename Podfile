@@ -6,15 +6,15 @@ target 'iva_ios' do
   use_frameworks!
 
   # Pods for iva_ios
-	pod 'Alamofire', '~> 5.2'
+	pod 'Alamofire'
     pod 'HealthKitReporter', '~> 1.4'
-    pod "PromiseKit", "~> 6.8"
+    pod "PromiseKit", '~> 6.17'
     pod 'AwaitKit', :git => 'https://github.com/yannickl/AwaitKit.git', :branch => 'master'
     pod 'CalendarKit'
 end
 
 target 'iva_watch Extension' do
     platform :watchos, '7.4'
-    pod 'Alamofire', '~> 5.2'
-    pod "PromiseKit", "~> 6.8"
+    pod 'Alamofire'
+    pod "PromiseKit", '~> 6.17'
 end

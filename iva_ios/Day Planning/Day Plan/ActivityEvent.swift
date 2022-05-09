@@ -8,6 +8,7 @@
 import CalendarKit
 
 public final class ActivityEvent: EventDescriptor {
+    public var dateInterval = DateInterval(start: Date(), end: Date())
     public var startDate = Date()
     public var endDate = Date()
     public var isAllDay = false
@@ -26,7 +27,7 @@ public final class ActivityEvent: EventDescriptor {
         self.activity = activity
         startDate = activity.startTime.toDateTime()
         endDate = activity.endTime.toDateTime()
-        
+        dateInterval = DateInterval(start: startDate, end: endDate)
         text = """
         \(activity.name)
         \(activity.description)

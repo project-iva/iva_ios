@@ -121,5 +121,5 @@ struct DayPlanTemplateActivity: Codable, Identifiable, Activity, Hashable {
 struct DayPlanTemplate: Codable, Identifiable {
     let id: Int
     var name: String
-    let activities: [DayPlanTemplateActivity]
+    var activities: [DayPlanTemplateActivity]
 }

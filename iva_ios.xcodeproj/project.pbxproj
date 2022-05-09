@@ -3,11 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		189CAF757DE933D103CF0C1B /* Pods_iva_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */; };
+		6D29B30E06F6CF57EF543765 /* libPods-iva_watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF47F0A834B77C228B447F0 /* libPods-iva_watch Extension.a */; };
 		780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780530B126825A43007A7EAA /* SleepAnalysis.swift */; };
 		780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */; };
 		78182C99282573FC004B5FB8 /* DPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78182C98282573FC004B5FB8 /* DPView.swift */; };
@@ -18,11 +18,13 @@
 		784A47BB280C3D490025A10B /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784A47BA280C3D490025A10B /* ActivityView.swift */; };
 		785071A32826B39B00A28761 /* TemplateActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A22826B39B00A28761 /* TemplateActivityView.swift */; };
 		785071A52826B96500A28761 /* SelectActivitiesFromTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */; };
-		785071A72826CA0C00A28761 /* SaveDayPlanTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A62826CA0C00A28761 /* SaveDayPlanTemplateView.swift */; };
+		785071A72826CA0C00A28761 /* EditDayPlanTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785071A62826CA0C00A28761 /* EditDayPlanTemplateView.swift */; };
 		7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */; };
 		7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C426A0C1E600F59BE2 /* BodyMass.swift */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
 		78878629273C7582005475B5 /* VoiceControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78878628273C7582005475B5 /* VoiceControlView.swift */; };
+		788ED6DF2827F532004DA835 /* DayPlanTemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788ED6DE2827F532004DA835 /* DayPlanTemplatesView.swift */; };
+		788ED6E228280A96004DA835 /* DayPlanTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */; };
 		78A15AEE269C731E000EBCBF /* RoutineControlSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */; };
 		78A15AF0269C73AE000EBCBF /* RoutineStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A15AEF269C73AD000EBCBF /* RoutineStep.swift */; };
 		78A15AF1269CACD2000EBCBF /* ControlSessionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A1269B6F4800AB55A0 /* ControlSessionsView.swift */; };
@@ -86,7 +88,7 @@
 		78F2B9FA270376D300105763 /* RaspberryClientControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */; };
 		78F6E3A126D29309000F1B28 /* SelectTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E3A026D29309000F1B28 /* SelectTemplateView.swift */; };
 		78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */; };
-		EE67B2E17E4E8D04303A5DBD /* libPods-iva_watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */; };
+		939508641C4CBD1DFC1CDE14 /* Pods_iva_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916B3F83CE4A0FD124BCA969 /* Pods_iva_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,10 +134,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1A76B3B3620276956F32EB3D /* Pods-iva_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios.release.xcconfig"; sourceTree = "<group>"; };
-		52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iva_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		4854AC9E3AC1519EA67FD6E0 /* Pods-iva_watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.release.xcconfig"; path = "Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		5B5B397320E8ECF60B24C8DA /* Pods-iva_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.release.xcconfig"; path = "Target Support Files/Pods-iva_ios/Pods-iva_ios.release.xcconfig"; sourceTree = "<group>"; };
 		780530B126825A43007A7EAA /* SleepAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysis.swift; sourceTree = "<group>"; };
 		780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysisReporter.swift; sourceTree = "<group>"; };
 		78182C98282573FC004B5FB8 /* DPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPView.swift; sourceTree = "<group>"; };
@@ -148,11 +148,13 @@
 		784A47BA280C3D490025A10B /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		785071A22826B39B00A28761 /* TemplateActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateActivityView.swift; sourceTree = "<group>"; };
 		785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectActivitiesFromTemplate.swift; sourceTree = "<group>"; };
-		785071A62826CA0C00A28761 /* SaveDayPlanTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDayPlanTemplateView.swift; sourceTree = "<group>"; };
+		785071A62826CA0C00A28761 /* EditDayPlanTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDayPlanTemplateView.swift; sourceTree = "<group>"; };
 		7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassReporter.swift; sourceTree = "<group>"; };
 		7868B3C426A0C1E600F59BE2 /* BodyMass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMass.swift; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78878628273C7582005475B5 /* VoiceControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlView.swift; sourceTree = "<group>"; };
+		788ED6DE2827F532004DA835 /* DayPlanTemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTemplatesView.swift; sourceTree = "<group>"; };
+		788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTemplateView.swift; sourceTree = "<group>"; };
 		78A15AED269C731E000EBCBF /* RoutineControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineControlSessionView.swift; sourceTree = "<group>"; };
 		78A15AEF269C73AD000EBCBF /* RoutineStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStep.swift; sourceTree = "<group>"; };
 		78A243402685005700CF78EC /* MindfulSessionReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MindfulSessionReporter.swift; sourceTree = "<group>"; };
@@ -206,8 +208,10 @@
 		78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryClientControlsView.swift; sourceTree = "<group>"; };
 		78F6E3A026D29309000F1B28 /* SelectTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTemplateView.swift; sourceTree = "<group>"; };
 		78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaHealthKitReporter.swift; sourceTree = "<group>"; };
-		B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iva_watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		7A67CC70AC85872552EF1F27 /* Pods-iva_watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.debug.xcconfig"; path = "Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		916B3F83CE4A0FD124BCA969 /* Pods_iva_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iva_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8B473C1BC8B11DD183658B5 /* Pods-iva_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.debug.xcconfig"; path = "Target Support Files/Pods-iva_ios/Pods-iva_ios.debug.xcconfig"; sourceTree = "<group>"; };
+		CAF47F0A834B77C228B447F0 /* libPods-iva_watch Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iva_watch Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,8 +219,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				189CAF757DE933D103CF0C1B /* Pods_iva_ios.framework in Frameworks */,
 				78D8525A264C7304001DAC38 /* HealthKit.framework in Frameworks */,
+				939508641C4CBD1DFC1CDE14 /* Pods_iva_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE67B2E17E4E8D04303A5DBD /* libPods-iva_watch Extension.a in Frameworks */,
+				6D29B30E06F6CF57EF543765 /* libPods-iva_watch Extension.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,10 +246,21 @@
 			isa = PBXGroup;
 			children = (
 				78D85259264C7304001DAC38 /* HealthKit.framework */,
-				5CD4D0673AE95697900A261C /* Pods_iva_ios.framework */,
-				B4E128AAC7DDBF481E11E190 /* libPods-iva_watch Extension.a */,
+				916B3F83CE4A0FD124BCA969 /* Pods_iva_ios.framework */,
+				CAF47F0A834B77C228B447F0 /* libPods-iva_watch Extension.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		119C06779DEE4671E7003AC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A8B473C1BC8B11DD183658B5 /* Pods-iva_ios.debug.xcconfig */,
+				5B5B397320E8ECF60B24C8DA /* Pods-iva_ios.release.xcconfig */,
+				7A67CC70AC85872552EF1F27 /* Pods-iva_watch Extension.debug.xcconfig */,
+				4854AC9E3AC1519EA67FD6E0 /* Pods-iva_watch Extension.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		780A46742683C12100EDED5A /* HealthKit Reporting */ = {
@@ -267,8 +282,8 @@
 				78C3053826499B340001BE1D /* iva_watch */,
 				78C3054426499B370001BE1D /* iva_watch Extension */,
 				7832EA742645A18100371FA7 /* Products */,
-				C1C5F6739D5B282130E6703E /* Pods */,
 				0B48B016CB8DAFD9C16F4D28 /* Frameworks */,
+				119C06779DEE4671E7003AC3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -322,17 +337,27 @@
 			path = "Voice Control";
 			sourceTree = "<group>";
 		};
+		788ED6E0282809F6004DA835 /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				788ED6DE2827F532004DA835 /* DayPlanTemplatesView.swift */,
+				785071A22826B39B00A28761 /* TemplateActivityView.swift */,
+				785071A62826CA0C00A28761 /* EditDayPlanTemplateView.swift */,
+				788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
 		78AA1AF42809E74C00B04D0D /* Day Overview */ = {
 			isa = PBXGroup;
 			children = (
+				788ED6E0282809F6004DA835 /* Template */,
 				78AA1AF52809E76800B04D0D /* DayOverviewView.swift */,
 				784A47BA280C3D490025A10B /* ActivityView.swift */,
 				78AE3D4728146CFF00DA8687 /* DayPlanning.swift */,
 				78AE3D4928146E6000DA8687 /* DayPlanningView.swift */,
 				78182C98282573FC004B5FB8 /* DPView.swift */,
-				785071A22826B39B00A28761 /* TemplateActivityView.swift */,
 				785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */,
-				785071A62826CA0C00A28761 /* SaveDayPlanTemplateView.swift */,
 			);
 			path = "Day Overview";
 			sourceTree = "<group>";
@@ -461,17 +486,6 @@
 			path = "Raspberry Client Controls";
 			sourceTree = "<group>";
 		};
-		C1C5F6739D5B282130E6703E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */,
-				1A76B3B3620276956F32EB3D /* Pods-iva_ios.release.xcconfig */,
-				52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */,
-				72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -479,13 +493,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7832EA822645A18200371FA7 /* Build configuration list for PBXNativeTarget "iva_ios" */;
 			buildPhases = (
-				EB6FEE933498611986FBC96D /* [CP] Check Pods Manifest.lock */,
+				2A95329A855B3D1E39CB6DC2 /* [CP] Check Pods Manifest.lock */,
 				7832EA6F2645A18100371FA7 /* Sources */,
 				7832EA702645A18100371FA7 /* Frameworks */,
 				7832EA712645A18100371FA7 /* Resources */,
 				78C3056026499B380001BE1D /* Embed Watch Content */,
-				6C5D18933B69182681C787ED /* [CP] Embed Pods Frameworks */,
 				78A8FB742683966C0010423C /* ShellScript */,
+				86E89B74F3967407D2FC0DB5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -519,7 +533,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78C3055926499B380001BE1D /* Build configuration list for PBXNativeTarget "iva_watch Extension" */;
 			buildPhases = (
-				C1868EB6C62FC8BBB239839E /* [CP] Check Pods Manifest.lock */,
+				92E7FE29EA7DBC8C1C776B57 /* [CP] Check Pods Manifest.lock */,
 				78C3053C26499B370001BE1D /* Sources */,
 				78C3053D26499B370001BE1D /* Frameworks */,
 				78C3053E26499B370001BE1D /* Resources */,
@@ -603,30 +617,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		6C5D18933B69182681C787ED /* [CP] Embed Pods Frameworks */ = {
+		2A95329A855B3D1E39CB6DC2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-framework/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AwaitKit/AwaitKit.framework",
-				"${BUILT_PRODUCTS_DIR}/CalendarKit/CalendarKit.framework",
-				"${BUILT_PRODUCTS_DIR}/HealthKitReporter/HealthKitReporter.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			inputFileListPaths = (
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AwaitKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CalendarKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HealthKitReporter.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"$(DERIVED_FILE_DIR)/Pods-iva_ios-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		78A8FB742683966C0010423C /* ShellScript */ = {
@@ -642,36 +652,39 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		C1868EB6C62FC8BBB239839E /* [CP] Check Pods Manifest.lock */ = {
+		86E89B74F3967407D2FC0DB5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iva_watch Extension-checkManifestLockResult.txt",
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iva_ios/Pods-iva_ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB6FEE933498611986FBC96D /* [CP] Check Pods Manifest.lock */ = {
+		92E7FE29EA7DBC8C1C776B57 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iva_ios-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-iva_watch Extension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -688,7 +701,7 @@
 				78F1C7E8273F0AC700AD2551 /* VoiceControlHelper.swift in Sources */,
 				78A2434526851E7E00CF78EC /* ModelProtocols.swift in Sources */,
 				78E4505A267FDE2300D04B3A /* Router.swift in Sources */,
-				785071A72826CA0C00A28761 /* SaveDayPlanTemplateView.swift in Sources */,
+				785071A72826CA0C00A28761 /* EditDayPlanTemplateView.swift in Sources */,
 				787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */,
 				78C4C0A226C198AE00A3DB50 /* DayPlanView.swift in Sources */,
 				78F2B9F92703756300105763 /* RaspberryClientControlsView.swift in Sources */,
@@ -709,6 +722,7 @@
 				78C4C09D26C1980B00A3DB50 /* DayPlan.swift in Sources */,
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
 				78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */,
+				788ED6DF2827F532004DA835 /* DayPlanTemplatesView.swift in Sources */,
 				785071A52826B96500A28761 /* SelectActivitiesFromTemplate.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
@@ -720,6 +734,7 @@
 				78E45056267FDA7500D04B3A /* ApiHandler.swift in Sources */,
 				7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */,
 				78B116C726C825F000EDB53E /* ActivityEvent.swift in Sources */,
+				788ED6E228280A96004DA835 /* DayPlanTemplateView.swift in Sources */,
 				780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */,
 				78A8FB762683A63C0010423C /* RouterHelper.swift in Sources */,
 				784A47BB280C3D490025A10B /* ActivityView.swift in Sources */,
@@ -899,7 +914,7 @@
 		};
 		7832EA832645A18200371FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C9AA95E2E5BDBFD1015C3D70 /* Pods-iva_ios.debug.xcconfig */;
+			baseConfigurationReference = A8B473C1BC8B11DD183658B5 /* Pods-iva_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -925,7 +940,7 @@
 		};
 		7832EA842645A18200371FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A76B3B3620276956F32EB3D /* Pods-iva_ios.release.xcconfig */;
+			baseConfigurationReference = 5B5B397320E8ECF60B24C8DA /* Pods-iva_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -951,7 +966,7 @@
 		};
 		78C3055A26499B380001BE1D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 52A17005BEB9461226286E23 /* Pods-iva_watch Extension.debug.xcconfig */;
+			baseConfigurationReference = 7A67CC70AC85872552EF1F27 /* Pods-iva_watch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -976,7 +991,7 @@
 		};
 		78C3055B26499B380001BE1D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72EC2863E663761A6BCCFC3B /* Pods-iva_watch Extension.release.xcconfig */;
+			baseConfigurationReference = 4854AC9E3AC1519EA67FD6E0 /* Pods-iva_watch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;

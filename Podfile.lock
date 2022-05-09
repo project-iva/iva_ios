@@ -1,28 +1,28 @@
 PODS:
-  - Alamofire (5.4.3)
+  - Alamofire (5.6.1)
   - AwaitKit (5.2.0):
     - PromiseKit (~> 6)
-  - CalendarKit (1.0.6)
-  - HealthKitReporter (1.4.3)
-  - PromiseKit (6.13.1):
-    - PromiseKit/CorePromise (= 6.13.1)
-    - PromiseKit/Foundation (= 6.13.1)
-    - PromiseKit/UIKit (= 6.13.1)
-  - PromiseKit/CorePromise (6.13.1)
-  - PromiseKit/Foundation (6.13.1):
+  - CalendarKit (1.1.4)
+  - HealthKitReporter (1.6.5)
+  - PromiseKit (6.17.0):
+    - PromiseKit/CorePromise (= 6.17.0)
+    - PromiseKit/Foundation (= 6.17.0)
+    - PromiseKit/UIKit (= 6.17.0)
+  - PromiseKit/CorePromise (6.17.0)
+  - PromiseKit/Foundation (6.17.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.13.1):
+  - PromiseKit/UIKit (6.17.0):
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire
   - AwaitKit (from `https://github.com/yannickl/AwaitKit.git`, branch `master`)
   - CalendarKit
   - HealthKitReporter (~> 1.4)
-  - PromiseKit (~> 6.8)
+  - PromiseKit (~> 6.17)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - CalendarKit
     - HealthKitReporter
@@ -39,12 +39,12 @@ CHECKOUT OPTIONS:
     :git: https://github.com/yannickl/AwaitKit.git
 
 SPEC CHECKSUMS:
-  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   AwaitKit: 512626cd12c82b1fbffddc8f414d0364cb456004
-  CalendarKit: eb72185fdc61a65107e4edbedb7b6a8f409fb19b
-  HealthKitReporter: 5f061ac7ecea833cf1374de6de8fc2780136066f
-  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  CalendarKit: b858714286ba4f2b19544d79d42c3512949f1da5
+  HealthKitReporter: cec816c8f9477c8a0a8e2f90dd7aa0780bf21e16
+  PromiseKit: 996202d4cae72b7801b312abef4cd2f995b2978a
 
-PODFILE CHECKSUM: e9ce854c8c53b668ffa254dc3060823dde617ff8
+PODFILE CHECKSUM: a9769b2b1f045d35bb7f33df930bb0f7c5083eba
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.11.3

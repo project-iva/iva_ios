@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct EditDayPlanActivity: View {
-    @State var activity: DayPlanActivity
+struct EditDayPlanActivity<T: Activity>: View {
+    @State var activity: T
     @State var addingActivity: Bool
-    var onSaveAction: ((DayPlanActivity) -> Void)
-    var onDeleteAction: ((DayPlanActivity) -> Void)?
+    var onSaveAction: ((T) -> Void)
+    var onDeleteAction: ((T) -> Void)?
     
     var body: some View {
         VStack {

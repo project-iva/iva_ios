@@ -103,7 +103,7 @@ struct DayPlanningView: View {
         })
         .sheet(isPresented: $showSaveTemplateSheet, content: {
             let template = DayPlanTemplate(id: -1, name: "", activities: activities.map({ $0.toDayPlanTemplateActivity() }))
-            SaveDayPlanTemplateView(template: template) { newTemplate in
+            EditDayPlanTemplateView(template: template) { newTemplate in
                 showSaveTemplateSheet = false
             }
         })
