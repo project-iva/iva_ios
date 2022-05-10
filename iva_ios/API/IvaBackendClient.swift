@@ -14,10 +14,10 @@ class IvaBackendClient {
         return Promise<DayPlan> { seal in
             ApiHandler.shared.makeRequest(request: DayPlanRouter.get(date),
                                           resultType: DayPlan.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -25,10 +25,10 @@ class IvaBackendClient {
         return Promise<DayGoals> { seal in
             ApiHandler.shared.makeRequest(request: DayGoalsRouter.get(date),
                                           resultType: DayGoals.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -36,10 +36,10 @@ class IvaBackendClient {
         return Promise<DayGoal> { seal in
             ApiHandler.shared.makeRequest(request: DayGoalRouter.post(goalsListId, goal),
                                           resultType: DayGoal.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -47,10 +47,10 @@ class IvaBackendClient {
         return Promise<DayGoal> { seal in
             ApiHandler.shared.makeRequest(request: DayGoalRouter.patch(goalsListId, goal),
                                           resultType: DayGoal.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -58,10 +58,10 @@ class IvaBackendClient {
         return Promise<Empty> { seal in
             ApiHandler.shared.makeRequest(request: DayGoalRouter.delete(goalsListId, goal),
                                           resultType: Empty.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -69,10 +69,10 @@ class IvaBackendClient {
         return Promise<DayPlanActivity> { seal in
             ApiHandler.shared.makeRequest(request: DayPlanActivityRouter.post(dayPlanId, activity),
                                           resultType: DayPlanActivity.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -80,10 +80,10 @@ class IvaBackendClient {
         return Promise<DayPlanActivity> { seal in
             ApiHandler.shared.makeRequest(request: DayPlanActivityRouter.patch(dayPlanId, activity),
                                           resultType: DayPlanActivity.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -91,10 +91,10 @@ class IvaBackendClient {
         return Promise<Empty> { seal in
             ApiHandler.shared.makeRequest(request: DayPlanActivityRouter.delete(dayPlanId, activity),
                                           resultType: Empty.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
@@ -102,21 +102,54 @@ class IvaBackendClient {
         return Promise<[DayPlanTemplate]> { seal in
             ApiHandler.shared.makeRequest(request: DayPlanTemplateRouter.get,
                                           resultType: [DayPlanTemplate].self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
     
-    static func addActivitiesFromDayPlanTemplate(dayPlanId: Int, dayPlanTemplateId: Int) -> Promise<DayPlan> {
-        return Promise<DayPlan> { seal in
-            ApiHandler.shared.makeRequest(request: DayPlanTemplateRouter.post(dayPlanId, dayPlanTemplateId),
-                                          resultType: DayPlan.self).done { response in
-                                            seal.fulfill(response.result)
-                                          }.catch { error in
-                                            seal.reject(error)
-                                          }
+    static func postDayPlanTemplate(template: DayPlanTemplate) -> Promise<DayPlanTemplate> {
+        return Promise<DayPlanTemplate> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateRouter.post(template),
+                                          resultType: DayPlanTemplate.self).done { response in
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    static func postDayPlanTemplateActivity(dayPlanTemplateId: Int, activity: DayPlanTemplateActivity) -> Promise<DayPlanTemplateActivity> {
+        return Promise<DayPlanTemplateActivity> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateActivityRouter.post(dayPlanTemplateId, activity),
+                                          resultType: DayPlanTemplateActivity.self).done { response in
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    static func patchDayPlanTemplateActivity(dayPlanTemplateId: Int, activity: DayPlanTemplateActivity) -> Promise<DayPlanTemplateActivity> {
+        return Promise<DayPlanTemplateActivity> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateActivityRouter.patch(dayPlanTemplateId, activity),
+                                          resultType: DayPlanTemplateActivity.self).done { response in
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    static func deleteDayPlanTemplateActivity(dayPlanTemplateId: Int, activity: DayPlanTemplateActivity) -> Promise<Empty> {
+        return Promise<Empty> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateActivityRouter.delete(dayPlanTemplateId, activity),
+                                          resultType: Empty.self).done { response in
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
         }
     }
 }
