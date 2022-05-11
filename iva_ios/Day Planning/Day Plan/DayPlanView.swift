@@ -88,12 +88,12 @@ struct DayPlanView: View {
         .sheet(isPresented: $showAddActivitiesFromTemplateSheet, content: {
             SelectTemplateView { template in
                 showAddActivitiesFromTemplateSheet = false
-                IvaBackendClient.addActivitiesFromDayPlanTemplate(dayPlanId: dayPlanId, dayPlanTemplateId: template.id)
-                    .done { updatedDayPlan in
-                        activities = updatedDayPlan.activities
-                    }.catch { error in
-                        print(error)
-                    }
+//                IvaBackendClient.addActivitiesFromDayPlanTemplate(dayPlanId: dayPlanId, dayPlanTemplateId: template.id)
+//                    .done { updatedDayPlan in
+//                        activities = updatedDayPlan.activities
+//                    }.catch { error in
+//                        print(error)
+//                    }
                 
             }
         })

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct DayPlanTemplatesView: View {
-    @Environment(\.editMode) var editMode
     @State var templates: [DayPlanTemplate] = []
-    @State var detailedTemplate: DayPlanTemplate?
-    @State var editingTemplate: DayPlanTemplate?
+    @State private var showAddTemplate = false
+    private let newTemplate = DayPlanTemplate(id: -1, name: "", activities: [])
     
     var body: some View {
         List(templates) { template in
@@ -19,24 +18,29 @@ struct DayPlanTemplatesView: View {
                 Text(template.name)
             }
         }
+        .background(
+            NavigationLink(
+                destination: DayPlanTemplateView(template: newTemplate, onSave: { createdTemplate in
+                    IvaBackendClient.postDayPlanTemplate(template: createdTemplate).done { _ in
+                       loadTemplates()
+                    }.catch { err in
+                        print(err)
+                    }
+                }),
+                isActive: $showAddTemplate
+            ) {
+                EmptyView()
+            }.hidden()
+        )
         .onAppear(perform: loadTemplates)
         .navigationTitle("Templates")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    //                    showAddActionSheet = true
+                    showAddTemplate = true
                 } label: {
                     Image(systemName: "plus")
                 }
-            }
-        }
-        .sheet(item: $detailedTemplate) { template in
-            Text(template.name)
-        }.sheet(item: $editingTemplate, onDismiss: {
-            editMode?.wrappedValue = .inactive
-        }) { template in
-            EditDayPlanTemplateView(template: template) { editedTemplate in
-                
             }
         }
     }
