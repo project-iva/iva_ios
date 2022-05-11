@@ -120,6 +120,17 @@ class IvaBackendClient {
         }
     }
     
+    static func patchDayPlanTemplate(template: DayPlanTemplate) -> Promise<DayPlanTemplate> {
+        return Promise<DayPlanTemplate> { seal in
+            ApiHandler.shared.makeRequest(request: DayPlanTemplateRouter.patch(template),
+                                          resultType: DayPlanTemplate.self).done { response in
+                seal.fulfill(response.result)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
     static func postDayPlanTemplateActivity(dayPlanTemplateId: Int, activity: DayPlanTemplateActivity) -> Promise<DayPlanTemplateActivity> {
         return Promise<DayPlanTemplateActivity> { seal in
             ApiHandler.shared.makeRequest(request: DayPlanTemplateActivityRouter.post(dayPlanTemplateId, activity),

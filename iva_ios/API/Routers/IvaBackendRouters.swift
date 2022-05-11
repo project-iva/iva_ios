@@ -91,6 +91,7 @@ enum DayPlanActivityRouter: RouterProtocol {
 enum DayPlanTemplateRouter: RouterProtocol {
     case get
     case post(DayPlanTemplate)
+    case patch(DayPlanTemplate)
     
     var method: HTTPMethod {
         switch self {
@@ -98,6 +99,8 @@ enum DayPlanTemplateRouter: RouterProtocol {
                 return .get
             case .post:
                 return .post
+            case .patch:
+                return .patch
         }
     }
     
@@ -105,6 +108,8 @@ enum DayPlanTemplateRouter: RouterProtocol {
         switch self {
             case .get, .post:
                 return "day-plan-templates/"
+            case .patch(let template):
+                return "day-plan-templates/\(template.id)/"
         }
     }
     
@@ -112,7 +117,7 @@ enum DayPlanTemplateRouter: RouterProtocol {
         switch self {
             case .get:
                 return request
-            case .post(let template):
+            case .post(let template), .patch(let template):
                 return try encodeModelIntoRequest(model: template, request: request)
         }
     }
