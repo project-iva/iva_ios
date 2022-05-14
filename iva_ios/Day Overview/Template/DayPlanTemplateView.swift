@@ -49,7 +49,9 @@ struct DayPlanTemplateView: View {
             }
         })
         .sheet(item: $editingActivity, onDismiss: {
-            editMode?.wrappedValue = .inactive
+            if !creatingNewTemplate {
+                editMode?.wrappedValue = .inactive
+            }
         }, content: { activity in
             EditDayPlanActivity(activity: activity, addingActivity: false) { updatedActivity in
                 let index = template.activities.firstIndex { checkingActivity in
@@ -85,8 +87,10 @@ struct DayPlanTemplateView: View {
             EditDayPlanActivity(activity: activity, addingActivity: true) { newTemplateActivity in
                 showAddActionSheet = false
                 template.activities.append(newTemplateActivity)
-                IvaBackendClient.postDayPlanTemplateActivity(dayPlanTemplateId: template.id, activity: newTemplateActivity).catch { err in
-                    print(err)
+                if !creatingNewTemplate {
+                    IvaBackendClient.postDayPlanTemplateActivity(dayPlanTemplateId: template.id, activity: newTemplateActivity).catch { err in
+                        print(err)
+                    }
                 }
             }
         })

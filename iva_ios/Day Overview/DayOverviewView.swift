@@ -181,6 +181,22 @@ struct DayOverviewView: View {
                 }
             }
         })
+        .sheet(isPresented: $showAddActionSheet, content: {
+            let activity = DayPlanActivity(
+                id: -1, name: "", description: "",
+                startTime: Date().toTimeString(), endTime: Date().toTimeString(),
+                type: .other
+            )
+            
+            EditDayPlanActivity(activity: activity, addingActivity: true) { newActivity in
+                showAddActionSheet = false
+                IvaBackendClient.postDayPlanActivity(dayPlanId: dayPlanId, activity: newActivity).done{ activity in
+                    upcomingActivities.append(activity)
+                }.catch { err in
+                    print(err)
+                }
+            }
+        })
         .onAppear(perform: fetchDayPlan)
     }
     
