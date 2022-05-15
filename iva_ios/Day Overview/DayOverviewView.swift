@@ -77,7 +77,7 @@ struct DayOverviewView: View {
                     .onTapGesture {
                         if editMode?.wrappedValue.isEditing ?? false {
                             editingActivity = activity
-                        } else {
+                        } else if overviewSegment == .upcoming {
                             actionSheetActivity = activity
                             showActionSheet = true
                         }
