@@ -36,9 +36,3 @@ struct TemplateActivityView: View {
         }
     }
 }
-//
-//struct TemplateActivityView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TemplateActivityView()
-//    }
-//}

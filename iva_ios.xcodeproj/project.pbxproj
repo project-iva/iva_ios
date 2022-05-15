@@ -22,6 +22,7 @@
 		7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */; };
 		7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7868B3C426A0C1E600F59BE2 /* BodyMass.swift */; };
 		787F5ADC264DAA8D00092255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F5ADB264DAA8D00092255 /* AppDelegate.swift */; };
+		7880514A28312F2700C7952F /* DayPlanTemplatesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7880514928312F2700C7952F /* DayPlanTemplatesModel.swift */; };
 		78878629273C7582005475B5 /* VoiceControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78878628273C7582005475B5 /* VoiceControlView.swift */; };
 		788ED6DF2827F532004DA835 /* DayPlanTemplatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788ED6DE2827F532004DA835 /* DayPlanTemplatesView.swift */; };
 		788ED6E228280A96004DA835 /* DayPlanTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */; };
@@ -151,6 +152,7 @@
 		7868B3C226A0BCCE00F59BE2 /* BodyMassReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMassReporter.swift; sourceTree = "<group>"; };
 		7868B3C426A0C1E600F59BE2 /* BodyMass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMass.swift; sourceTree = "<group>"; };
 		787F5ADB264DAA8D00092255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7880514928312F2700C7952F /* DayPlanTemplatesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTemplatesModel.swift; sourceTree = "<group>"; };
 		78878628273C7582005475B5 /* VoiceControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlView.swift; sourceTree = "<group>"; };
 		788ED6DE2827F532004DA835 /* DayPlanTemplatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTemplatesView.swift; sourceTree = "<group>"; };
 		788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanTemplateView.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 				785071A22826B39B00A28761 /* TemplateActivityView.swift */,
 				785071A62826CA0C00A28761 /* EditDayPlanTemplateView.swift */,
 				788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */,
+				7880514928312F2700C7952F /* DayPlanTemplatesModel.swift */,
 			);
 			path = Template;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				785071A52826B96500A28761 /* SelectActivitiesFromTemplate.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,
+				7880514A28312F2700C7952F /* DayPlanTemplatesModel.swift in Sources */,
 				78AE3D4A28146E6000DA8687 /* DayPlanningView.swift in Sources */,
 				78F2B9F5270373E000105763 /* RaspberryClientAction.swift in Sources */,
 				78C42E53269C6C9F00FBCAE1 /* MealControlSessionView.swift in Sources */,

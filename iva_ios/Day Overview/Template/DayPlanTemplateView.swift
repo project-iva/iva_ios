@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DayPlanTemplateView: View {
+    var model: DayPlanTemplatesModel
     @State var template: DayPlanTemplate
     @Environment(\.editMode) private var editMode
     @Environment(\.presentationMode) var presentationMode
@@ -60,9 +61,7 @@ struct DayPlanTemplateView: View {
                 template.activities[index] = updatedActivity
                 editingActivity = nil
                 if !creatingNewTemplate {
-                    IvaBackendClient.patchDayPlanTemplateActivity(dayPlanTemplateId: template.id, activity: updatedActivity).catch { err in
-                        print(err)
-                    }
+                    model.updateTemplateActivity(templateId: template.id, activity: updatedActivity)
                 }
             } onDeleteAction: { deletedActivity in
                 let index = template.activities.firstIndex { checkingActivity in
@@ -71,9 +70,7 @@ struct DayPlanTemplateView: View {
                 template.activities.remove(at: index)
                 editingActivity = nil
                 if !creatingNewTemplate {
-                    IvaBackendClient.deleteDayPlanTemplateActivity(dayPlanTemplateId: template.id, activity: deletedActivity).catch { err in
-                        print(err)
-                    }
+                    model.deleteTemplateActivity(templateId: template.id, activity: deletedActivity)
                 }
             }
         })
@@ -88,9 +85,7 @@ struct DayPlanTemplateView: View {
                 showAddActionSheet = false
                 template.activities.append(newTemplateActivity)
                 if !creatingNewTemplate {
-                    IvaBackendClient.postDayPlanTemplateActivity(dayPlanTemplateId: template.id, activity: newTemplateActivity).catch { err in
-                        print(err)
-                    }
+                    model.postTemplateActivity(templateId: template.id, activity: newTemplateActivity)
                 }
             }
         })
@@ -110,11 +105,7 @@ struct DayPlanTemplateView: View {
             }
         }.navigationBarTitleDisplayMode(.inline).onChange(of: editMode?.wrappedValue) { value in
             if !(value?.isEditing ?? true) {
-                IvaBackendClient.patchDayPlanTemplate(template: template).done { patchedTemplate in
-                    template = patchedTemplate
-                }.catch { err in
-                    print(err)
-                }
+                model.patchTemplate(template: template)
             }
         }
     }
