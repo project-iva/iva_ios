@@ -89,7 +89,7 @@ struct DayPlanningView: View {
             }
         }
         .sheet(isPresented: $showAddActivitiesFromTemplateSheet, content: {
-            DPView { templateActivities in
+            SelectTemplateView { templateActivities in
                 showAddActivitiesFromTemplateSheet = false
                 let activitiesToBeAdded = templateActivities.map({ $0.toDayPlanActivity()})
                 activities.append(contentsOf: activitiesToBeAdded)

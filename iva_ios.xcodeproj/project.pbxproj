@@ -10,7 +10,7 @@
 		6D29B30E06F6CF57EF543765 /* libPods-iva_watch Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CAF47F0A834B77C228B447F0 /* libPods-iva_watch Extension.a */; };
 		780530B226825A43007A7EAA /* SleepAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780530B126825A43007A7EAA /* SleepAnalysis.swift */; };
 		780A46762683C20600EDED5A /* SleepAnalysisReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */; };
-		78182C99282573FC004B5FB8 /* DPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78182C98282573FC004B5FB8 /* DPView.swift */; };
+		78182C99282573FC004B5FB8 /* SelectTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78182C98282573FC004B5FB8 /* SelectTemplateView.swift */; };
 		7832EA772645A18100371FA7 /* iva_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA762645A18100371FA7 /* iva_iosApp.swift */; };
 		7832EA792645A18100371FA7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832EA782645A18100371FA7 /* ContentView.swift */; };
 		7832EA7B2645A18200371FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7832EA7A2645A18200371FA7 /* Assets.xcassets */; };
@@ -86,7 +86,6 @@
 		78F2B9F62703744200105763 /* RaspberryClientAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F4270373E000105763 /* RaspberryClientAction.swift */; };
 		78F2B9F92703756300105763 /* RaspberryClientControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */; };
 		78F2B9FA270376D300105763 /* RaspberryClientControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */; };
-		78F6E3A126D29309000F1B28 /* SelectTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E3A026D29309000F1B28 /* SelectTemplateView.swift */; };
 		78FADBEA267FBB1E0025F40A /* IvaHealthKitReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */; };
 		939508641C4CBD1DFC1CDE14 /* Pods_iva_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 916B3F83CE4A0FD124BCA969 /* Pods_iva_ios.framework */; };
 /* End PBXBuildFile section */
@@ -138,7 +137,7 @@
 		5B5B397320E8ECF60B24C8DA /* Pods-iva_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_ios.release.xcconfig"; path = "Target Support Files/Pods-iva_ios/Pods-iva_ios.release.xcconfig"; sourceTree = "<group>"; };
 		780530B126825A43007A7EAA /* SleepAnalysis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysis.swift; sourceTree = "<group>"; };
 		780A46752683C20600EDED5A /* SleepAnalysisReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAnalysisReporter.swift; sourceTree = "<group>"; };
-		78182C98282573FC004B5FB8 /* DPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DPView.swift; sourceTree = "<group>"; };
+		78182C98282573FC004B5FB8 /* SelectTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTemplateView.swift; sourceTree = "<group>"; };
 		7832EA732645A18100371FA7 /* iva_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iva_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7832EA762645A18100371FA7 /* iva_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iva_iosApp.swift; sourceTree = "<group>"; };
 		7832EA782645A18100371FA7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -206,7 +205,6 @@
 		78F1C7EB273F152500AD2551 /* VoiceControlViewWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceControlViewWatch.swift; sourceTree = "<group>"; };
 		78F2B9F4270373E000105763 /* RaspberryClientAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryClientAction.swift; sourceTree = "<group>"; };
 		78F2B9F82703756300105763 /* RaspberryClientControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaspberryClientControlsView.swift; sourceTree = "<group>"; };
-		78F6E3A026D29309000F1B28 /* SelectTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTemplateView.swift; sourceTree = "<group>"; };
 		78FADBE9267FBB1E0025F40A /* IvaHealthKitReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaHealthKitReporter.swift; sourceTree = "<group>"; };
 		7A67CC70AC85872552EF1F27 /* Pods-iva_watch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iva_watch Extension.debug.xcconfig"; path = "Target Support Files/Pods-iva_watch Extension/Pods-iva_watch Extension.debug.xcconfig"; sourceTree = "<group>"; };
 		916B3F83CE4A0FD124BCA969 /* Pods_iva_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iva_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,7 +354,7 @@
 				784A47BA280C3D490025A10B /* ActivityView.swift */,
 				78AE3D4728146CFF00DA8687 /* DayPlanning.swift */,
 				78AE3D4928146E6000DA8687 /* DayPlanningView.swift */,
-				78182C98282573FC004B5FB8 /* DPView.swift */,
+				78182C98282573FC004B5FB8 /* SelectTemplateView.swift */,
 				785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */,
 			);
 			path = "Day Overview";
@@ -412,7 +410,6 @@
 				78E7524026C3E9C7000BA320 /* DayTimelineView.swift */,
 				78B116C626C825F000EDB53E /* ActivityEvent.swift */,
 				78B116C826C82DBC00EDB53E /* EditDayPlanActivity.swift */,
-				78F6E3A026D29309000F1B28 /* SelectTemplateView.swift */,
 			);
 			path = "Day Plan";
 			sourceTree = "<group>";
@@ -706,7 +703,6 @@
 				78C4C0A226C198AE00A3DB50 /* DayPlanView.swift in Sources */,
 				78F2B9F92703756300105763 /* RaspberryClientControlsView.swift in Sources */,
 				7868B3C526A0C1E600F59BE2 /* BodyMass.swift in Sources */,
-				78F6E3A126D29309000F1B28 /* SelectTemplateView.swift in Sources */,
 				78C4C09B26C194C600A3DB50 /* DayGoals.swift in Sources */,
 				785071A32826B39B00A28761 /* TemplateActivityView.swift in Sources */,
 				78A243412685005700CF78EC /* MindfulSessionReporter.swift in Sources */,
@@ -744,7 +740,7 @@
 				78E4505E267FE65D00D04B3A /* MindfulSession.swift in Sources */,
 				7868B3C326A0BCCE00F59BE2 /* BodyMassReporter.swift in Sources */,
 				78C4C0A826C1A2A900A3DB50 /* DayGoalsView.swift in Sources */,
-				78182C99282573FC004B5FB8 /* DPView.swift in Sources */,
+				78182C99282573FC004B5FB8 /* SelectTemplateView.swift in Sources */,
 				78C4C0A426C199EB00A3DB50 /* IvaBackendClient.swift in Sources */,
 				78878629273C7582005475B5 /* VoiceControlView.swift in Sources */,
 				78E7524526C42F08000BA320 /* Extensions.swift in Sources */,

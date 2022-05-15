@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DPView: View {
+struct SelectTemplateView: View {
     @State private var dayPlanTemplates = [DayPlanTemplate]()
     var onDone: ([DayPlanTemplateActivity]) -> Void
     
