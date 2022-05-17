@@ -55,6 +55,7 @@
 		78C3055826499B380001BE1D /* iva_watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 78C3053726499B340001BE1D /* iva_watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78C3056226499D8B0001BE1D /* IvaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaClient.swift */; };
 		78C3056326499D8B0001BE1D /* IvaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3056126499D8B0001BE1D /* IvaClient.swift */; };
+		78C3490C283192B200762D77 /* DayPlanModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C3490B283192B200762D77 /* DayPlanModel.swift */; };
 		78C42E40269C62A400FBCAE1 /* ControlSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A3269B707900AB55A0 /* ControlSession.swift */; };
 		78C42E41269C62A900FBCAE1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CE20A5269B962C00AB55A0 /* Meal.swift */; };
 		78C42E42269C62B500FBCAE1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78E45059267FDE2300D04B3A /* Router.swift */; };
@@ -182,6 +183,7 @@
 		78C3055426499B380001BE1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78C3055526499B380001BE1D /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		78C3056126499D8B0001BE1D /* IvaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaClient.swift; sourceTree = "<group>"; };
+		78C3490B283192B200762D77 /* DayPlanModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPlanModel.swift; sourceTree = "<group>"; };
 		78C42E4B269C63B300FBCAE1 /* IvaBackendRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaBackendRouters.swift; sourceTree = "<group>"; };
 		78C42E4D269C63BF00FBCAE1 /* IvaRouters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IvaRouters.swift; sourceTree = "<group>"; };
 		78C42E50269C6C6400FBCAE1 /* ControlSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlSessionView.swift; sourceTree = "<group>"; };
@@ -340,10 +342,12 @@
 		788ED6E0282809F6004DA835 /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				78182C98282573FC004B5FB8 /* SelectTemplateView.swift */,
 				788ED6DE2827F532004DA835 /* DayPlanTemplatesView.swift */,
 				785071A22826B39B00A28761 /* TemplateActivityView.swift */,
 				785071A62826CA0C00A28761 /* EditDayPlanTemplateView.swift */,
 				788ED6E128280A96004DA835 /* DayPlanTemplateView.swift */,
+				785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */,
 				7880514928312F2700C7952F /* DayPlanTemplatesModel.swift */,
 			);
 			path = Template;
@@ -357,8 +361,7 @@
 				784A47BA280C3D490025A10B /* ActivityView.swift */,
 				78AE3D4728146CFF00DA8687 /* DayPlanning.swift */,
 				78AE3D4928146E6000DA8687 /* DayPlanningView.swift */,
-				78182C98282573FC004B5FB8 /* SelectTemplateView.swift */,
-				785071A42826B96500A28761 /* SelectActivitiesFromTemplate.swift */,
+				78C3490B283192B200762D77 /* DayPlanModel.swift */,
 			);
 			path = "Day Overview";
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				78A2434326851DD900CF78EC /* ModelReporter.swift in Sources */,
 				78A275FD26C9A88B00CCBF9E /* EditDayGoal.swift in Sources */,
 				788ED6DF2827F532004DA835 /* DayPlanTemplatesView.swift in Sources */,
+				78C3490C283192B200762D77 /* DayPlanModel.swift in Sources */,
 				785071A52826B96500A28761 /* SelectActivitiesFromTemplate.swift in Sources */,
 				7832EA792645A18100371FA7 /* ContentView.swift in Sources */,
 				78CE20A2269B6F4800AB55A0 /* ControlSessionsView.swift in Sources */,

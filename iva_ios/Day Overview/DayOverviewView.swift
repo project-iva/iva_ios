@@ -14,12 +14,8 @@ enum OverviewSegment: String, CaseIterable {
 }
 
 struct DayOverviewView: View {
+    @StateObject private var model = DayPlanModel()
     @State private var overviewSegment: OverviewSegment = .upcoming
-    @State private var currentActivity: DayPlanActivity?
-    @State private var upcomingActivities: [DayPlanActivity] = []
-    @State private var pastActivities: [DayPlanActivity] = []
-    @State private var activities: [DayPlanActivity] = []
-    @State private var dayPlanId: Int = 0
     @State private var showActionSheet = false
     @State private var actionSheetActivity: DayPlanActivity?
     @Environment(\.editMode) private var editMode
@@ -28,18 +24,18 @@ struct DayOverviewView: View {
     
     var body: some View {
         VStack {
-            if currentActivity != nil {
+            if model.currentActivity != nil {
                 VStack(alignment: .leading, spacing: 10) {
                     Text("Current activity").font(.title)
                     ZStack {
-                        ActivityView(activity: currentActivity!)
+                        ActivityView(activity: model.currentActivity!)
                             .padding()
                             .contentShape(Rectangle())
                             .onTapGesture {
                                 if editMode?.wrappedValue.isEditing ?? false {
-                                    editingActivity = currentActivity
+                                    editingActivity = model.currentActivity
                                 } else {
-                                    actionSheetActivity = currentActivity
+                                    actionSheetActivity = model.currentActivity
                                     showActionSheet = true
                                 }
                             }
@@ -49,7 +45,7 @@ struct DayOverviewView: View {
                 }.padding()
             }
             VStack(alignment: .leading) {
-                if currentActivity != nil {
+                if model.currentActivity != nil {
                     Text("Other activities").font(.title)
                 } else {
                     Text("Activities").font(.title)
@@ -64,9 +60,9 @@ struct DayOverviewView: View {
             let otherActivities: [DayPlanActivity] = {
                 switch overviewSegment {
                     case .upcoming:
-                        return upcomingActivities
+                        return model.upcomingActivities
                     case .history:
-                        return pastActivities
+                        return model.pastActivities
                 }
             }()
             List(otherActivities) { activity in
@@ -99,61 +95,27 @@ struct DayOverviewView: View {
             }
         }
         .actionSheet(isPresented: $showActionSheet, content: {
-            guard var actionSheetActivity = actionSheetActivity else {
+            guard let actionSheetActivity = actionSheetActivity else {
                 fatalError("Action sheet activity is null")
             }
             
             if actionSheetActivity.status == .current {
                 return ActionSheet(title: Text("Manage current activity"), buttons: [
                     .default(Text("Finish")) {
-                        actionSheetActivity.endedAt = Date().toTimeString()
-                        IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity).done { _ in
-                            fetchDayPlan()
-                        }.catch { error in
-                            print(error)
-                        }
+                        model.finishActivity(activity: actionSheetActivity)
                     },
                     .default(Text("Finish and start next activity")) {
-                        actionSheetActivity.endedAt = Date().toTimeString()
-                        var promises = [IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity)]
-                        if var upcomingActivity = upcomingActivities.first {
-                            upcomingActivity.startedAt = Date().toTimeString()
-                            promises.append(IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: upcomingActivity))
-                        }
-                        
-                        when(fulfilled: promises).done { _ in
-                            fetchDayPlan()
-                        }.catch { error in
-                            print(error)
-                        }
-                        
+                        model.finishActivityAndStartNext(activity: actionSheetActivity)
                     },
                     .cancel()
                 ])
             } else {
                 return ActionSheet(title: Text("Manage upcoming activity"), buttons: [
                     .default(Text("Start activity")) {
-                        actionSheetActivity.startedAt = Date().toTimeString()
-                        var promises = [IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity)]
-                        
-                        // finish current activity
-                        if currentActivity != nil {
-                            currentActivity!.endedAt = Date().toTimeString()
-                            promises.append(IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: currentActivity!))
-                        }
-                        when(fulfilled: promises).done { _ in
-                            fetchDayPlan()
-                        }.catch { error in
-                            print(error)
-                        }
+                        model.startActivity(activity: actionSheetActivity)
                     },
                     .default(Text("Skip activity")) {
-                        actionSheetActivity.skipped = true
-                        IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: actionSheetActivity).done { _ in
-                            fetchDayPlan()
-                        }.catch { error in
-                            print(error)
-                        }
+                        model.skipActivity(activity: actionSheetActivity)
                     },
                     .cancel()
                 ])
@@ -163,22 +125,11 @@ struct DayOverviewView: View {
             editMode?.wrappedValue = .inactive
         }, content: { activity in
             EditDayPlanActivity(activity: activity, addingActivity: false) { updatedActivity in
-                
                 editingActivity = nil
-                
-                IvaBackendClient.patchDayPlanActivity(dayPlanId: dayPlanId, activity: updatedActivity).done { _ in
-                    fetchDayPlan()
-                }.catch { error in
-                    print(updatedActivity)
-                    print("Error updating day plan activity: \(error)")
-                }
+                model.updateActivity(activity: updatedActivity)
             } onDeleteAction: { deletedActivity in
                 editingActivity = nil
-                IvaBackendClient.deleteDayPlanActivity(dayPlanId: dayPlanId, activity: deletedActivity).done { _ in
-                    fetchDayPlan()
-                }.catch { error in
-                    print("Error deleting activity: \(error)")
-                }
+                model.deleteActivity(activity: deletedActivity)
             }
         })
         .sheet(isPresented: $showAddActionSheet, content: {
@@ -190,44 +141,12 @@ struct DayOverviewView: View {
             
             EditDayPlanActivity(activity: activity, addingActivity: true) { newActivity in
                 showAddActionSheet = false
-                IvaBackendClient.postDayPlanActivity(dayPlanId: dayPlanId, activity: newActivity).done{ activity in
-                    upcomingActivities.append(activity)
-                }.catch { err in
-                    print(err)
-                }
+                model.createActivity(activity: newActivity)
             }
         })
-        .onAppear(perform: fetchDayPlan)
     }
     
-    private func fetchDayPlan() {
-        IvaBackendClient.fetchDayPlan(for: Date()).done { dayPlan in
-            dayPlanId = dayPlan.id
-            filterActivities(dayPlan.activities)
-        }.catch { error in
-            print(error)
-        }
-    }
-    
-    private func filterActivities(_ activities: [DayPlanActivity]) {
-        currentActivity = nil
-        upcomingActivities = []
-        pastActivities = []
-        for activity in activities.sorted(by: { $0.startTime.toDateTime() < $1.startTime.toDateTime() }) {
-            if activity.status == .current {
-                currentActivity = activity
-                continue
-            }
-            
-            if activity.status == .finished || activity.status == .skipped {
-                pastActivities.append(activity)
-                continue
-            }
-            
-            upcomingActivities.append(activity)
-        }
-        
-    }
+
 }
 
 struct DayOverviewView_Previews: PreviewProvider {
